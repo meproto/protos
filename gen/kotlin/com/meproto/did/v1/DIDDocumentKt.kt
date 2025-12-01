@@ -5,29 +5,29 @@
 @file:com.google.protobuf.Generated
 // Generated files should ignore deprecation warnings
 @file:Suppress("DEPRECATION")
-package com.didme;
+package com.meproto.did.v1;
 
 @kotlin.jvm.JvmName("-initializedIDDocument")
-public inline fun dIDDocument(block: com.didme.DIDDocumentKt.Dsl.() -> kotlin.Unit): com.didme.DIDDocument =
-  com.didme.DIDDocumentKt.Dsl._create(com.didme.DIDDocument.newBuilder()).apply { block() }._build()
+public inline fun dIDDocument(block: com.meproto.did.v1.DIDDocumentKt.Dsl.() -> kotlin.Unit): com.meproto.did.v1.DIDDocument =
+  com.meproto.did.v1.DIDDocumentKt.Dsl._create(com.meproto.did.v1.DIDDocument.newBuilder()).apply { block() }._build()
 /**
- * Protobuf type `didme.DIDDocument`
+ * Protobuf type `meproto.did.v1.DIDDocument`
  */
 public object DIDDocumentKt {
   @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
   @com.google.protobuf.kotlin.ProtoDslMarker
   public class Dsl private constructor(
-    private val _builder: com.didme.DIDDocument.Builder
+    private val _builder: com.meproto.did.v1.DIDDocument.Builder
   ) {
     public companion object {
       @kotlin.jvm.JvmSynthetic
     @kotlin.PublishedApi
-      internal fun _create(builder: com.didme.DIDDocument.Builder): Dsl = Dsl(builder)
+      internal fun _create(builder: com.meproto.did.v1.DIDDocument.Builder): Dsl = Dsl(builder)
     }
 
     @kotlin.jvm.JvmSynthetic
   @kotlin.PublishedApi
-    internal fun _build(): com.didme.DIDDocument = _builder.build()
+    internal fun _build(): com.meproto.did.v1.DIDDocument = _builder.build()
 
     /**
      * ```
@@ -319,9 +319,9 @@ public object DIDDocumentKt {
     }
 
     /**
-     * `.didme.UserVerificationMethod user_verification_method = 8 [json_name = "userVerificationMethod"];`
+     * `.meproto.did.v1.UserVerificationMethod user_verification_method = 8 [json_name = "userVerificationMethod"];`
      */
-    public var userVerificationMethod: com.didme.UserVerificationMethod
+    public var userVerificationMethod: com.meproto.did.v1.UserVerificationMethod
       @kotlin.jvm.JvmName("getUserVerificationMethod")
         get() = _builder.userVerificationMethod
       @kotlin.jvm.JvmName("setUserVerificationMethod")
@@ -336,7 +336,7 @@ public object DIDDocumentKt {
         _builder.userVerificationMethodValue = value
       }
     /**
-     * `.didme.UserVerificationMethod user_verification_method = 8 [json_name = "userVerificationMethod"];`
+     * `.meproto.did.v1.UserVerificationMethod user_verification_method = 8 [json_name = "userVerificationMethod"];`
      */
     public fun clearUserVerificationMethod() {
       _builder.clearUserVerificationMethod()
@@ -499,9 +499,9 @@ public object DIDDocumentKt {
      * Verification relationships
      * ```
      *
-     * `repeated .didme.VMKey vm = 14 [json_name = "vm"];`
+     * `repeated .meproto.did.v1.VMKey vm = 14 [json_name = "vm"];`
      */
-     public val vm: com.google.protobuf.kotlin.DslList<com.didme.VMKey, VmProxy>
+     public val vm: com.google.protobuf.kotlin.DslList<com.meproto.did.v1.VMKey, VmProxy>
       @kotlin.jvm.JvmSynthetic
   get() = com.google.protobuf.kotlin.DslList(
         _builder.vmList
@@ -511,12 +511,12 @@ public object DIDDocumentKt {
      * Verification relationships
      * ```
      *
-     * `repeated .didme.VMKey vm = 14 [json_name = "vm"];`
+     * `repeated .meproto.did.v1.VMKey vm = 14 [json_name = "vm"];`
      * @param value The vm to add.
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("addVm")
-    public fun com.google.protobuf.kotlin.DslList<com.didme.VMKey, VmProxy>.add(value: com.didme.VMKey) {
+    public fun com.google.protobuf.kotlin.DslList<com.meproto.did.v1.VMKey, VmProxy>.add(value: com.meproto.did.v1.VMKey) {
       _builder.addVm(value)
     }
     /**
@@ -524,13 +524,13 @@ public object DIDDocumentKt {
      * Verification relationships
      * ```
      *
-     * `repeated .didme.VMKey vm = 14 [json_name = "vm"];`
+     * `repeated .meproto.did.v1.VMKey vm = 14 [json_name = "vm"];`
      * @param value The vm to add.
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("plusAssignVm")
     @Suppress("NOTHING_TO_INLINE")
-    public inline operator fun com.google.protobuf.kotlin.DslList<com.didme.VMKey, VmProxy>.plusAssign(value: com.didme.VMKey) {
+    public inline operator fun com.google.protobuf.kotlin.DslList<com.meproto.did.v1.VMKey, VmProxy>.plusAssign(value: com.meproto.did.v1.VMKey) {
       add(value)
     }
     /**
@@ -538,12 +538,12 @@ public object DIDDocumentKt {
      * Verification relationships
      * ```
      *
-     * `repeated .didme.VMKey vm = 14 [json_name = "vm"];`
+     * `repeated .meproto.did.v1.VMKey vm = 14 [json_name = "vm"];`
      * @param values The vm to add.
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("addAllVm")
-    public fun com.google.protobuf.kotlin.DslList<com.didme.VMKey, VmProxy>.addAll(values: kotlin.collections.Iterable<com.didme.VMKey>) {
+    public fun com.google.protobuf.kotlin.DslList<com.meproto.did.v1.VMKey, VmProxy>.addAll(values: kotlin.collections.Iterable<com.meproto.did.v1.VMKey>) {
       _builder.addAllVm(values)
     }
     /**
@@ -551,13 +551,13 @@ public object DIDDocumentKt {
      * Verification relationships
      * ```
      *
-     * `repeated .didme.VMKey vm = 14 [json_name = "vm"];`
+     * `repeated .meproto.did.v1.VMKey vm = 14 [json_name = "vm"];`
      * @param values The vm to add.
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("plusAssignAllVm")
     @Suppress("NOTHING_TO_INLINE")
-    public inline operator fun com.google.protobuf.kotlin.DslList<com.didme.VMKey, VmProxy>.plusAssign(values: kotlin.collections.Iterable<com.didme.VMKey>) {
+    public inline operator fun com.google.protobuf.kotlin.DslList<com.meproto.did.v1.VMKey, VmProxy>.plusAssign(values: kotlin.collections.Iterable<com.meproto.did.v1.VMKey>) {
       addAll(values)
     }
     /**
@@ -565,13 +565,13 @@ public object DIDDocumentKt {
      * Verification relationships
      * ```
      *
-     * `repeated .didme.VMKey vm = 14 [json_name = "vm"];`
+     * `repeated .meproto.did.v1.VMKey vm = 14 [json_name = "vm"];`
      * @param index The index to set the value at.
      * @param value The vm to set.
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setVm")
-    public operator fun com.google.protobuf.kotlin.DslList<com.didme.VMKey, VmProxy>.set(index: kotlin.Int, value: com.didme.VMKey) {
+    public operator fun com.google.protobuf.kotlin.DslList<com.meproto.did.v1.VMKey, VmProxy>.set(index: kotlin.Int, value: com.meproto.did.v1.VMKey) {
       _builder.setVm(index, value)
     }
     /**
@@ -579,11 +579,11 @@ public object DIDDocumentKt {
      * Verification relationships
      * ```
      *
-     * `repeated .didme.VMKey vm = 14 [json_name = "vm"];`
+     * `repeated .meproto.did.v1.VMKey vm = 14 [json_name = "vm"];`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearVm")
-    public fun com.google.protobuf.kotlin.DslList<com.didme.VMKey, VmProxy>.clear() {
+    public fun com.google.protobuf.kotlin.DslList<com.meproto.did.v1.VMKey, VmProxy>.clear() {
       _builder.clearVm()
     }
 
@@ -878,9 +878,9 @@ public object DIDDocumentKt {
      * Services
      * ```
      *
-     * `repeated .didme.Service svc = 19 [json_name = "svc"];`
+     * `repeated .meproto.did.v1.Service svc = 19 [json_name = "svc"];`
      */
-     public val svc: com.google.protobuf.kotlin.DslList<com.didme.Service, SvcProxy>
+     public val svc: com.google.protobuf.kotlin.DslList<com.meproto.did.v1.Service, SvcProxy>
       @kotlin.jvm.JvmSynthetic
   get() = com.google.protobuf.kotlin.DslList(
         _builder.svcList
@@ -890,12 +890,12 @@ public object DIDDocumentKt {
      * Services
      * ```
      *
-     * `repeated .didme.Service svc = 19 [json_name = "svc"];`
+     * `repeated .meproto.did.v1.Service svc = 19 [json_name = "svc"];`
      * @param value The svc to add.
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("addSvc")
-    public fun com.google.protobuf.kotlin.DslList<com.didme.Service, SvcProxy>.add(value: com.didme.Service) {
+    public fun com.google.protobuf.kotlin.DslList<com.meproto.did.v1.Service, SvcProxy>.add(value: com.meproto.did.v1.Service) {
       _builder.addSvc(value)
     }
     /**
@@ -903,13 +903,13 @@ public object DIDDocumentKt {
      * Services
      * ```
      *
-     * `repeated .didme.Service svc = 19 [json_name = "svc"];`
+     * `repeated .meproto.did.v1.Service svc = 19 [json_name = "svc"];`
      * @param value The svc to add.
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("plusAssignSvc")
     @Suppress("NOTHING_TO_INLINE")
-    public inline operator fun com.google.protobuf.kotlin.DslList<com.didme.Service, SvcProxy>.plusAssign(value: com.didme.Service) {
+    public inline operator fun com.google.protobuf.kotlin.DslList<com.meproto.did.v1.Service, SvcProxy>.plusAssign(value: com.meproto.did.v1.Service) {
       add(value)
     }
     /**
@@ -917,12 +917,12 @@ public object DIDDocumentKt {
      * Services
      * ```
      *
-     * `repeated .didme.Service svc = 19 [json_name = "svc"];`
+     * `repeated .meproto.did.v1.Service svc = 19 [json_name = "svc"];`
      * @param values The svc to add.
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("addAllSvc")
-    public fun com.google.protobuf.kotlin.DslList<com.didme.Service, SvcProxy>.addAll(values: kotlin.collections.Iterable<com.didme.Service>) {
+    public fun com.google.protobuf.kotlin.DslList<com.meproto.did.v1.Service, SvcProxy>.addAll(values: kotlin.collections.Iterable<com.meproto.did.v1.Service>) {
       _builder.addAllSvc(values)
     }
     /**
@@ -930,13 +930,13 @@ public object DIDDocumentKt {
      * Services
      * ```
      *
-     * `repeated .didme.Service svc = 19 [json_name = "svc"];`
+     * `repeated .meproto.did.v1.Service svc = 19 [json_name = "svc"];`
      * @param values The svc to add.
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("plusAssignAllSvc")
     @Suppress("NOTHING_TO_INLINE")
-    public inline operator fun com.google.protobuf.kotlin.DslList<com.didme.Service, SvcProxy>.plusAssign(values: kotlin.collections.Iterable<com.didme.Service>) {
+    public inline operator fun com.google.protobuf.kotlin.DslList<com.meproto.did.v1.Service, SvcProxy>.plusAssign(values: kotlin.collections.Iterable<com.meproto.did.v1.Service>) {
       addAll(values)
     }
     /**
@@ -944,13 +944,13 @@ public object DIDDocumentKt {
      * Services
      * ```
      *
-     * `repeated .didme.Service svc = 19 [json_name = "svc"];`
+     * `repeated .meproto.did.v1.Service svc = 19 [json_name = "svc"];`
      * @param index The index to set the value at.
      * @param value The svc to set.
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setSvc")
-    public operator fun com.google.protobuf.kotlin.DslList<com.didme.Service, SvcProxy>.set(index: kotlin.Int, value: com.didme.Service) {
+    public operator fun com.google.protobuf.kotlin.DslList<com.meproto.did.v1.Service, SvcProxy>.set(index: kotlin.Int, value: com.meproto.did.v1.Service) {
       _builder.setSvc(index, value)
     }
     /**
@@ -958,11 +958,11 @@ public object DIDDocumentKt {
      * Services
      * ```
      *
-     * `repeated .didme.Service svc = 19 [json_name = "svc"];`
+     * `repeated .meproto.did.v1.Service svc = 19 [json_name = "svc"];`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearSvc")
-    public fun com.google.protobuf.kotlin.DslList<com.didme.Service, SvcProxy>.clear() {
+    public fun com.google.protobuf.kotlin.DslList<com.meproto.did.v1.Service, SvcProxy>.clear() {
       _builder.clearSvc()
     }
 
@@ -971,9 +971,9 @@ public object DIDDocumentKt {
      * Policy & attestations
      * ```
      *
-     * `.didme.UpdatePolicy policy = 20 [json_name = "policy"];`
+     * `.meproto.did.v1.UpdatePolicy policy = 20 [json_name = "policy"];`
      */
-    public var policy: com.didme.UpdatePolicy
+    public var policy: com.meproto.did.v1.UpdatePolicy
       @kotlin.jvm.JvmName("getPolicy")
         get() = _builder.policy
       @kotlin.jvm.JvmName("setPolicy")
@@ -985,7 +985,7 @@ public object DIDDocumentKt {
      * Policy & attestations
      * ```
      *
-     * `.didme.UpdatePolicy policy = 20 [json_name = "policy"];`
+     * `.meproto.did.v1.UpdatePolicy policy = 20 [json_name = "policy"];`
      */
     public fun clearPolicy() {
       _builder.clearPolicy()
@@ -995,14 +995,14 @@ public object DIDDocumentKt {
      * Policy & attestations
      * ```
      *
-     * `.didme.UpdatePolicy policy = 20 [json_name = "policy"];`
+     * `.meproto.did.v1.UpdatePolicy policy = 20 [json_name = "policy"];`
      * @return Whether the policy field is set.
      */
     public fun hasPolicy(): kotlin.Boolean {
       return _builder.hasPolicy()
     }
 
-    public val DIDDocumentKt.Dsl.policyOrNull: com.didme.UpdatePolicy?
+    public val DIDDocumentKt.Dsl.policyOrNull: com.meproto.did.v1.UpdatePolicy?
       get() = _builder.policyOrNull
 
     /**
@@ -1012,67 +1012,67 @@ public object DIDDocumentKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class AttProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated .didme.Attestation att = 21 [json_name = "att"];`
+     * `repeated .meproto.did.v1.Attestation att = 21 [json_name = "att"];`
      */
-     public val att: com.google.protobuf.kotlin.DslList<com.didme.Attestation, AttProxy>
+     public val att: com.google.protobuf.kotlin.DslList<com.meproto.did.v1.Attestation, AttProxy>
       @kotlin.jvm.JvmSynthetic
   get() = com.google.protobuf.kotlin.DslList(
         _builder.attList
       )
     /**
-     * `repeated .didme.Attestation att = 21 [json_name = "att"];`
+     * `repeated .meproto.did.v1.Attestation att = 21 [json_name = "att"];`
      * @param value The att to add.
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("addAtt")
-    public fun com.google.protobuf.kotlin.DslList<com.didme.Attestation, AttProxy>.add(value: com.didme.Attestation) {
+    public fun com.google.protobuf.kotlin.DslList<com.meproto.did.v1.Attestation, AttProxy>.add(value: com.meproto.did.v1.Attestation) {
       _builder.addAtt(value)
     }
     /**
-     * `repeated .didme.Attestation att = 21 [json_name = "att"];`
+     * `repeated .meproto.did.v1.Attestation att = 21 [json_name = "att"];`
      * @param value The att to add.
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("plusAssignAtt")
     @Suppress("NOTHING_TO_INLINE")
-    public inline operator fun com.google.protobuf.kotlin.DslList<com.didme.Attestation, AttProxy>.plusAssign(value: com.didme.Attestation) {
+    public inline operator fun com.google.protobuf.kotlin.DslList<com.meproto.did.v1.Attestation, AttProxy>.plusAssign(value: com.meproto.did.v1.Attestation) {
       add(value)
     }
     /**
-     * `repeated .didme.Attestation att = 21 [json_name = "att"];`
+     * `repeated .meproto.did.v1.Attestation att = 21 [json_name = "att"];`
      * @param values The att to add.
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("addAllAtt")
-    public fun com.google.protobuf.kotlin.DslList<com.didme.Attestation, AttProxy>.addAll(values: kotlin.collections.Iterable<com.didme.Attestation>) {
+    public fun com.google.protobuf.kotlin.DslList<com.meproto.did.v1.Attestation, AttProxy>.addAll(values: kotlin.collections.Iterable<com.meproto.did.v1.Attestation>) {
       _builder.addAllAtt(values)
     }
     /**
-     * `repeated .didme.Attestation att = 21 [json_name = "att"];`
+     * `repeated .meproto.did.v1.Attestation att = 21 [json_name = "att"];`
      * @param values The att to add.
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("plusAssignAllAtt")
     @Suppress("NOTHING_TO_INLINE")
-    public inline operator fun com.google.protobuf.kotlin.DslList<com.didme.Attestation, AttProxy>.plusAssign(values: kotlin.collections.Iterable<com.didme.Attestation>) {
+    public inline operator fun com.google.protobuf.kotlin.DslList<com.meproto.did.v1.Attestation, AttProxy>.plusAssign(values: kotlin.collections.Iterable<com.meproto.did.v1.Attestation>) {
       addAll(values)
     }
     /**
-     * `repeated .didme.Attestation att = 21 [json_name = "att"];`
+     * `repeated .meproto.did.v1.Attestation att = 21 [json_name = "att"];`
      * @param index The index to set the value at.
      * @param value The att to set.
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setAtt")
-    public operator fun com.google.protobuf.kotlin.DslList<com.didme.Attestation, AttProxy>.set(index: kotlin.Int, value: com.didme.Attestation) {
+    public operator fun com.google.protobuf.kotlin.DslList<com.meproto.did.v1.Attestation, AttProxy>.set(index: kotlin.Int, value: com.meproto.did.v1.Attestation) {
       _builder.setAtt(index, value)
     }
     /**
-     * `repeated .didme.Attestation att = 21 [json_name = "att"];`
+     * `repeated .meproto.did.v1.Attestation att = 21 [json_name = "att"];`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearAtt")
-    public fun com.google.protobuf.kotlin.DslList<com.didme.Attestation, AttProxy>.clear() {
+    public fun com.google.protobuf.kotlin.DslList<com.meproto.did.v1.Attestation, AttProxy>.clear() {
       _builder.clearAtt()
     }
 
@@ -1081,9 +1081,9 @@ public object DIDDocumentKt {
      * Optional P-256 DataIntegrityProof
      * ```
      *
-     * `.didme.Proof proof = 22 [json_name = "proof"];`
+     * `.meproto.did.v1.Proof proof = 22 [json_name = "proof"];`
      */
-    public var proof: com.didme.Proof
+    public var proof: com.meproto.did.v1.Proof
       @kotlin.jvm.JvmName("getProof")
         get() = _builder.proof
       @kotlin.jvm.JvmName("setProof")
@@ -1095,7 +1095,7 @@ public object DIDDocumentKt {
      * Optional P-256 DataIntegrityProof
      * ```
      *
-     * `.didme.Proof proof = 22 [json_name = "proof"];`
+     * `.meproto.did.v1.Proof proof = 22 [json_name = "proof"];`
      */
     public fun clearProof() {
       _builder.clearProof()
@@ -1105,14 +1105,14 @@ public object DIDDocumentKt {
      * Optional P-256 DataIntegrityProof
      * ```
      *
-     * `.didme.Proof proof = 22 [json_name = "proof"];`
+     * `.meproto.did.v1.Proof proof = 22 [json_name = "proof"];`
      * @return Whether the proof field is set.
      */
     public fun hasProof(): kotlin.Boolean {
       return _builder.hasProof()
     }
 
-    public val DIDDocumentKt.Dsl.proofOrNull: com.didme.Proof?
+    public val DIDDocumentKt.Dsl.proofOrNull: com.meproto.did.v1.Proof?
       get() = _builder.proofOrNull
 
     /**
@@ -1126,9 +1126,9 @@ public object DIDDocumentKt {
      * Domain verification objects
      * ```
      *
-     * `repeated .didme.DomainVerification dv = 23 [json_name = "dv"];`
+     * `repeated .meproto.did.v1.DomainVerification dv = 23 [json_name = "dv"];`
      */
-     public val dv: com.google.protobuf.kotlin.DslList<com.didme.DomainVerification, DvProxy>
+     public val dv: com.google.protobuf.kotlin.DslList<com.meproto.did.v1.DomainVerification, DvProxy>
       @kotlin.jvm.JvmSynthetic
   get() = com.google.protobuf.kotlin.DslList(
         _builder.dvList
@@ -1138,12 +1138,12 @@ public object DIDDocumentKt {
      * Domain verification objects
      * ```
      *
-     * `repeated .didme.DomainVerification dv = 23 [json_name = "dv"];`
+     * `repeated .meproto.did.v1.DomainVerification dv = 23 [json_name = "dv"];`
      * @param value The dv to add.
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("addDv")
-    public fun com.google.protobuf.kotlin.DslList<com.didme.DomainVerification, DvProxy>.add(value: com.didme.DomainVerification) {
+    public fun com.google.protobuf.kotlin.DslList<com.meproto.did.v1.DomainVerification, DvProxy>.add(value: com.meproto.did.v1.DomainVerification) {
       _builder.addDv(value)
     }
     /**
@@ -1151,13 +1151,13 @@ public object DIDDocumentKt {
      * Domain verification objects
      * ```
      *
-     * `repeated .didme.DomainVerification dv = 23 [json_name = "dv"];`
+     * `repeated .meproto.did.v1.DomainVerification dv = 23 [json_name = "dv"];`
      * @param value The dv to add.
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("plusAssignDv")
     @Suppress("NOTHING_TO_INLINE")
-    public inline operator fun com.google.protobuf.kotlin.DslList<com.didme.DomainVerification, DvProxy>.plusAssign(value: com.didme.DomainVerification) {
+    public inline operator fun com.google.protobuf.kotlin.DslList<com.meproto.did.v1.DomainVerification, DvProxy>.plusAssign(value: com.meproto.did.v1.DomainVerification) {
       add(value)
     }
     /**
@@ -1165,12 +1165,12 @@ public object DIDDocumentKt {
      * Domain verification objects
      * ```
      *
-     * `repeated .didme.DomainVerification dv = 23 [json_name = "dv"];`
+     * `repeated .meproto.did.v1.DomainVerification dv = 23 [json_name = "dv"];`
      * @param values The dv to add.
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("addAllDv")
-    public fun com.google.protobuf.kotlin.DslList<com.didme.DomainVerification, DvProxy>.addAll(values: kotlin.collections.Iterable<com.didme.DomainVerification>) {
+    public fun com.google.protobuf.kotlin.DslList<com.meproto.did.v1.DomainVerification, DvProxy>.addAll(values: kotlin.collections.Iterable<com.meproto.did.v1.DomainVerification>) {
       _builder.addAllDv(values)
     }
     /**
@@ -1178,13 +1178,13 @@ public object DIDDocumentKt {
      * Domain verification objects
      * ```
      *
-     * `repeated .didme.DomainVerification dv = 23 [json_name = "dv"];`
+     * `repeated .meproto.did.v1.DomainVerification dv = 23 [json_name = "dv"];`
      * @param values The dv to add.
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("plusAssignAllDv")
     @Suppress("NOTHING_TO_INLINE")
-    public inline operator fun com.google.protobuf.kotlin.DslList<com.didme.DomainVerification, DvProxy>.plusAssign(values: kotlin.collections.Iterable<com.didme.DomainVerification>) {
+    public inline operator fun com.google.protobuf.kotlin.DslList<com.meproto.did.v1.DomainVerification, DvProxy>.plusAssign(values: kotlin.collections.Iterable<com.meproto.did.v1.DomainVerification>) {
       addAll(values)
     }
     /**
@@ -1192,13 +1192,13 @@ public object DIDDocumentKt {
      * Domain verification objects
      * ```
      *
-     * `repeated .didme.DomainVerification dv = 23 [json_name = "dv"];`
+     * `repeated .meproto.did.v1.DomainVerification dv = 23 [json_name = "dv"];`
      * @param index The index to set the value at.
      * @param value The dv to set.
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setDv")
-    public operator fun com.google.protobuf.kotlin.DslList<com.didme.DomainVerification, DvProxy>.set(index: kotlin.Int, value: com.didme.DomainVerification) {
+    public operator fun com.google.protobuf.kotlin.DslList<com.meproto.did.v1.DomainVerification, DvProxy>.set(index: kotlin.Int, value: com.meproto.did.v1.DomainVerification) {
       _builder.setDv(index, value)
     }
     /**
@@ -1206,22 +1206,22 @@ public object DIDDocumentKt {
      * Domain verification objects
      * ```
      *
-     * `repeated .didme.DomainVerification dv = 23 [json_name = "dv"];`
+     * `repeated .meproto.did.v1.DomainVerification dv = 23 [json_name = "dv"];`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearDv")
-    public fun com.google.protobuf.kotlin.DslList<com.didme.DomainVerification, DvProxy>.clear() {
+    public fun com.google.protobuf.kotlin.DslList<com.meproto.did.v1.DomainVerification, DvProxy>.clear() {
       _builder.clearDv()
     }
   }
 }
 @kotlin.jvm.JvmSynthetic
-public inline fun com.didme.DIDDocument.copy(block: `com.didme`.DIDDocumentKt.Dsl.() -> kotlin.Unit): com.didme.DIDDocument =
-  `com.didme`.DIDDocumentKt.Dsl._create(this.toBuilder()).apply { block() }._build()
+public inline fun com.meproto.did.v1.DIDDocument.copy(block: `com.meproto.did.v1`.DIDDocumentKt.Dsl.() -> kotlin.Unit): com.meproto.did.v1.DIDDocument =
+  `com.meproto.did.v1`.DIDDocumentKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 
-public val com.didme.DIDDocumentOrBuilder.policyOrNull: com.didme.UpdatePolicy?
+public val com.meproto.did.v1.DIDDocumentOrBuilder.policyOrNull: com.meproto.did.v1.UpdatePolicy?
   get() = if (hasPolicy()) getPolicy() else null
 
-public val com.didme.DIDDocumentOrBuilder.proofOrNull: com.didme.Proof?
+public val com.meproto.did.v1.DIDDocumentOrBuilder.proofOrNull: com.meproto.did.v1.Proof?
   get() = if (hasProof()) getProof() else null
 

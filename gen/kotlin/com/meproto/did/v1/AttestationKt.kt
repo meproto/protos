@@ -5,34 +5,34 @@
 @file:com.google.protobuf.Generated
 // Generated files should ignore deprecation warnings
 @file:Suppress("DEPRECATION")
-package com.didme;
+package com.meproto.did.v1;
 
 @kotlin.jvm.JvmName("-initializeattestation")
-public inline fun attestation(block: com.didme.AttestationKt.Dsl.() -> kotlin.Unit): com.didme.Attestation =
-  com.didme.AttestationKt.Dsl._create(com.didme.Attestation.newBuilder()).apply { block() }._build()
+public inline fun attestation(block: com.meproto.did.v1.AttestationKt.Dsl.() -> kotlin.Unit): com.meproto.did.v1.Attestation =
+  com.meproto.did.v1.AttestationKt.Dsl._create(com.meproto.did.v1.Attestation.newBuilder()).apply { block() }._build()
 /**
- * Protobuf type `didme.Attestation`
+ * Protobuf type `meproto.did.v1.Attestation`
  */
 public object AttestationKt {
   @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
   @com.google.protobuf.kotlin.ProtoDslMarker
   public class Dsl private constructor(
-    private val _builder: com.didme.Attestation.Builder
+    private val _builder: com.meproto.did.v1.Attestation.Builder
   ) {
     public companion object {
       @kotlin.jvm.JvmSynthetic
     @kotlin.PublishedApi
-      internal fun _create(builder: com.didme.Attestation.Builder): Dsl = Dsl(builder)
+      internal fun _create(builder: com.meproto.did.v1.Attestation.Builder): Dsl = Dsl(builder)
     }
 
     @kotlin.jvm.JvmSynthetic
   @kotlin.PublishedApi
-    internal fun _build(): com.didme.Attestation = _builder.build()
+    internal fun _build(): com.meproto.did.v1.Attestation = _builder.build()
 
     /**
-     * `.didme.Algorithm alg = 1 [json_name = "alg"];`
+     * `.meproto.did.v1.Algorithm alg = 1 [json_name = "alg"];`
      */
-    public var alg: com.didme.Algorithm
+    public var alg: com.meproto.did.v1.Algorithm
       @kotlin.jvm.JvmName("getAlg")
         get() = _builder.alg
       @kotlin.jvm.JvmName("setAlg")
@@ -47,7 +47,7 @@ public object AttestationKt {
         _builder.algValue = value
       }
     /**
-     * `.didme.Algorithm alg = 1 [json_name = "alg"];`
+     * `.meproto.did.v1.Algorithm alg = 1 [json_name = "alg"];`
      */
     public fun clearAlg() {
       _builder.clearAlg()
@@ -89,6 +89,6 @@ public object AttestationKt {
   }
 }
 @kotlin.jvm.JvmSynthetic
-public inline fun com.didme.Attestation.copy(block: `com.didme`.AttestationKt.Dsl.() -> kotlin.Unit): com.didme.Attestation =
-  `com.didme`.AttestationKt.Dsl._create(this.toBuilder()).apply { block() }._build()
+public inline fun com.meproto.did.v1.Attestation.copy(block: `com.meproto.did.v1`.AttestationKt.Dsl.() -> kotlin.Unit): com.meproto.did.v1.Attestation =
+  `com.meproto.did.v1`.AttestationKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 

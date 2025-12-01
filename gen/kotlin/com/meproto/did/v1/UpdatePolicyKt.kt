@@ -5,29 +5,29 @@
 @file:com.google.protobuf.Generated
 // Generated files should ignore deprecation warnings
 @file:Suppress("DEPRECATION")
-package com.didme;
+package com.meproto.did.v1;
 
 @kotlin.jvm.JvmName("-initializeupdatePolicy")
-public inline fun updatePolicy(block: com.didme.UpdatePolicyKt.Dsl.() -> kotlin.Unit): com.didme.UpdatePolicy =
-  com.didme.UpdatePolicyKt.Dsl._create(com.didme.UpdatePolicy.newBuilder()).apply { block() }._build()
+public inline fun updatePolicy(block: com.meproto.did.v1.UpdatePolicyKt.Dsl.() -> kotlin.Unit): com.meproto.did.v1.UpdatePolicy =
+  com.meproto.did.v1.UpdatePolicyKt.Dsl._create(com.meproto.did.v1.UpdatePolicy.newBuilder()).apply { block() }._build()
 /**
- * Protobuf type `didme.UpdatePolicy`
+ * Protobuf type `meproto.did.v1.UpdatePolicy`
  */
 public object UpdatePolicyKt {
   @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
   @com.google.protobuf.kotlin.ProtoDslMarker
   public class Dsl private constructor(
-    private val _builder: com.didme.UpdatePolicy.Builder
+    private val _builder: com.meproto.did.v1.UpdatePolicy.Builder
   ) {
     public companion object {
       @kotlin.jvm.JvmSynthetic
     @kotlin.PublishedApi
-      internal fun _create(builder: com.didme.UpdatePolicy.Builder): Dsl = Dsl(builder)
+      internal fun _create(builder: com.meproto.did.v1.UpdatePolicy.Builder): Dsl = Dsl(builder)
     }
 
     @kotlin.jvm.JvmSynthetic
   @kotlin.PublishedApi
-    internal fun _build(): com.didme.UpdatePolicy = _builder.build()
+    internal fun _build(): com.meproto.did.v1.UpdatePolicy = _builder.build()
 
     /**
      * An uninstantiable, behaviorless type to represent the field in
@@ -101,6 +101,6 @@ public object UpdatePolicyKt {
     }}
 }
 @kotlin.jvm.JvmSynthetic
-public inline fun com.didme.UpdatePolicy.copy(block: `com.didme`.UpdatePolicyKt.Dsl.() -> kotlin.Unit): com.didme.UpdatePolicy =
-  `com.didme`.UpdatePolicyKt.Dsl._create(this.toBuilder()).apply { block() }._build()
+public inline fun com.meproto.did.v1.UpdatePolicy.copy(block: `com.meproto.did.v1`.UpdatePolicyKt.Dsl.() -> kotlin.Unit): com.meproto.did.v1.UpdatePolicy =
+  `com.meproto.did.v1`.UpdatePolicyKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 

@@ -5,29 +5,29 @@
 @file:com.google.protobuf.Generated
 // Generated files should ignore deprecation warnings
 @file:Suppress("DEPRECATION")
-package com.didme;
+package com.meproto.did.v1;
 
 @kotlin.jvm.JvmName("-initializevMKey")
-public inline fun vMKey(block: com.didme.VMKeyKt.Dsl.() -> kotlin.Unit): com.didme.VMKey =
-  com.didme.VMKeyKt.Dsl._create(com.didme.VMKey.newBuilder()).apply { block() }._build()
+public inline fun vMKey(block: com.meproto.did.v1.VMKeyKt.Dsl.() -> kotlin.Unit): com.meproto.did.v1.VMKey =
+  com.meproto.did.v1.VMKeyKt.Dsl._create(com.meproto.did.v1.VMKey.newBuilder()).apply { block() }._build()
 /**
- * Protobuf type `didme.VMKey`
+ * Protobuf type `meproto.did.v1.VMKey`
  */
 public object VMKeyKt {
   @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
   @com.google.protobuf.kotlin.ProtoDslMarker
   public class Dsl private constructor(
-    private val _builder: com.didme.VMKey.Builder
+    private val _builder: com.meproto.did.v1.VMKey.Builder
   ) {
     public companion object {
       @kotlin.jvm.JvmSynthetic
     @kotlin.PublishedApi
-      internal fun _create(builder: com.didme.VMKey.Builder): Dsl = Dsl(builder)
+      internal fun _create(builder: com.meproto.did.v1.VMKey.Builder): Dsl = Dsl(builder)
     }
 
     @kotlin.jvm.JvmSynthetic
   @kotlin.PublishedApi
-    internal fun _build(): com.didme.VMKey = _builder.build()
+    internal fun _build(): com.meproto.did.v1.VMKey = _builder.build()
 
     /**
      * `string id = 1 [json_name = "id"];`
@@ -64,9 +64,9 @@ public object VMKeyKt {
     }
 
     /**
-     * `.didme.KeyType type = 3 [json_name = "type"];`
+     * `.meproto.did.v1.KeyType type = 3 [json_name = "type"];`
      */
-    public var type: com.didme.KeyType
+    public var type: com.meproto.did.v1.KeyType
       @kotlin.jvm.JvmName("getType")
         get() = _builder.type
       @kotlin.jvm.JvmName("setType")
@@ -81,16 +81,16 @@ public object VMKeyKt {
         _builder.typeValue = value
       }
     /**
-     * `.didme.KeyType type = 3 [json_name = "type"];`
+     * `.meproto.did.v1.KeyType type = 3 [json_name = "type"];`
      */
     public fun clearType() {
       _builder.clearType()
     }
 
     /**
-     * `.didme.Algorithm alg = 4 [json_name = "alg"];`
+     * `.meproto.did.v1.Algorithm alg = 4 [json_name = "alg"];`
      */
-    public var alg: com.didme.Algorithm
+    public var alg: com.meproto.did.v1.Algorithm
       @kotlin.jvm.JvmName("getAlg")
         get() = _builder.alg
       @kotlin.jvm.JvmName("setAlg")
@@ -105,7 +105,7 @@ public object VMKeyKt {
         _builder.algValue = value
       }
     /**
-     * `.didme.Algorithm alg = 4 [json_name = "alg"];`
+     * `.meproto.did.v1.Algorithm alg = 4 [json_name = "alg"];`
      */
     public fun clearAlg() {
       _builder.clearAlg()
@@ -130,6 +130,6 @@ public object VMKeyKt {
   }
 }
 @kotlin.jvm.JvmSynthetic
-public inline fun com.didme.VMKey.copy(block: `com.didme`.VMKeyKt.Dsl.() -> kotlin.Unit): com.didme.VMKey =
-  `com.didme`.VMKeyKt.Dsl._create(this.toBuilder()).apply { block() }._build()
+public inline fun com.meproto.did.v1.VMKey.copy(block: `com.meproto.did.v1`.VMKeyKt.Dsl.() -> kotlin.Unit): com.meproto.did.v1.VMKey =
+  `com.meproto.did.v1`.VMKeyKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 

@@ -21,7 +21,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-public enum Didme_KeyType: SwiftProtobuf.Enum, Swift.CaseIterable {
+public enum Meproto_Did_V1_KeyType: SwiftProtobuf.Enum, Swift.CaseIterable {
   public typealias RawValue = Int
   case unspecified // = 0
   case multikey // = 1
@@ -48,14 +48,14 @@ public enum Didme_KeyType: SwiftProtobuf.Enum, Swift.CaseIterable {
   }
 
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  public static let allCases: [Didme_KeyType] = [
+  public static let allCases: [Meproto_Did_V1_KeyType] = [
     .unspecified,
     .multikey,
   ]
 
 }
 
-public enum Didme_Algorithm: SwiftProtobuf.Enum, Swift.CaseIterable {
+public enum Meproto_Did_V1_Algorithm: SwiftProtobuf.Enum, Swift.CaseIterable {
   public typealias RawValue = Int
   case algUnspecified // = 0
 
@@ -109,7 +109,7 @@ public enum Didme_Algorithm: SwiftProtobuf.Enum, Swift.CaseIterable {
   }
 
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  public static let allCases: [Didme_Algorithm] = [
+  public static let allCases: [Meproto_Did_V1_Algorithm] = [
     .algUnspecified,
     .ed25519,
     .x25519,
@@ -121,7 +121,7 @@ public enum Didme_Algorithm: SwiftProtobuf.Enum, Swift.CaseIterable {
 
 }
 
-public enum Didme_UserVerificationMethod: SwiftProtobuf.Enum, Swift.CaseIterable {
+public enum Meproto_Did_V1_UserVerificationMethod: SwiftProtobuf.Enum, Swift.CaseIterable {
   public typealias RawValue = Int
   case uvmUnspecified // = 0
   case none // = 1
@@ -172,7 +172,7 @@ public enum Didme_UserVerificationMethod: SwiftProtobuf.Enum, Swift.CaseIterable
   }
 
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  public static let allCases: [Didme_UserVerificationMethod] = [
+  public static let allCases: [Meproto_Did_V1_UserVerificationMethod] = [
     .uvmUnspecified,
     .none,
     .pin,
@@ -187,7 +187,7 @@ public enum Didme_UserVerificationMethod: SwiftProtobuf.Enum, Swift.CaseIterable
 
 }
 
-public enum Didme_DomainVerificationType: SwiftProtobuf.Enum, Swift.CaseIterable {
+public enum Meproto_Did_V1_DomainVerificationType: SwiftProtobuf.Enum, Swift.CaseIterable {
   public typealias RawValue = Int
   case dvtUnspecified // = 0
   case dnsTxt // = 1
@@ -217,7 +217,7 @@ public enum Didme_DomainVerificationType: SwiftProtobuf.Enum, Swift.CaseIterable
   }
 
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  public static let allCases: [Didme_DomainVerificationType] = [
+  public static let allCases: [Meproto_Did_V1_DomainVerificationType] = [
     .dvtUnspecified,
     .dnsTxt,
     .httpsWellKnown,
@@ -225,7 +225,7 @@ public enum Didme_DomainVerificationType: SwiftProtobuf.Enum, Swift.CaseIterable
 
 }
 
-public struct Didme_VMKey: Sendable {
+public struct Meproto_Did_V1_VMKey: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -234,9 +234,9 @@ public struct Didme_VMKey: Sendable {
 
   public var controller: String = String()
 
-  public var type: Didme_KeyType = .unspecified
+  public var type: Meproto_Did_V1_KeyType = .unspecified
 
-  public var alg: Didme_Algorithm = .algUnspecified
+  public var alg: Meproto_Did_V1_Algorithm = .algUnspecified
 
   public var pk: String = String()
 
@@ -245,7 +245,7 @@ public struct Didme_VMKey: Sendable {
   public init() {}
 }
 
-public struct Didme_Service: Sendable {
+public struct Meproto_Did_V1_Service: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -263,12 +263,12 @@ public struct Didme_Service: Sendable {
   public init() {}
 }
 
-public struct Didme_Attestation: Sendable {
+public struct Meproto_Did_V1_Attestation: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  public var alg: Didme_Algorithm = .algUnspecified
+  public var alg: Meproto_Did_V1_Algorithm = .algUnspecified
 
   public var vm: String = String()
 
@@ -279,7 +279,7 @@ public struct Didme_Attestation: Sendable {
   public init() {}
 }
 
-public struct Didme_Proof: Sendable {
+public struct Meproto_Did_V1_Proof: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -303,12 +303,12 @@ public struct Didme_Proof: Sendable {
   public init() {}
 }
 
-public struct Didme_DomainVerification: Sendable {
+public struct Meproto_Did_V1_DomainVerification: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  public var t: Didme_DomainVerificationType = .dvtUnspecified
+  public var t: Meproto_Did_V1_DomainVerificationType = .dvtUnspecified
 
   public var domain: String = String()
 
@@ -325,7 +325,7 @@ public struct Didme_DomainVerification: Sendable {
   public init() {}
 }
 
-public struct Didme_UpdatePolicy: Sendable {
+public struct Meproto_Did_V1_UpdatePolicy: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -337,7 +337,7 @@ public struct Didme_UpdatePolicy: Sendable {
   public init() {}
 }
 
-public struct Didme_DIDDocument: @unchecked Sendable {
+public struct Meproto_Did_V1_DIDDocument: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -380,7 +380,7 @@ public struct Didme_DIDDocument: @unchecked Sendable {
     set {_uniqueStorage()._deviceModel = newValue}
   }
 
-  public var userVerificationMethod: Didme_UserVerificationMethod {
+  public var userVerificationMethod: Meproto_Did_V1_UserVerificationMethod {
     get {return _storage._userVerificationMethod}
     set {_uniqueStorage()._userVerificationMethod = newValue}
   }
@@ -412,7 +412,7 @@ public struct Didme_DIDDocument: @unchecked Sendable {
   }
 
   /// Verification relationships
-  public var vm: [Didme_VMKey] {
+  public var vm: [Meproto_Did_V1_VMKey] {
     get {return _storage._vm}
     set {_uniqueStorage()._vm = newValue}
   }
@@ -438,14 +438,14 @@ public struct Didme_DIDDocument: @unchecked Sendable {
   }
 
   /// Services
-  public var svc: [Didme_Service] {
+  public var svc: [Meproto_Did_V1_Service] {
     get {return _storage._svc}
     set {_uniqueStorage()._svc = newValue}
   }
 
   /// Policy & attestations
-  public var policy: Didme_UpdatePolicy {
-    get {return _storage._policy ?? Didme_UpdatePolicy()}
+  public var policy: Meproto_Did_V1_UpdatePolicy {
+    get {return _storage._policy ?? Meproto_Did_V1_UpdatePolicy()}
     set {_uniqueStorage()._policy = newValue}
   }
   /// Returns true if `policy` has been explicitly set.
@@ -453,14 +453,14 @@ public struct Didme_DIDDocument: @unchecked Sendable {
   /// Clears the value of `policy`. Subsequent reads from it will return its default value.
   public mutating func clearPolicy() {_uniqueStorage()._policy = nil}
 
-  public var att: [Didme_Attestation] {
+  public var att: [Meproto_Did_V1_Attestation] {
     get {return _storage._att}
     set {_uniqueStorage()._att = newValue}
   }
 
   /// Optional P-256 DataIntegrityProof
-  public var proof: Didme_Proof {
-    get {return _storage._proof ?? Didme_Proof()}
+  public var proof: Meproto_Did_V1_Proof {
+    get {return _storage._proof ?? Meproto_Did_V1_Proof()}
     set {_uniqueStorage()._proof = newValue}
   }
   /// Returns true if `proof` has been explicitly set.
@@ -469,7 +469,7 @@ public struct Didme_DIDDocument: @unchecked Sendable {
   public mutating func clearProof() {_uniqueStorage()._proof = nil}
 
   /// Domain verification objects
-  public var dv: [Didme_DomainVerification] {
+  public var dv: [Meproto_Did_V1_DomainVerification] {
     get {return _storage._dv}
     set {_uniqueStorage()._dv = newValue}
   }
@@ -483,25 +483,25 @@ public struct Didme_DIDDocument: @unchecked Sendable {
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "didme"
+fileprivate let _protobuf_package = "meproto.did.v1"
 
-extension Didme_KeyType: SwiftProtobuf._ProtoNameProviding {
+extension Meproto_Did_V1_KeyType: SwiftProtobuf._ProtoNameProviding {
   public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0KEYTYPE_UNSPECIFIED\0\u{1}MULTIKEY\0")
 }
 
-extension Didme_Algorithm: SwiftProtobuf._ProtoNameProviding {
+extension Meproto_Did_V1_Algorithm: SwiftProtobuf._ProtoNameProviding {
   public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0ALG_UNSPECIFIED\0\u{1}ED25519\0\u{1}X25519\0\u{1}ES256\0\u{1}SECP256K1\0\u{1}ML_DSA_87\0\u{1}ML_KEM_1024\0")
 }
 
-extension Didme_UserVerificationMethod: SwiftProtobuf._ProtoNameProviding {
+extension Meproto_Did_V1_UserVerificationMethod: SwiftProtobuf._ProtoNameProviding {
   public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0UVM_UNSPECIFIED\0\u{1}NONE\0\u{1}PIN\0\u{1}PASSCODE\0\u{1}PASSWORD\0\u{1}FINGERPRINT\0\u{1}FACE\0\u{1}IRIS\0\u{1}VOICE\0\u{1}PATTERN\0")
 }
 
-extension Didme_DomainVerificationType: SwiftProtobuf._ProtoNameProviding {
+extension Meproto_Did_V1_DomainVerificationType: SwiftProtobuf._ProtoNameProviding {
   public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0DVT_UNSPECIFIED\0\u{1}DNS_TXT\0\u{1}HTTPS_WELL_KNOWN\0")
 }
 
-extension Didme_VMKey: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Meproto_Did_V1_VMKey: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".VMKey"
   public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}id\0\u{1}controller\0\u{1}type\0\u{1}alg\0\u{1}pk\0")
 
@@ -540,7 +540,7 @@ extension Didme_VMKey: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementati
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  public static func ==(lhs: Didme_VMKey, rhs: Didme_VMKey) -> Bool {
+  public static func ==(lhs: Meproto_Did_V1_VMKey, rhs: Meproto_Did_V1_VMKey) -> Bool {
     if lhs.id != rhs.id {return false}
     if lhs.controller != rhs.controller {return false}
     if lhs.type != rhs.type {return false}
@@ -551,7 +551,7 @@ extension Didme_VMKey: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementati
   }
 }
 
-extension Didme_Service: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Meproto_Did_V1_Service: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".Service"
   public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}id\0\u{1}type\0\u{1}version\0\u{1}endpoint\0")
 
@@ -586,7 +586,7 @@ extension Didme_Service: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  public static func ==(lhs: Didme_Service, rhs: Didme_Service) -> Bool {
+  public static func ==(lhs: Meproto_Did_V1_Service, rhs: Meproto_Did_V1_Service) -> Bool {
     if lhs.id != rhs.id {return false}
     if lhs.type != rhs.type {return false}
     if lhs.version != rhs.version {return false}
@@ -596,7 +596,7 @@ extension Didme_Service: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
   }
 }
 
-extension Didme_Attestation: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Meproto_Did_V1_Attestation: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".Attestation"
   public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}alg\0\u{1}vm\0\u{1}sig\0")
 
@@ -627,7 +627,7 @@ extension Didme_Attestation: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  public static func ==(lhs: Didme_Attestation, rhs: Didme_Attestation) -> Bool {
+  public static func ==(lhs: Meproto_Did_V1_Attestation, rhs: Meproto_Did_V1_Attestation) -> Bool {
     if lhs.alg != rhs.alg {return false}
     if lhs.vm != rhs.vm {return false}
     if lhs.sig != rhs.sig {return false}
@@ -636,7 +636,7 @@ extension Didme_Attestation: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
   }
 }
 
-extension Didme_Proof: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Meproto_Did_V1_Proof: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".Proof"
   public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}id\0\u{1}type\0\u{1}cryptosuite\0\u{1}purpose\0\u{1}vm\0\u{1}created\0\u{1}jws\0")
 
@@ -683,7 +683,7 @@ extension Didme_Proof: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementati
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  public static func ==(lhs: Didme_Proof, rhs: Didme_Proof) -> Bool {
+  public static func ==(lhs: Meproto_Did_V1_Proof, rhs: Meproto_Did_V1_Proof) -> Bool {
     if lhs.id != rhs.id {return false}
     if lhs.type != rhs.type {return false}
     if lhs.cryptosuite != rhs.cryptosuite {return false}
@@ -696,7 +696,7 @@ extension Didme_Proof: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementati
   }
 }
 
-extension Didme_DomainVerification: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Meproto_Did_V1_DomainVerification: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".DomainVerification"
   public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}t\0\u{1}domain\0\u{1}method\0\u{1}proof\0\u{3}proof_url\0\u{3}verified_at\0")
 
@@ -739,7 +739,7 @@ extension Didme_DomainVerification: SwiftProtobuf.Message, SwiftProtobuf._Messag
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  public static func ==(lhs: Didme_DomainVerification, rhs: Didme_DomainVerification) -> Bool {
+  public static func ==(lhs: Meproto_Did_V1_DomainVerification, rhs: Meproto_Did_V1_DomainVerification) -> Bool {
     if lhs.t != rhs.t {return false}
     if lhs.domain != rhs.domain {return false}
     if lhs.method != rhs.method {return false}
@@ -751,7 +751,7 @@ extension Didme_DomainVerification: SwiftProtobuf.Message, SwiftProtobuf._Messag
   }
 }
 
-extension Didme_UpdatePolicy: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Meproto_Did_V1_UpdatePolicy: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".UpdatePolicy"
   public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}allowed\0")
 
@@ -774,14 +774,14 @@ extension Didme_UpdatePolicy: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  public static func ==(lhs: Didme_UpdatePolicy, rhs: Didme_UpdatePolicy) -> Bool {
+  public static func ==(lhs: Meproto_Did_V1_UpdatePolicy, rhs: Meproto_Did_V1_UpdatePolicy) -> Bool {
     if lhs.allowed != rhs.allowed {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
-extension Didme_DIDDocument: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Meproto_Did_V1_DIDDocument: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".DIDDocument"
   public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}id\0\u{1}controller\0\u{1}ctx\0\u{1}also\0\u{1}biometric\0\u{1}hardware\0\u{3}device_model\0\u{3}user_verification_method\0\u{1}seq\0\u{1}prev\0\u{1}core\0\u{3}core_cbor\0\u{3}key_history\0\u{1}vm\0\u{1}authn\0\u{1}assert\0\u{1}inv\0\u{1}ka\0\u{1}svc\0\u{1}policy\0\u{1}att\0\u{1}proof\0\u{1}dv\0")
 
@@ -793,22 +793,22 @@ extension Didme_DIDDocument: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
     var _biometric: Bool = false
     var _hardware: Bool = false
     var _deviceModel: String = String()
-    var _userVerificationMethod: Didme_UserVerificationMethod = .uvmUnspecified
+    var _userVerificationMethod: Meproto_Did_V1_UserVerificationMethod = .uvmUnspecified
     var _seq: UInt64 = 0
     var _prev: String = String()
     var _core: String = String()
     var _coreCbor: Data = Data()
     var _keyHistory: [String] = []
-    var _vm: [Didme_VMKey] = []
+    var _vm: [Meproto_Did_V1_VMKey] = []
     var _authn: [String] = []
     var _assert: [String] = []
     var _inv: [String] = []
     var _ka: [String] = []
-    var _svc: [Didme_Service] = []
-    var _policy: Didme_UpdatePolicy? = nil
-    var _att: [Didme_Attestation] = []
-    var _proof: Didme_Proof? = nil
-    var _dv: [Didme_DomainVerification] = []
+    var _svc: [Meproto_Did_V1_Service] = []
+    var _policy: Meproto_Did_V1_UpdatePolicy? = nil
+    var _att: [Meproto_Did_V1_Attestation] = []
+    var _proof: Meproto_Did_V1_Proof? = nil
+    var _dv: [Meproto_Did_V1_DomainVerification] = []
 
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
@@ -968,7 +968,7 @@ extension Didme_DIDDocument: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  public static func ==(lhs: Didme_DIDDocument, rhs: Didme_DIDDocument) -> Bool {
+  public static func ==(lhs: Meproto_Did_V1_DIDDocument, rhs: Meproto_Did_V1_DIDDocument) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0

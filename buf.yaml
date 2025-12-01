@@ -1,5 +1,5 @@
 version: v1
-name: buf.build/didme/api
+name: buf.build/meproto/protos
 breaking:
   use:
     - FILE

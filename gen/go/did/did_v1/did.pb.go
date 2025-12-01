@@ -4,7 +4,7 @@
 // 	protoc        (unknown)
 // source: did/did_v1/did.proto
 
-package did_v1
+package didv1
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -251,8 +251,8 @@ type VMKey struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Controller    string                 `protobuf:"bytes,2,opt,name=controller,proto3" json:"controller,omitempty"`
-	Type          KeyType                `protobuf:"varint,3,opt,name=type,proto3,enum=didme.KeyType" json:"type,omitempty"`
-	Alg           Algorithm              `protobuf:"varint,4,opt,name=alg,proto3,enum=didme.Algorithm" json:"alg,omitempty"`
+	Type          KeyType                `protobuf:"varint,3,opt,name=type,proto3,enum=meproto.did.v1.KeyType" json:"type,omitempty"`
+	Alg           Algorithm              `protobuf:"varint,4,opt,name=alg,proto3,enum=meproto.did.v1.Algorithm" json:"alg,omitempty"`
 	Pk            string                 `protobuf:"bytes,5,opt,name=pk,proto3" json:"pk,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -393,7 +393,7 @@ func (x *Service) GetEndpoint() []byte {
 
 type Attestation struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Alg           Algorithm              `protobuf:"varint,1,opt,name=alg,proto3,enum=didme.Algorithm" json:"alg,omitempty"`
+	Alg           Algorithm              `protobuf:"varint,1,opt,name=alg,proto3,enum=meproto.did.v1.Algorithm" json:"alg,omitempty"`
 	Vm            string                 `protobuf:"bytes,2,opt,name=vm,proto3" json:"vm,omitempty"`
 	Sig           []byte                 `protobuf:"bytes,3,opt,name=sig,proto3" json:"sig,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -545,7 +545,7 @@ func (x *Proof) GetJws() string {
 
 type DomainVerification struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	T             DomainVerificationType `protobuf:"varint,1,opt,name=t,proto3,enum=didme.DomainVerificationType" json:"t,omitempty"`
+	T             DomainVerificationType `protobuf:"varint,1,opt,name=t,proto3,enum=meproto.did.v1.DomainVerificationType" json:"t,omitempty"`
 	Domain        string                 `protobuf:"bytes,2,opt,name=domain,proto3" json:"domain,omitempty"`
 	Method        string                 `protobuf:"bytes,3,opt,name=method,proto3" json:"method,omitempty"`
 	Proof         []byte                 `protobuf:"bytes,4,opt,name=proof,proto3" json:"proof,omitempty"`
@@ -683,7 +683,7 @@ type DIDDocument struct {
 	Biometric              bool                   `protobuf:"varint,5,opt,name=biometric,proto3" json:"biometric,omitempty"`
 	Hardware               bool                   `protobuf:"varint,6,opt,name=hardware,proto3" json:"hardware,omitempty"`
 	DeviceModel            string                 `protobuf:"bytes,7,opt,name=device_model,json=deviceModel,proto3" json:"device_model,omitempty"`
-	UserVerificationMethod UserVerificationMethod `protobuf:"varint,8,opt,name=user_verification_method,json=userVerificationMethod,proto3,enum=didme.UserVerificationMethod" json:"user_verification_method,omitempty"`
+	UserVerificationMethod UserVerificationMethod `protobuf:"varint,8,opt,name=user_verification_method,json=userVerificationMethod,proto3,enum=meproto.did.v1.UserVerificationMethod" json:"user_verification_method,omitempty"`
 	// Core state
 	Seq        uint64   `protobuf:"varint,9,opt,name=seq,proto3" json:"seq,omitempty"`
 	Prev       string   `protobuf:"bytes,10,opt,name=prev,proto3" json:"prev,omitempty"`
@@ -904,22 +904,22 @@ var File_did_did_v1_did_proto protoreflect.FileDescriptor
 
 const file_did_did_v1_did_proto_rawDesc = "" +
 	"\n" +
-	"\x14did/did_v1/did.proto\x12\x05didme\"\x8f\x01\n" +
+	"\x14did/did_v1/did.proto\x12\x0emeproto.did.v1\"\xa1\x01\n" +
 	"\x05VMKey\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1e\n" +
 	"\n" +
 	"controller\x18\x02 \x01(\tR\n" +
-	"controller\x12\"\n" +
-	"\x04type\x18\x03 \x01(\x0e2\x0e.didme.KeyTypeR\x04type\x12\"\n" +
-	"\x03alg\x18\x04 \x01(\x0e2\x10.didme.AlgorithmR\x03alg\x12\x0e\n" +
+	"controller\x12+\n" +
+	"\x04type\x18\x03 \x01(\x0e2\x17.meproto.did.v1.KeyTypeR\x04type\x12+\n" +
+	"\x03alg\x18\x04 \x01(\x0e2\x19.meproto.did.v1.AlgorithmR\x03alg\x12\x0e\n" +
 	"\x02pk\x18\x05 \x01(\tR\x02pk\"c\n" +
 	"\aService\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04type\x18\x02 \x01(\tR\x04type\x12\x18\n" +
 	"\aversion\x18\x03 \x01(\tR\aversion\x12\x1a\n" +
-	"\bendpoint\x18\x04 \x01(\fR\bendpoint\"S\n" +
-	"\vAttestation\x12\"\n" +
-	"\x03alg\x18\x01 \x01(\x0e2\x10.didme.AlgorithmR\x03alg\x12\x0e\n" +
+	"\bendpoint\x18\x04 \x01(\fR\bendpoint\"\\\n" +
+	"\vAttestation\x12+\n" +
+	"\x03alg\x18\x01 \x01(\x0e2\x19.meproto.did.v1.AlgorithmR\x03alg\x12\x0e\n" +
 	"\x02vm\x18\x02 \x01(\tR\x02vm\x12\x10\n" +
 	"\x03sig\x18\x03 \x01(\fR\x03sig\"\xa3\x01\n" +
 	"\x05Proof\x12\x0e\n" +
@@ -929,9 +929,9 @@ const file_did_did_v1_did_proto_rawDesc = "" +
 	"\apurpose\x18\x04 \x01(\tR\apurpose\x12\x0e\n" +
 	"\x02vm\x18\x05 \x01(\tR\x02vm\x12\x18\n" +
 	"\acreated\x18\x06 \x01(\tR\acreated\x12\x10\n" +
-	"\x03jws\x18\a \x01(\tR\x03jws\"\xc5\x01\n" +
-	"\x12DomainVerification\x12+\n" +
-	"\x01t\x18\x01 \x01(\x0e2\x1d.didme.DomainVerificationTypeR\x01t\x12\x16\n" +
+	"\x03jws\x18\a \x01(\tR\x03jws\"\xce\x01\n" +
+	"\x12DomainVerification\x124\n" +
+	"\x01t\x18\x01 \x01(\x0e2&.meproto.did.v1.DomainVerificationTypeR\x01t\x12\x16\n" +
 	"\x06domain\x18\x02 \x01(\tR\x06domain\x12\x16\n" +
 	"\x06method\x18\x03 \x01(\tR\x06method\x12\x14\n" +
 	"\x05proof\x18\x04 \x01(\fR\x05proof\x12\x1b\n" +
@@ -939,7 +939,7 @@ const file_did_did_v1_did_proto_rawDesc = "" +
 	"\vverified_at\x18\x06 \x01(\tR\n" +
 	"verifiedAt\"(\n" +
 	"\fUpdatePolicy\x12\x18\n" +
-	"\aallowed\x18\x01 \x03(\tR\aallowed\"\xc3\x05\n" +
+	"\aallowed\x18\x01 \x03(\tR\aallowed\"\x82\x06\n" +
 	"\vDIDDocument\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1e\n" +
 	"\n" +
@@ -949,25 +949,25 @@ const file_did_did_v1_did_proto_rawDesc = "" +
 	"\x04also\x18\x04 \x03(\tR\x04also\x12\x1c\n" +
 	"\tbiometric\x18\x05 \x01(\bR\tbiometric\x12\x1a\n" +
 	"\bhardware\x18\x06 \x01(\bR\bhardware\x12!\n" +
-	"\fdevice_model\x18\a \x01(\tR\vdeviceModel\x12W\n" +
-	"\x18user_verification_method\x18\b \x01(\x0e2\x1d.didme.UserVerificationMethodR\x16userVerificationMethod\x12\x10\n" +
+	"\fdevice_model\x18\a \x01(\tR\vdeviceModel\x12`\n" +
+	"\x18user_verification_method\x18\b \x01(\x0e2&.meproto.did.v1.UserVerificationMethodR\x16userVerificationMethod\x12\x10\n" +
 	"\x03seq\x18\t \x01(\x04R\x03seq\x12\x12\n" +
 	"\x04prev\x18\n" +
 	" \x01(\tR\x04prev\x12\x12\n" +
 	"\x04core\x18\v \x01(\tR\x04core\x12\x1b\n" +
 	"\tcore_cbor\x18\f \x01(\fR\bcoreCbor\x12\x1f\n" +
 	"\vkey_history\x18\r \x03(\tR\n" +
-	"keyHistory\x12\x1c\n" +
-	"\x02vm\x18\x0e \x03(\v2\f.didme.VMKeyR\x02vm\x12\x14\n" +
+	"keyHistory\x12%\n" +
+	"\x02vm\x18\x0e \x03(\v2\x15.meproto.did.v1.VMKeyR\x02vm\x12\x14\n" +
 	"\x05authn\x18\x0f \x03(\tR\x05authn\x12\x16\n" +
 	"\x06assert\x18\x10 \x03(\tR\x06assert\x12\x10\n" +
 	"\x03inv\x18\x11 \x03(\tR\x03inv\x12\x0e\n" +
-	"\x02ka\x18\x12 \x03(\tR\x02ka\x12 \n" +
-	"\x03svc\x18\x13 \x03(\v2\x0e.didme.ServiceR\x03svc\x12+\n" +
-	"\x06policy\x18\x14 \x01(\v2\x13.didme.UpdatePolicyR\x06policy\x12$\n" +
-	"\x03att\x18\x15 \x03(\v2\x12.didme.AttestationR\x03att\x12\"\n" +
-	"\x05proof\x18\x16 \x01(\v2\f.didme.ProofR\x05proof\x12)\n" +
-	"\x02dv\x18\x17 \x03(\v2\x19.didme.DomainVerificationR\x02dv*0\n" +
+	"\x02ka\x18\x12 \x03(\tR\x02ka\x12)\n" +
+	"\x03svc\x18\x13 \x03(\v2\x17.meproto.did.v1.ServiceR\x03svc\x124\n" +
+	"\x06policy\x18\x14 \x01(\v2\x1c.meproto.did.v1.UpdatePolicyR\x06policy\x12-\n" +
+	"\x03att\x18\x15 \x03(\v2\x1b.meproto.did.v1.AttestationR\x03att\x12+\n" +
+	"\x05proof\x18\x16 \x01(\v2\x15.meproto.did.v1.ProofR\x05proof\x122\n" +
+	"\x02dv\x18\x17 \x03(\v2\".meproto.did.v1.DomainVerificationR\x02dv*0\n" +
 	"\aKeyType\x12\x17\n" +
 	"\x13KEYTYPE_UNSPECIFIED\x10\x00\x12\f\n" +
 	"\bMULTIKEY\x10\x01*s\n" +
@@ -994,8 +994,8 @@ const file_did_did_v1_did_proto_rawDesc = "" +
 	"\x16DomainVerificationType\x12\x13\n" +
 	"\x0fDVT_UNSPECIFIED\x10\x00\x12\v\n" +
 	"\aDNS_TXT\x10\x01\x12\x14\n" +
-	"\x10HTTPS_WELL_KNOWN\x10\x02Bt\n" +
-	"\tcom.didmeB\bDidProtoP\x01Z)github.com/me-id/protos/gen/go/did/did_v1\xa2\x02\x03DXX\xaa\x02\x05Didme\xca\x02\x05Didme\xe2\x02\x11Didme\\GPBMetadata\xea\x02\x05Didmeb\x06proto3"
+	"\x10HTTPS_WELL_KNOWN\x10\x02B\xab\x01\n" +
+	"\x12com.meproto.did.v1B\bDidProtoP\x01Z1github.com/meproto/protos/gen/go/did/did_v1;didv1\xa2\x02\x03MDX\xaa\x02\x0eMeproto.Did.V1\xca\x02\x0eMeproto\\Did\\V1\xe2\x02\x1aMeproto\\Did\\V1\\GPBMetadata\xea\x02\x10Meproto::Did::V1b\x06proto3"
 
 var (
 	file_did_did_v1_did_proto_rawDescOnce sync.Once
@@ -1012,30 +1012,30 @@ func file_did_did_v1_did_proto_rawDescGZIP() []byte {
 var file_did_did_v1_did_proto_enumTypes = make([]protoimpl.EnumInfo, 4)
 var file_did_did_v1_did_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
 var file_did_did_v1_did_proto_goTypes = []any{
-	(KeyType)(0),                // 0: didme.KeyType
-	(Algorithm)(0),              // 1: didme.Algorithm
-	(UserVerificationMethod)(0), // 2: didme.UserVerificationMethod
-	(DomainVerificationType)(0), // 3: didme.DomainVerificationType
-	(*VMKey)(nil),               // 4: didme.VMKey
-	(*Service)(nil),             // 5: didme.Service
-	(*Attestation)(nil),         // 6: didme.Attestation
-	(*Proof)(nil),               // 7: didme.Proof
-	(*DomainVerification)(nil),  // 8: didme.DomainVerification
-	(*UpdatePolicy)(nil),        // 9: didme.UpdatePolicy
-	(*DIDDocument)(nil),         // 10: didme.DIDDocument
+	(KeyType)(0),                // 0: meproto.did.v1.KeyType
+	(Algorithm)(0),              // 1: meproto.did.v1.Algorithm
+	(UserVerificationMethod)(0), // 2: meproto.did.v1.UserVerificationMethod
+	(DomainVerificationType)(0), // 3: meproto.did.v1.DomainVerificationType
+	(*VMKey)(nil),               // 4: meproto.did.v1.VMKey
+	(*Service)(nil),             // 5: meproto.did.v1.Service
+	(*Attestation)(nil),         // 6: meproto.did.v1.Attestation
+	(*Proof)(nil),               // 7: meproto.did.v1.Proof
+	(*DomainVerification)(nil),  // 8: meproto.did.v1.DomainVerification
+	(*UpdatePolicy)(nil),        // 9: meproto.did.v1.UpdatePolicy
+	(*DIDDocument)(nil),         // 10: meproto.did.v1.DIDDocument
 }
 var file_did_did_v1_did_proto_depIdxs = []int32{
-	0,  // 0: didme.VMKey.type:type_name -> didme.KeyType
-	1,  // 1: didme.VMKey.alg:type_name -> didme.Algorithm
-	1,  // 2: didme.Attestation.alg:type_name -> didme.Algorithm
-	3,  // 3: didme.DomainVerification.t:type_name -> didme.DomainVerificationType
-	2,  // 4: didme.DIDDocument.user_verification_method:type_name -> didme.UserVerificationMethod
-	4,  // 5: didme.DIDDocument.vm:type_name -> didme.VMKey
-	5,  // 6: didme.DIDDocument.svc:type_name -> didme.Service
-	9,  // 7: didme.DIDDocument.policy:type_name -> didme.UpdatePolicy
-	6,  // 8: didme.DIDDocument.att:type_name -> didme.Attestation
-	7,  // 9: didme.DIDDocument.proof:type_name -> didme.Proof
-	8,  // 10: didme.DIDDocument.dv:type_name -> didme.DomainVerification
+	0,  // 0: meproto.did.v1.VMKey.type:type_name -> meproto.did.v1.KeyType
+	1,  // 1: meproto.did.v1.VMKey.alg:type_name -> meproto.did.v1.Algorithm
+	1,  // 2: meproto.did.v1.Attestation.alg:type_name -> meproto.did.v1.Algorithm
+	3,  // 3: meproto.did.v1.DomainVerification.t:type_name -> meproto.did.v1.DomainVerificationType
+	2,  // 4: meproto.did.v1.DIDDocument.user_verification_method:type_name -> meproto.did.v1.UserVerificationMethod
+	4,  // 5: meproto.did.v1.DIDDocument.vm:type_name -> meproto.did.v1.VMKey
+	5,  // 6: meproto.did.v1.DIDDocument.svc:type_name -> meproto.did.v1.Service
+	9,  // 7: meproto.did.v1.DIDDocument.policy:type_name -> meproto.did.v1.UpdatePolicy
+	6,  // 8: meproto.did.v1.DIDDocument.att:type_name -> meproto.did.v1.Attestation
+	7,  // 9: meproto.did.v1.DIDDocument.proof:type_name -> meproto.did.v1.Proof
+	8,  // 10: meproto.did.v1.DIDDocument.dv:type_name -> meproto.did.v1.DomainVerification
 	11, // [11:11] is the sub-list for method output_type
 	11, // [11:11] is the sub-list for method input_type
 	11, // [11:11] is the sub-list for extension type_name

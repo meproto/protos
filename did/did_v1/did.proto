@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package didme;
+package meproto.did.v1;
 
 // ===========================
 //  ENUMS

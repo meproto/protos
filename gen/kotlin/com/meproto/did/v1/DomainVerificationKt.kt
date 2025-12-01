@@ -5,34 +5,34 @@
 @file:com.google.protobuf.Generated
 // Generated files should ignore deprecation warnings
 @file:Suppress("DEPRECATION")
-package com.didme;
+package com.meproto.did.v1;
 
 @kotlin.jvm.JvmName("-initializedomainVerification")
-public inline fun domainVerification(block: com.didme.DomainVerificationKt.Dsl.() -> kotlin.Unit): com.didme.DomainVerification =
-  com.didme.DomainVerificationKt.Dsl._create(com.didme.DomainVerification.newBuilder()).apply { block() }._build()
+public inline fun domainVerification(block: com.meproto.did.v1.DomainVerificationKt.Dsl.() -> kotlin.Unit): com.meproto.did.v1.DomainVerification =
+  com.meproto.did.v1.DomainVerificationKt.Dsl._create(com.meproto.did.v1.DomainVerification.newBuilder()).apply { block() }._build()
 /**
- * Protobuf type `didme.DomainVerification`
+ * Protobuf type `meproto.did.v1.DomainVerification`
  */
 public object DomainVerificationKt {
   @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
   @com.google.protobuf.kotlin.ProtoDslMarker
   public class Dsl private constructor(
-    private val _builder: com.didme.DomainVerification.Builder
+    private val _builder: com.meproto.did.v1.DomainVerification.Builder
   ) {
     public companion object {
       @kotlin.jvm.JvmSynthetic
     @kotlin.PublishedApi
-      internal fun _create(builder: com.didme.DomainVerification.Builder): Dsl = Dsl(builder)
+      internal fun _create(builder: com.meproto.did.v1.DomainVerification.Builder): Dsl = Dsl(builder)
     }
 
     @kotlin.jvm.JvmSynthetic
   @kotlin.PublishedApi
-    internal fun _build(): com.didme.DomainVerification = _builder.build()
+    internal fun _build(): com.meproto.did.v1.DomainVerification = _builder.build()
 
     /**
-     * `.didme.DomainVerificationType t = 1 [json_name = "t"];`
+     * `.meproto.did.v1.DomainVerificationType t = 1 [json_name = "t"];`
      */
-    public var t: com.didme.DomainVerificationType
+    public var t: com.meproto.did.v1.DomainVerificationType
       @kotlin.jvm.JvmName("getT")
         get() = _builder.t
       @kotlin.jvm.JvmName("setT")
@@ -47,7 +47,7 @@ public object DomainVerificationKt {
         _builder.tValue = value
       }
     /**
-     * `.didme.DomainVerificationType t = 1 [json_name = "t"];`
+     * `.meproto.did.v1.DomainVerificationType t = 1 [json_name = "t"];`
      */
     public fun clearT() {
       _builder.clearT()
@@ -140,6 +140,6 @@ public object DomainVerificationKt {
   }
 }
 @kotlin.jvm.JvmSynthetic
-public inline fun com.didme.DomainVerification.copy(block: `com.didme`.DomainVerificationKt.Dsl.() -> kotlin.Unit): com.didme.DomainVerification =
-  `com.didme`.DomainVerificationKt.Dsl._create(this.toBuilder()).apply { block() }._build()
+public inline fun com.meproto.did.v1.DomainVerification.copy(block: `com.meproto.did.v1`.DomainVerificationKt.Dsl.() -> kotlin.Unit): com.meproto.did.v1.DomainVerification =
+  `com.meproto.did.v1`.DomainVerificationKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 

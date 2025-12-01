@@ -5,29 +5,29 @@
 @file:com.google.protobuf.Generated
 // Generated files should ignore deprecation warnings
 @file:Suppress("DEPRECATION")
-package com.didme;
+package com.meproto.did.v1;
 
 @kotlin.jvm.JvmName("-initializeproof")
-public inline fun proof(block: com.didme.ProofKt.Dsl.() -> kotlin.Unit): com.didme.Proof =
-  com.didme.ProofKt.Dsl._create(com.didme.Proof.newBuilder()).apply { block() }._build()
+public inline fun proof(block: com.meproto.did.v1.ProofKt.Dsl.() -> kotlin.Unit): com.meproto.did.v1.Proof =
+  com.meproto.did.v1.ProofKt.Dsl._create(com.meproto.did.v1.Proof.newBuilder()).apply { block() }._build()
 /**
- * Protobuf type `didme.Proof`
+ * Protobuf type `meproto.did.v1.Proof`
  */
 public object ProofKt {
   @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
   @com.google.protobuf.kotlin.ProtoDslMarker
   public class Dsl private constructor(
-    private val _builder: com.didme.Proof.Builder
+    private val _builder: com.meproto.did.v1.Proof.Builder
   ) {
     public companion object {
       @kotlin.jvm.JvmSynthetic
     @kotlin.PublishedApi
-      internal fun _create(builder: com.didme.Proof.Builder): Dsl = Dsl(builder)
+      internal fun _create(builder: com.meproto.did.v1.Proof.Builder): Dsl = Dsl(builder)
     }
 
     @kotlin.jvm.JvmSynthetic
   @kotlin.PublishedApi
-    internal fun _build(): com.didme.Proof = _builder.build()
+    internal fun _build(): com.meproto.did.v1.Proof = _builder.build()
 
     /**
      * `string id = 1 [json_name = "id"];`
@@ -150,6 +150,6 @@ public object ProofKt {
   }
 }
 @kotlin.jvm.JvmSynthetic
-public inline fun com.didme.Proof.copy(block: `com.didme`.ProofKt.Dsl.() -> kotlin.Unit): com.didme.Proof =
-  `com.didme`.ProofKt.Dsl._create(this.toBuilder()).apply { block() }._build()
+public inline fun com.meproto.did.v1.Proof.copy(block: `com.meproto.did.v1`.ProofKt.Dsl.() -> kotlin.Unit): com.meproto.did.v1.Proof =
+  `com.meproto.did.v1`.ProofKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 

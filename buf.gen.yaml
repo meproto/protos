@@ -2,14 +2,15 @@ version: v1
 managed:
    enabled: true
    go_package_prefix:
-    default: github.com/me-id/protos/gen/go
+    default: github.com/meproto/protos/gen/go
     except: 
       - buf.build/googleapis/googleapis
 plugins:
   # Go
    - plugin: buf.build/protocolbuffers/go
      out: gen/go
-     opt: paths=source_relative
+     opt: 
+      - paths=source_relative
   # TypeScript 
    - plugin: buf.build/bufbuild/es
      out: gen/es
