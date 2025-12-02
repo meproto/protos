@@ -54,20 +54,20 @@ public object AttestationKt {
     }
 
     /**
-     * `string vm = 2 [json_name = "vm"];`
+     * `string verification_method = 2 [json_name = "verificationMethod"];`
      */
-    public var vm: kotlin.String
-      @kotlin.jvm.JvmName("getVm")
-        get() = _builder.vm
-      @kotlin.jvm.JvmName("setVm")
+    public var verificationMethod: kotlin.String
+      @kotlin.jvm.JvmName("getVerificationMethod")
+        get() = _builder.verificationMethod
+      @kotlin.jvm.JvmName("setVerificationMethod")
         set(value) {
-        _builder.vm = value
+        _builder.verificationMethod = value
       }
     /**
-     * `string vm = 2 [json_name = "vm"];`
+     * `string verification_method = 2 [json_name = "verificationMethod"];`
      */
-    public fun clearVm() {
-      _builder.clearVm()
+    public fun clearVerificationMethod() {
+      _builder.clearVerificationMethod()
     }
 
     /**

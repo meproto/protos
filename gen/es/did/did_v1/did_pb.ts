@@ -10,7 +10,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file did/did_v1/did.proto.
  */
 export const file_did_did_v1_did: GenFile = /*@__PURE__*/
-  fileDesc("ChRkaWQvZGlkX3YxL2RpZC5wcm90bxIObWVwcm90by5kaWQudjEiWwoFVk1LZXkSCgoCaWQYASABKAkSEgoKY29udHJvbGxlchgCIAEoCRImCgNhbGcYAyABKA4yGS5tZXByb3RvLmRpZC52MS5BbGdvcml0aG0SCgoCcGsYBCABKAwiRgoHU2VydmljZRIKCgJpZBgBIAEoCRIMCgR0eXBlGAIgASgJEg8KB3ZlcnNpb24YAyABKAkSEAoIZW5kcG9pbnQYBCABKAwiTgoLQXR0ZXN0YXRpb24SJgoDYWxnGAEgASgOMhkubWVwcm90by5kaWQudjEuQWxnb3JpdGhtEgoKAnZtGAIgASgJEgsKA3NpZxgDIAEoDCJxCgVQcm9vZhIKCgJpZBgBIAEoCRIMCgR0eXBlGAIgASgJEhMKC2NyeXB0b3N1aXRlGAMgASgJEg8KB3B1cnBvc2UYBCABKAkSCgoCdm0YBSABKAkSDwoHY3JlYXRlZBgGIAEoCRILCgNqd3MYByABKAkijQEKEkRvbWFpblZlcmlmaWNhdGlvbhIxCgF0GAEgASgOMiYubWVwcm90by5kaWQudjEuRG9tYWluVmVyaWZpY2F0aW9uVHlwZRIOCgZkb21haW4YAiABKAkSDgoGbWV0aG9kGAMgASgJEg8KB2JpbmRpbmcYBCABKAwSEwoLYmluZGluZ191cmwYBSABKAkiHwoMVXBkYXRlUG9saWN5Eg8KB2FsbG93ZWQYASADKAkizQQKC0RJRERvY3VtZW50EgoKAmlkGAEgASgJEhIKCmNvbnRyb2xsZXIYAiABKAkSCwoDY3R4GAMgAygJEgwKBGFsc28YBCADKAkSEQoJYmlvbWV0cmljGAUgASgIEhAKCGhhcmR3YXJlGAYgASgIEhQKDGRldmljZV9tb2RlbBgHIAEoCRJIChh1c2VyX3ZlcmlmaWNhdGlvbl9tZXRob2QYCCABKA4yJi5tZXByb3RvLmRpZC52MS5Vc2VyVmVyaWZpY2F0aW9uTWV0aG9kEgsKA3NlcRgJIAEoBBIMCgRwcmV2GAogASgJEgwKBGNvcmUYCyABKAkSEQoJY29yZV9jYm9yGAwgASgMEhMKC2tleV9oaXN0b3J5GA0gAygJEiEKAnZtGA4gAygLMhUubWVwcm90by5kaWQudjEuVk1LZXkSDQoFYXV0aG4YDyADKAkSDgoGYXNzZXJ0GBAgAygJEgsKA2ludhgRIAMoCRIKCgJrYRgSIAMoCRIkCgNzdmMYEyADKAsyFy5tZXByb3RvLmRpZC52MS5TZXJ2aWNlEiwKBnBvbGljeRgUIAEoCzIcLm1lcHJvdG8uZGlkLnYxLlVwZGF0ZVBvbGljeRIoCgNhdHQYFSADKAsyGy5tZXByb3RvLmRpZC52MS5BdHRlc3RhdGlvbhIkCgVwcm9vZhgWIAEoCzIVLm1lcHJvdG8uZGlkLnYxLlByb29mEi4KAmR2GBcgAygLMiIubWVwcm90by5kaWQudjEuRG9tYWluVmVyaWZpY2F0aW9uKnMKCUFsZ29yaXRobRITCg9BTEdfVU5TUEVDSUZJRUQQABILCgdFRDI1NTE5EAESCgoGWDI1NTE5EAISCQoFRVMyNTYQAxINCglTRUNQMjU2SzEQBBINCglNTF9EU0FfODcQBRIPCgtNTF9LRU1fMTAyNBAGKpkBChZVc2VyVmVyaWZpY2F0aW9uTWV0aG9kEhMKD1VWTV9VTlNQRUNJRklFRBAAEggKBE5PTkUQARIHCgNQSU4QAhIMCghQQVNTQ09ERRADEgwKCFBBU1NXT1JEEAQSDwoLRklOR0VSUFJJTlQQBRIICgRGQUNFEAYSCAoESVJJUxAHEgkKBVZPSUNFEAgSCwoHUEFUVEVSThAJKlAKFkRvbWFpblZlcmlmaWNhdGlvblR5cGUSEwoPRFZUX1VOU1BFQ0lGSUVEEAASCwoHRE5TX1RYVBABEhQKEEhUVFBTX1dFTExfS05PV04QAkKrAQoSY29tLm1lcHJvdG8uZGlkLnYxQghEaWRQcm90b1ABWjFnaXRodWIuY29tL21lcHJvdG8vcHJvdG9zL2dlbi9nby9kaWQvZGlkX3YxO2RpZHYxogIDTURYqgIOTWVwcm90by5EaWQuVjHKAg5NZXByb3RvXERpZFxWMeICGk1lcHJvdG9cRGlkXFYxXEdQQk1ldGFkYXRh6gIQTWVwcm90bzo6RGlkOjpWMWIGcHJvdG8z");
+  fileDesc("ChRkaWQvZGlkX3YxL2RpZC5wcm90bxIObWVwcm90by5kaWQudjEikQEKBVZNS2V5EgoKAmlkGAEgASgJEhIKCmNvbnRyb2xsZXIYAiABKAkSNAoEdHlwZRgDIAEoDjImLm1lcHJvdG8uZGlkLnYxLlZlcmlmaWNhdGlvbk1ldGhvZFR5cGUSJgoDYWxnGAQgASgOMhkubWVwcm90by5kaWQudjEuQWxnb3JpdGhtEgoKAnBrGAUgASgMIkoKB1NlcnZpY2USCgoCaWQYASABKAkSDAoEdHlwZRgCIAEoCRIPCgd2ZXJzaW9uGAMgASgJEhQKDHNlcnZpY2VfZGF0YRgEIAEoDCJfCgtBdHRlc3RhdGlvbhImCgNhbGcYASABKA4yGS5tZXByb3RvLmRpZC52MS5BbGdvcml0aG0SGwoTdmVyaWZpY2F0aW9uX21ldGhvZBgCIAEoCRILCgNzaWcYAyABKAwicQoFUHJvb2YSCgoCaWQYASABKAkSDAoEdHlwZRgCIAEoCRITCgtjcnlwdG9zdWl0ZRgDIAEoCRIPCgdwdXJwb3NlGAQgASgJEgoKAnZtGAUgASgJEg8KB2NyZWF0ZWQYBiABKAkSCwoDandzGAcgASgJIssBChJEb21haW5WZXJpZmljYXRpb24SOAoGbWV0aG9kGAEgASgOMigubWVwcm90by5kaWQudjEuRG9tYWluVmVyaWZpY2F0aW9uTWV0aG9kEg4KBmRvbWFpbhgCIAEoCRIpCgNkbnMYAyABKAsyGi5tZXByb3RvLmRpZC52MS5ETlNCaW5kaW5nSAASNQoJd2VsbGtub3duGAQgASgLMiAubWVwcm90by5kaWQudjEuV2VsbEtub3duQmluZGluZ0gAQgkKB2JpbmRpbmciNAoKRE5TQmluZGluZxITCgtyZWNvcmRfbmFtZRgBIAEoCRIRCgl0eHRfdmFsdWUYAiABKAkiMAoQV2VsbEtub3duQmluZGluZxILCgN1cmkYASABKAkSDwoHY29udGVudBgCIAEoDCIfCgxVcGRhdGVQb2xpY3kSDwoHYWxsb3dlZBgBIAMoCSL0BAoLRElERG9jdW1lbnQSCgoCaWQYASABKAkSEgoKY29udHJvbGxlchgCIAEoCRILCgNjdHgYAyADKAkSFQoNYWxzb19rbm93bl9hcxgEIAMoCRIRCgliaW9tZXRyaWMYBSABKAgSEAoIaGFyZHdhcmUYBiABKAgSFAoMZGV2aWNlX21vZGVsGAcgASgJEkgKGHVzZXJfdmVyaWZpY2F0aW9uX21ldGhvZBgIIAEoDjImLm1lcHJvdG8uZGlkLnYxLlVzZXJWZXJpZmljYXRpb25NZXRob2QSCwoDc2VxGAkgASgEEgwKBHByZXYYCiABKAkSDAoEY29yZRgLIAEoCRIRCgljb3JlX2Nib3IYDCABKAwSEwoLa2V5X2hpc3RvcnkYDSADKAkSIQoCdm0YDiADKAsyFS5tZXByb3RvLmRpZC52MS5WTUtleRIWCg5hdXRoZW50aWNhdGlvbhgPIAMoCRIRCglhc3NlcnRpb24YECADKAkSEgoKaW52b2NhdGlvbhgRIAMoCRIVCg1rZXlfYWdyZWVtZW50GBIgAygJEiQKA3N2YxgTIAMoCzIXLm1lcHJvdG8uZGlkLnYxLlNlcnZpY2USLAoGcG9saWN5GBQgASgLMhwubWVwcm90by5kaWQudjEuVXBkYXRlUG9saWN5EigKA2F0dBgVIAMoCzIbLm1lcHJvdG8uZGlkLnYxLkF0dGVzdGF0aW9uEiQKBXByb29mGBYgASgLMhUubWVwcm90by5kaWQudjEuUHJvb2YSLgoCZHYYFyADKAsyIi5tZXByb3RvLmRpZC52MS5Eb21haW5WZXJpZmljYXRpb24qcwoJQWxnb3JpdGhtEhMKD0FMR19VTlNQRUNJRklFRBAAEgsKB0VEMjU1MTkQARIKCgZYMjU1MTkQAhIJCgVFUzI1NhADEg0KCVNFQ1AyNTZLMRAEEg0KCU1MX0RTQV84NxAFEg8KC01MX0tFTV8xMDI0EAYqmQEKFlVzZXJWZXJpZmljYXRpb25NZXRob2QSEwoPVVZNX1VOU1BFQ0lGSUVEEAASCAoETk9ORRABEgcKA1BJThACEgwKCFBBU1NDT0RFEAMSDAoIUEFTU1dPUkQQBBIPCgtGSU5HRVJQUklOVBAFEggKBEZBQ0UQBhIICgRJUklTEAcSCQoFVk9JQ0UQCBILCgdQQVRURVJOEAkqOwoWVmVyaWZpY2F0aW9uTWV0aG9kVHlwZRITCg9WTVRfVU5TUEVDSUZJRUQQABIMCghNVUxUSUtFWRABKlIKGERvbWFpblZlcmlmaWNhdGlvbk1ldGhvZBITCg9EVk1fVU5TUEVDSUZJRUQQABILCgdETlNfVFhUEAESFAoQSFRUUFNfV0VMTF9LTk9XThACQqsBChJjb20ubWVwcm90by5kaWQudjFCCERpZFByb3RvUAFaMWdpdGh1Yi5jb20vbWVwcm90by9wcm90b3MvZ2VuL2dvL2RpZC9kaWRfdjE7ZGlkdjGiAgNNRFiqAg5NZXByb3RvLkRpZC5WMcoCDk1lcHJvdG9cRGlkXFYx4gIaTWVwcm90b1xEaWRcVjFcR1BCTWV0YWRhdGHqAhBNZXByb3RvOjpEaWQ6OlYxYgZwcm90bzM");
 
 /**
  * @generated from message meproto.did.v1.VMKey
@@ -27,12 +27,23 @@ export type VMKey = Message<"meproto.did.v1.VMKey"> & {
   controller: string;
 
   /**
-   * @generated from field: meproto.did.v1.Algorithm alg = 3;
+   * always MULTIKEY for now
+   *
+   * @generated from field: meproto.did.v1.VerificationMethodType type = 3;
+   */
+  type: VerificationMethodType;
+
+  /**
+   * optional but helpful for fast routing
+   *
+   * @generated from field: meproto.did.v1.Algorithm alg = 4;
    */
   alg: Algorithm;
 
   /**
-   * @generated from field: bytes pk = 4;
+   * multikey-encoded public key
+   *
+   * @generated from field: bytes pk = 5;
    */
   pk: Uint8Array;
 };
@@ -66,9 +77,9 @@ export type Service = Message<"meproto.did.v1.Service"> & {
   /**
    * JSON blob
    *
-   * @generated from field: bytes endpoint = 4;
+   * @generated from field: bytes service_data = 4;
    */
-  endpoint: Uint8Array;
+  serviceData: Uint8Array;
 };
 
 /**
@@ -88,9 +99,9 @@ export type Attestation = Message<"meproto.did.v1.Attestation"> & {
   alg: Algorithm;
 
   /**
-   * @generated from field: string vm = 2;
+   * @generated from field: string verification_method = 2;
    */
-  vm: string;
+  verificationMethod: string;
 
   /**
    * @generated from field: bytes sig = 3;
@@ -157,9 +168,9 @@ export const ProofSchema: GenMessage<Proof> = /*@__PURE__*/
  */
 export type DomainVerification = Message<"meproto.did.v1.DomainVerification"> & {
   /**
-   * @generated from field: meproto.did.v1.DomainVerificationType t = 1;
+   * @generated from field: meproto.did.v1.DomainVerificationMethod method = 1;
    */
-  t: DomainVerificationType;
+  method: DomainVerificationMethod;
 
   /**
    * @generated from field: string domain = 2;
@@ -167,19 +178,21 @@ export type DomainVerification = Message<"meproto.did.v1.DomainVerification"> & 
   domain: string;
 
   /**
-   * @generated from field: string method = 3;
+   * @generated from oneof meproto.did.v1.DomainVerification.binding
    */
-  method: string;
-
-  /**
-   * @generated from field: bytes binding = 4;
-   */
-  binding: Uint8Array;
-
-  /**
-   * @generated from field: string binding_url = 5;
-   */
-  bindingUrl: string;
+  binding: {
+    /**
+     * @generated from field: meproto.did.v1.DNSBinding dns = 3;
+     */
+    value: DNSBinding;
+    case: "dns";
+  } | {
+    /**
+     * @generated from field: meproto.did.v1.WellKnownBinding wellknown = 4;
+     */
+    value: WellKnownBinding;
+    case: "wellknown";
+  } | { case: undefined; value?: undefined };
 };
 
 /**
@@ -188,6 +201,56 @@ export type DomainVerification = Message<"meproto.did.v1.DomainVerification"> & 
  */
 export const DomainVerificationSchema: GenMessage<DomainVerification> = /*@__PURE__*/
   messageDesc(file_did_did_v1_did, 4);
+
+/**
+ * @generated from message meproto.did.v1.DNSBinding
+ */
+export type DNSBinding = Message<"meproto.did.v1.DNSBinding"> & {
+  /**
+   * default: "_did"
+   *
+   * @generated from field: string record_name = 1;
+   */
+  recordName: string;
+
+  /**
+   * TXT record value
+   *
+   * @generated from field: string txt_value = 2;
+   */
+  txtValue: string;
+};
+
+/**
+ * Describes the message meproto.did.v1.DNSBinding.
+ * Use `create(DNSBindingSchema)` to create a new message.
+ */
+export const DNSBindingSchema: GenMessage<DNSBinding> = /*@__PURE__*/
+  messageDesc(file_did_did_v1_did, 5);
+
+/**
+ * @generated from message meproto.did.v1.WellKnownBinding
+ */
+export type WellKnownBinding = Message<"meproto.did.v1.WellKnownBinding"> & {
+  /**
+   * default: "/.well-known/did-configuration.json"
+   *
+   * @generated from field: string uri = 1;
+   */
+  uri: string;
+
+  /**
+   * @generated from field: bytes content = 2;
+   */
+  content: Uint8Array;
+};
+
+/**
+ * Describes the message meproto.did.v1.WellKnownBinding.
+ * Use `create(WellKnownBindingSchema)` to create a new message.
+ */
+export const WellKnownBindingSchema: GenMessage<WellKnownBinding> = /*@__PURE__*/
+  messageDesc(file_did_did_v1_did, 6);
 
 /**
  * @generated from message meproto.did.v1.UpdatePolicy
@@ -204,7 +267,7 @@ export type UpdatePolicy = Message<"meproto.did.v1.UpdatePolicy"> & {
  * Use `create(UpdatePolicySchema)` to create a new message.
  */
 export const UpdatePolicySchema: GenMessage<UpdatePolicy> = /*@__PURE__*/
-  messageDesc(file_did_did_v1_did, 5);
+  messageDesc(file_did_did_v1_did, 7);
 
 /**
  * @generated from message meproto.did.v1.DIDDocument
@@ -232,9 +295,9 @@ export type DIDDocument = Message<"meproto.did.v1.DIDDocument"> & {
   /**
    * Metadata
    *
-   * @generated from field: repeated string also = 4;
+   * @generated from field: repeated string also_known_as = 4;
    */
-  also: string[];
+  alsoKnownAs: string[];
 
   /**
    * @generated from field: bool biometric = 5;
@@ -291,24 +354,24 @@ export type DIDDocument = Message<"meproto.did.v1.DIDDocument"> & {
   vm: VMKey[];
 
   /**
-   * @generated from field: repeated string authn = 15;
+   * @generated from field: repeated string authentication = 15;
    */
-  authn: string[];
+  authentication: string[];
 
   /**
-   * @generated from field: repeated string assert = 16;
+   * @generated from field: repeated string assertion = 16;
    */
-  assert: string[];
+  assertion: string[];
 
   /**
-   * @generated from field: repeated string inv = 17;
+   * @generated from field: repeated string invocation = 17;
    */
-  inv: string[];
+  invocation: string[];
 
   /**
-   * @generated from field: repeated string ka = 18;
+   * @generated from field: repeated string key_agreement = 18;
    */
-  ka: string[];
+  keyAgreement: string[];
 
   /**
    * Services
@@ -349,7 +412,7 @@ export type DIDDocument = Message<"meproto.did.v1.DIDDocument"> & {
  * Use `create(DIDDocumentSchema)` to create a new message.
  */
 export const DIDDocumentSchema: GenMessage<DIDDocument> = /*@__PURE__*/
-  messageDesc(file_did_did_v1_did, 6);
+  messageDesc(file_did_did_v1_did, 8);
 
 /**
  * @generated from enum meproto.did.v1.Algorithm
@@ -471,13 +534,34 @@ export const UserVerificationMethodSchema: GenEnum<UserVerificationMethod> = /*@
   enumDesc(file_did_did_v1_did, 1);
 
 /**
- * @generated from enum meproto.did.v1.DomainVerificationType
+ * @generated from enum meproto.did.v1.VerificationMethodType
  */
-export enum DomainVerificationType {
+export enum VerificationMethodType {
   /**
-   * @generated from enum value: DVT_UNSPECIFIED = 0;
+   * @generated from enum value: VMT_UNSPECIFIED = 0;
    */
-  DVT_UNSPECIFIED = 0,
+  VMT_UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: MULTIKEY = 1;
+   */
+  MULTIKEY = 1,
+}
+
+/**
+ * Describes the enum meproto.did.v1.VerificationMethodType.
+ */
+export const VerificationMethodTypeSchema: GenEnum<VerificationMethodType> = /*@__PURE__*/
+  enumDesc(file_did_did_v1_did, 2);
+
+/**
+ * @generated from enum meproto.did.v1.DomainVerificationMethod
+ */
+export enum DomainVerificationMethod {
+  /**
+   * @generated from enum value: DVM_UNSPECIFIED = 0;
+   */
+  DVM_UNSPECIFIED = 0,
 
   /**
    * @generated from enum value: DNS_TXT = 1;
@@ -491,8 +575,8 @@ export enum DomainVerificationType {
 }
 
 /**
- * Describes the enum meproto.did.v1.DomainVerificationType.
+ * Describes the enum meproto.did.v1.DomainVerificationMethod.
  */
-export const DomainVerificationTypeSchema: GenEnum<DomainVerificationType> = /*@__PURE__*/
-  enumDesc(file_did_did_v1_did, 2);
+export const DomainVerificationMethodSchema: GenEnum<DomainVerificationMethod> = /*@__PURE__*/
+  enumDesc(file_did_did_v1_did, 3);
 

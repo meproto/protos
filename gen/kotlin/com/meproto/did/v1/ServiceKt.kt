@@ -85,24 +85,24 @@ public object ServiceKt {
      * JSON blob
      * ```
      *
-     * `bytes endpoint = 4 [json_name = "endpoint"];`
+     * `bytes service_data = 4 [json_name = "serviceData"];`
      */
-    public var endpoint: com.google.protobuf.ByteString
-      @kotlin.jvm.JvmName("getEndpoint")
-        get() = _builder.endpoint
-      @kotlin.jvm.JvmName("setEndpoint")
+    public var serviceData: com.google.protobuf.ByteString
+      @kotlin.jvm.JvmName("getServiceData")
+        get() = _builder.serviceData
+      @kotlin.jvm.JvmName("setServiceData")
         set(value) {
-        _builder.endpoint = value
+        _builder.serviceData = value
       }
     /**
      * ```
      * JSON blob
      * ```
      *
-     * `bytes endpoint = 4 [json_name = "endpoint"];`
+     * `bytes service_data = 4 [json_name = "serviceData"];`
      */
-    public fun clearEndpoint() {
-      _builder.clearEndpoint()
+    public fun clearServiceData() {
+      _builder.clearServiceData()
     }
   }
 }

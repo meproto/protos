@@ -152,61 +152,108 @@ func (UserVerificationMethod) EnumDescriptor() ([]byte, []int) {
 	return file_did_did_v1_did_proto_rawDescGZIP(), []int{1}
 }
 
-type DomainVerificationType int32
+type VerificationMethodType int32
 
 const (
-	DomainVerificationType_DVT_UNSPECIFIED  DomainVerificationType = 0
-	DomainVerificationType_DNS_TXT          DomainVerificationType = 1
-	DomainVerificationType_HTTPS_WELL_KNOWN DomainVerificationType = 2
+	VerificationMethodType_VMT_UNSPECIFIED VerificationMethodType = 0
+	VerificationMethodType_MULTIKEY        VerificationMethodType = 1
 )
 
-// Enum value maps for DomainVerificationType.
+// Enum value maps for VerificationMethodType.
 var (
-	DomainVerificationType_name = map[int32]string{
-		0: "DVT_UNSPECIFIED",
+	VerificationMethodType_name = map[int32]string{
+		0: "VMT_UNSPECIFIED",
+		1: "MULTIKEY",
+	}
+	VerificationMethodType_value = map[string]int32{
+		"VMT_UNSPECIFIED": 0,
+		"MULTIKEY":        1,
+	}
+)
+
+func (x VerificationMethodType) Enum() *VerificationMethodType {
+	p := new(VerificationMethodType)
+	*p = x
+	return p
+}
+
+func (x VerificationMethodType) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (VerificationMethodType) Descriptor() protoreflect.EnumDescriptor {
+	return file_did_did_v1_did_proto_enumTypes[2].Descriptor()
+}
+
+func (VerificationMethodType) Type() protoreflect.EnumType {
+	return &file_did_did_v1_did_proto_enumTypes[2]
+}
+
+func (x VerificationMethodType) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use VerificationMethodType.Descriptor instead.
+func (VerificationMethodType) EnumDescriptor() ([]byte, []int) {
+	return file_did_did_v1_did_proto_rawDescGZIP(), []int{2}
+}
+
+type DomainVerificationMethod int32
+
+const (
+	DomainVerificationMethod_DVM_UNSPECIFIED  DomainVerificationMethod = 0
+	DomainVerificationMethod_DNS_TXT          DomainVerificationMethod = 1
+	DomainVerificationMethod_HTTPS_WELL_KNOWN DomainVerificationMethod = 2
+)
+
+// Enum value maps for DomainVerificationMethod.
+var (
+	DomainVerificationMethod_name = map[int32]string{
+		0: "DVM_UNSPECIFIED",
 		1: "DNS_TXT",
 		2: "HTTPS_WELL_KNOWN",
 	}
-	DomainVerificationType_value = map[string]int32{
-		"DVT_UNSPECIFIED":  0,
+	DomainVerificationMethod_value = map[string]int32{
+		"DVM_UNSPECIFIED":  0,
 		"DNS_TXT":          1,
 		"HTTPS_WELL_KNOWN": 2,
 	}
 )
 
-func (x DomainVerificationType) Enum() *DomainVerificationType {
-	p := new(DomainVerificationType)
+func (x DomainVerificationMethod) Enum() *DomainVerificationMethod {
+	p := new(DomainVerificationMethod)
 	*p = x
 	return p
 }
 
-func (x DomainVerificationType) String() string {
+func (x DomainVerificationMethod) String() string {
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
 }
 
-func (DomainVerificationType) Descriptor() protoreflect.EnumDescriptor {
-	return file_did_did_v1_did_proto_enumTypes[2].Descriptor()
+func (DomainVerificationMethod) Descriptor() protoreflect.EnumDescriptor {
+	return file_did_did_v1_did_proto_enumTypes[3].Descriptor()
 }
 
-func (DomainVerificationType) Type() protoreflect.EnumType {
-	return &file_did_did_v1_did_proto_enumTypes[2]
+func (DomainVerificationMethod) Type() protoreflect.EnumType {
+	return &file_did_did_v1_did_proto_enumTypes[3]
 }
 
-func (x DomainVerificationType) Number() protoreflect.EnumNumber {
+func (x DomainVerificationMethod) Number() protoreflect.EnumNumber {
 	return protoreflect.EnumNumber(x)
 }
 
-// Deprecated: Use DomainVerificationType.Descriptor instead.
-func (DomainVerificationType) EnumDescriptor() ([]byte, []int) {
-	return file_did_did_v1_did_proto_rawDescGZIP(), []int{2}
+// Deprecated: Use DomainVerificationMethod.Descriptor instead.
+func (DomainVerificationMethod) EnumDescriptor() ([]byte, []int) {
+	return file_did_did_v1_did_proto_rawDescGZIP(), []int{3}
 }
 
 type VMKey struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Controller    string                 `protobuf:"bytes,2,opt,name=controller,proto3" json:"controller,omitempty"`
-	Alg           Algorithm              `protobuf:"varint,3,opt,name=alg,proto3,enum=meproto.did.v1.Algorithm" json:"alg,omitempty"`
-	Pk            []byte                 `protobuf:"bytes,4,opt,name=pk,proto3" json:"pk,omitempty"`
+	Type          VerificationMethodType `protobuf:"varint,3,opt,name=type,proto3,enum=meproto.did.v1.VerificationMethodType" json:"type,omitempty"` // always MULTIKEY for now
+	Alg           Algorithm              `protobuf:"varint,4,opt,name=alg,proto3,enum=meproto.did.v1.Algorithm" json:"alg,omitempty"`                // optional but helpful for fast routing
+	Pk            []byte                 `protobuf:"bytes,5,opt,name=pk,proto3" json:"pk,omitempty"`                                                 // multikey-encoded public key
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -255,6 +302,13 @@ func (x *VMKey) GetController() string {
 	return ""
 }
 
+func (x *VMKey) GetType() VerificationMethodType {
+	if x != nil {
+		return x.Type
+	}
+	return VerificationMethodType_VMT_UNSPECIFIED
+}
+
 func (x *VMKey) GetAlg() Algorithm {
 	if x != nil {
 		return x.Alg
@@ -274,7 +328,7 @@ type Service struct {
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Type          string                 `protobuf:"bytes,2,opt,name=type,proto3" json:"type,omitempty"`
 	Version       string                 `protobuf:"bytes,3,opt,name=version,proto3" json:"version,omitempty"`
-	Endpoint      []byte                 `protobuf:"bytes,4,opt,name=endpoint,proto3" json:"endpoint,omitempty"` // JSON blob
+	ServiceData   []byte                 `protobuf:"bytes,4,opt,name=service_data,json=serviceData,proto3" json:"service_data,omitempty"` // JSON blob
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -330,20 +384,20 @@ func (x *Service) GetVersion() string {
 	return ""
 }
 
-func (x *Service) GetEndpoint() []byte {
+func (x *Service) GetServiceData() []byte {
 	if x != nil {
-		return x.Endpoint
+		return x.ServiceData
 	}
 	return nil
 }
 
 type Attestation struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Alg           Algorithm              `protobuf:"varint,1,opt,name=alg,proto3,enum=meproto.did.v1.Algorithm" json:"alg,omitempty"`
-	Vm            string                 `protobuf:"bytes,2,opt,name=vm,proto3" json:"vm,omitempty"`
-	Sig           []byte                 `protobuf:"bytes,3,opt,name=sig,proto3" json:"sig,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	state              protoimpl.MessageState `protogen:"open.v1"`
+	Alg                Algorithm              `protobuf:"varint,1,opt,name=alg,proto3,enum=meproto.did.v1.Algorithm" json:"alg,omitempty"`
+	VerificationMethod string                 `protobuf:"bytes,2,opt,name=verification_method,json=verificationMethod,proto3" json:"verification_method,omitempty"`
+	Sig                []byte                 `protobuf:"bytes,3,opt,name=sig,proto3" json:"sig,omitempty"`
+	unknownFields      protoimpl.UnknownFields
+	sizeCache          protoimpl.SizeCache
 }
 
 func (x *Attestation) Reset() {
@@ -383,9 +437,9 @@ func (x *Attestation) GetAlg() Algorithm {
 	return Algorithm_ALG_UNSPECIFIED
 }
 
-func (x *Attestation) GetVm() string {
+func (x *Attestation) GetVerificationMethod() string {
 	if x != nil {
-		return x.Vm
+		return x.VerificationMethod
 	}
 	return ""
 }
@@ -490,12 +544,14 @@ func (x *Proof) GetJws() string {
 }
 
 type DomainVerification struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	T             DomainVerificationType `protobuf:"varint,1,opt,name=t,proto3,enum=meproto.did.v1.DomainVerificationType" json:"t,omitempty"`
-	Domain        string                 `protobuf:"bytes,2,opt,name=domain,proto3" json:"domain,omitempty"`
-	Method        string                 `protobuf:"bytes,3,opt,name=method,proto3" json:"method,omitempty"`
-	Binding       []byte                 `protobuf:"bytes,4,opt,name=binding,proto3" json:"binding,omitempty"`
-	BindingUrl    string                 `protobuf:"bytes,5,opt,name=binding_url,json=bindingUrl,proto3" json:"binding_url,omitempty"`
+	state  protoimpl.MessageState   `protogen:"open.v1"`
+	Method DomainVerificationMethod `protobuf:"varint,1,opt,name=method,proto3,enum=meproto.did.v1.DomainVerificationMethod" json:"method,omitempty"`
+	Domain string                   `protobuf:"bytes,2,opt,name=domain,proto3" json:"domain,omitempty"`
+	// Types that are valid to be assigned to Binding:
+	//
+	//	*DomainVerification_Dns
+	//	*DomainVerification_Wellknown
+	Binding       isDomainVerification_Binding `protobuf_oneof:"binding"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -530,11 +586,11 @@ func (*DomainVerification) Descriptor() ([]byte, []int) {
 	return file_did_did_v1_did_proto_rawDescGZIP(), []int{4}
 }
 
-func (x *DomainVerification) GetT() DomainVerificationType {
+func (x *DomainVerification) GetMethod() DomainVerificationMethod {
 	if x != nil {
-		return x.T
+		return x.Method
 	}
-	return DomainVerificationType_DVT_UNSPECIFIED
+	return DomainVerificationMethod_DVM_UNSPECIFIED
 }
 
 func (x *DomainVerification) GetDomain() string {
@@ -544,25 +600,149 @@ func (x *DomainVerification) GetDomain() string {
 	return ""
 }
 
-func (x *DomainVerification) GetMethod() string {
-	if x != nil {
-		return x.Method
-	}
-	return ""
-}
-
-func (x *DomainVerification) GetBinding() []byte {
+func (x *DomainVerification) GetBinding() isDomainVerification_Binding {
 	if x != nil {
 		return x.Binding
 	}
 	return nil
 }
 
-func (x *DomainVerification) GetBindingUrl() string {
+func (x *DomainVerification) GetDns() *DNSBinding {
 	if x != nil {
-		return x.BindingUrl
+		if x, ok := x.Binding.(*DomainVerification_Dns); ok {
+			return x.Dns
+		}
+	}
+	return nil
+}
+
+func (x *DomainVerification) GetWellknown() *WellKnownBinding {
+	if x != nil {
+		if x, ok := x.Binding.(*DomainVerification_Wellknown); ok {
+			return x.Wellknown
+		}
+	}
+	return nil
+}
+
+type isDomainVerification_Binding interface {
+	isDomainVerification_Binding()
+}
+
+type DomainVerification_Dns struct {
+	Dns *DNSBinding `protobuf:"bytes,3,opt,name=dns,proto3,oneof"`
+}
+
+type DomainVerification_Wellknown struct {
+	Wellknown *WellKnownBinding `protobuf:"bytes,4,opt,name=wellknown,proto3,oneof"`
+}
+
+func (*DomainVerification_Dns) isDomainVerification_Binding() {}
+
+func (*DomainVerification_Wellknown) isDomainVerification_Binding() {}
+
+type DNSBinding struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	RecordName    string                 `protobuf:"bytes,1,opt,name=record_name,json=recordName,proto3" json:"record_name,omitempty"` // default: "_did"
+	TxtValue      string                 `protobuf:"bytes,2,opt,name=txt_value,json=txtValue,proto3" json:"txt_value,omitempty"`       // TXT record value
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DNSBinding) Reset() {
+	*x = DNSBinding{}
+	mi := &file_did_did_v1_did_proto_msgTypes[5]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DNSBinding) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DNSBinding) ProtoMessage() {}
+
+func (x *DNSBinding) ProtoReflect() protoreflect.Message {
+	mi := &file_did_did_v1_did_proto_msgTypes[5]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DNSBinding.ProtoReflect.Descriptor instead.
+func (*DNSBinding) Descriptor() ([]byte, []int) {
+	return file_did_did_v1_did_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *DNSBinding) GetRecordName() string {
+	if x != nil {
+		return x.RecordName
 	}
 	return ""
+}
+
+func (x *DNSBinding) GetTxtValue() string {
+	if x != nil {
+		return x.TxtValue
+	}
+	return ""
+}
+
+type WellKnownBinding struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Uri           string                 `protobuf:"bytes,1,opt,name=uri,proto3" json:"uri,omitempty"` // default: "/.well-known/did-configuration.json"
+	Content       []byte                 `protobuf:"bytes,2,opt,name=content,proto3" json:"content,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *WellKnownBinding) Reset() {
+	*x = WellKnownBinding{}
+	mi := &file_did_did_v1_did_proto_msgTypes[6]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *WellKnownBinding) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*WellKnownBinding) ProtoMessage() {}
+
+func (x *WellKnownBinding) ProtoReflect() protoreflect.Message {
+	mi := &file_did_did_v1_did_proto_msgTypes[6]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use WellKnownBinding.ProtoReflect.Descriptor instead.
+func (*WellKnownBinding) Descriptor() ([]byte, []int) {
+	return file_did_did_v1_did_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *WellKnownBinding) GetUri() string {
+	if x != nil {
+		return x.Uri
+	}
+	return ""
+}
+
+func (x *WellKnownBinding) GetContent() []byte {
+	if x != nil {
+		return x.Content
+	}
+	return nil
 }
 
 type UpdatePolicy struct {
@@ -574,7 +754,7 @@ type UpdatePolicy struct {
 
 func (x *UpdatePolicy) Reset() {
 	*x = UpdatePolicy{}
-	mi := &file_did_did_v1_did_proto_msgTypes[5]
+	mi := &file_did_did_v1_did_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -586,7 +766,7 @@ func (x *UpdatePolicy) String() string {
 func (*UpdatePolicy) ProtoMessage() {}
 
 func (x *UpdatePolicy) ProtoReflect() protoreflect.Message {
-	mi := &file_did_did_v1_did_proto_msgTypes[5]
+	mi := &file_did_did_v1_did_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -599,7 +779,7 @@ func (x *UpdatePolicy) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdatePolicy.ProtoReflect.Descriptor instead.
 func (*UpdatePolicy) Descriptor() ([]byte, []int) {
-	return file_did_did_v1_did_proto_rawDescGZIP(), []int{5}
+	return file_did_did_v1_did_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *UpdatePolicy) GetAllowed() []string {
@@ -617,7 +797,7 @@ type DIDDocument struct {
 	// @context
 	Ctx []string `protobuf:"bytes,3,rep,name=ctx,proto3" json:"ctx,omitempty"`
 	// Metadata
-	Also                   []string               `protobuf:"bytes,4,rep,name=also,proto3" json:"also,omitempty"`
+	AlsoKnownAs            []string               `protobuf:"bytes,4,rep,name=also_known_as,json=alsoKnownAs,proto3" json:"also_known_as,omitempty"`
 	Biometric              bool                   `protobuf:"varint,5,opt,name=biometric,proto3" json:"biometric,omitempty"`
 	Hardware               bool                   `protobuf:"varint,6,opt,name=hardware,proto3" json:"hardware,omitempty"`
 	DeviceModel            string                 `protobuf:"bytes,7,opt,name=device_model,json=deviceModel,proto3" json:"device_model,omitempty"`
@@ -629,11 +809,11 @@ type DIDDocument struct {
 	CoreCbor   []byte   `protobuf:"bytes,12,opt,name=core_cbor,json=coreCbor,proto3" json:"core_cbor,omitempty"`
 	KeyHistory []string `protobuf:"bytes,13,rep,name=key_history,json=keyHistory,proto3" json:"key_history,omitempty"`
 	// Verification relationships
-	Vm     []*VMKey `protobuf:"bytes,14,rep,name=vm,proto3" json:"vm,omitempty"`
-	Authn  []string `protobuf:"bytes,15,rep,name=authn,proto3" json:"authn,omitempty"`
-	Assert []string `protobuf:"bytes,16,rep,name=assert,proto3" json:"assert,omitempty"`
-	Inv    []string `protobuf:"bytes,17,rep,name=inv,proto3" json:"inv,omitempty"`
-	Ka     []string `protobuf:"bytes,18,rep,name=ka,proto3" json:"ka,omitempty"`
+	Vm             []*VMKey `protobuf:"bytes,14,rep,name=vm,proto3" json:"vm,omitempty"`
+	Authentication []string `protobuf:"bytes,15,rep,name=authentication,proto3" json:"authentication,omitempty"`
+	Assertion      []string `protobuf:"bytes,16,rep,name=assertion,proto3" json:"assertion,omitempty"`
+	Invocation     []string `protobuf:"bytes,17,rep,name=invocation,proto3" json:"invocation,omitempty"`
+	KeyAgreement   []string `protobuf:"bytes,18,rep,name=key_agreement,json=keyAgreement,proto3" json:"key_agreement,omitempty"`
 	// Services
 	Svc []*Service `protobuf:"bytes,19,rep,name=svc,proto3" json:"svc,omitempty"`
 	// Policy & attestations
@@ -649,7 +829,7 @@ type DIDDocument struct {
 
 func (x *DIDDocument) Reset() {
 	*x = DIDDocument{}
-	mi := &file_did_did_v1_did_proto_msgTypes[6]
+	mi := &file_did_did_v1_did_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -661,7 +841,7 @@ func (x *DIDDocument) String() string {
 func (*DIDDocument) ProtoMessage() {}
 
 func (x *DIDDocument) ProtoReflect() protoreflect.Message {
-	mi := &file_did_did_v1_did_proto_msgTypes[6]
+	mi := &file_did_did_v1_did_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -674,7 +854,7 @@ func (x *DIDDocument) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DIDDocument.ProtoReflect.Descriptor instead.
 func (*DIDDocument) Descriptor() ([]byte, []int) {
-	return file_did_did_v1_did_proto_rawDescGZIP(), []int{6}
+	return file_did_did_v1_did_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *DIDDocument) GetId() string {
@@ -698,9 +878,9 @@ func (x *DIDDocument) GetCtx() []string {
 	return nil
 }
 
-func (x *DIDDocument) GetAlso() []string {
+func (x *DIDDocument) GetAlsoKnownAs() []string {
 	if x != nil {
-		return x.Also
+		return x.AlsoKnownAs
 	}
 	return nil
 }
@@ -775,30 +955,30 @@ func (x *DIDDocument) GetVm() []*VMKey {
 	return nil
 }
 
-func (x *DIDDocument) GetAuthn() []string {
+func (x *DIDDocument) GetAuthentication() []string {
 	if x != nil {
-		return x.Authn
+		return x.Authentication
 	}
 	return nil
 }
 
-func (x *DIDDocument) GetAssert() []string {
+func (x *DIDDocument) GetAssertion() []string {
 	if x != nil {
-		return x.Assert
+		return x.Assertion
 	}
 	return nil
 }
 
-func (x *DIDDocument) GetInv() []string {
+func (x *DIDDocument) GetInvocation() []string {
 	if x != nil {
-		return x.Inv
+		return x.Invocation
 	}
 	return nil
 }
 
-func (x *DIDDocument) GetKa() []string {
+func (x *DIDDocument) GetKeyAgreement() []string {
 	if x != nil {
-		return x.Ka
+		return x.KeyAgreement
 	}
 	return nil
 }
@@ -842,22 +1022,23 @@ var File_did_did_v1_did_proto protoreflect.FileDescriptor
 
 const file_did_did_v1_did_proto_rawDesc = "" +
 	"\n" +
-	"\x14did/did_v1/did.proto\x12\x0emeproto.did.v1\"t\n" +
+	"\x14did/did_v1/did.proto\x12\x0emeproto.did.v1\"\xb0\x01\n" +
 	"\x05VMKey\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1e\n" +
 	"\n" +
 	"controller\x18\x02 \x01(\tR\n" +
-	"controller\x12+\n" +
-	"\x03alg\x18\x03 \x01(\x0e2\x19.meproto.did.v1.AlgorithmR\x03alg\x12\x0e\n" +
-	"\x02pk\x18\x04 \x01(\fR\x02pk\"c\n" +
+	"controller\x12:\n" +
+	"\x04type\x18\x03 \x01(\x0e2&.meproto.did.v1.VerificationMethodTypeR\x04type\x12+\n" +
+	"\x03alg\x18\x04 \x01(\x0e2\x19.meproto.did.v1.AlgorithmR\x03alg\x12\x0e\n" +
+	"\x02pk\x18\x05 \x01(\fR\x02pk\"j\n" +
 	"\aService\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04type\x18\x02 \x01(\tR\x04type\x12\x18\n" +
-	"\aversion\x18\x03 \x01(\tR\aversion\x12\x1a\n" +
-	"\bendpoint\x18\x04 \x01(\fR\bendpoint\"\\\n" +
+	"\aversion\x18\x03 \x01(\tR\aversion\x12!\n" +
+	"\fservice_data\x18\x04 \x01(\fR\vserviceData\"}\n" +
 	"\vAttestation\x12+\n" +
-	"\x03alg\x18\x01 \x01(\x0e2\x19.meproto.did.v1.AlgorithmR\x03alg\x12\x0e\n" +
-	"\x02vm\x18\x02 \x01(\tR\x02vm\x12\x10\n" +
+	"\x03alg\x18\x01 \x01(\x0e2\x19.meproto.did.v1.AlgorithmR\x03alg\x12/\n" +
+	"\x13verification_method\x18\x02 \x01(\tR\x12verificationMethod\x12\x10\n" +
 	"\x03sig\x18\x03 \x01(\fR\x03sig\"\xa3\x01\n" +
 	"\x05Proof\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
@@ -866,23 +1047,30 @@ const file_did_did_v1_did_proto_rawDesc = "" +
 	"\apurpose\x18\x04 \x01(\tR\apurpose\x12\x0e\n" +
 	"\x02vm\x18\x05 \x01(\tR\x02vm\x12\x18\n" +
 	"\acreated\x18\x06 \x01(\tR\acreated\x12\x10\n" +
-	"\x03jws\x18\a \x01(\tR\x03jws\"\xb5\x01\n" +
-	"\x12DomainVerification\x124\n" +
-	"\x01t\x18\x01 \x01(\x0e2&.meproto.did.v1.DomainVerificationTypeR\x01t\x12\x16\n" +
-	"\x06domain\x18\x02 \x01(\tR\x06domain\x12\x16\n" +
-	"\x06method\x18\x03 \x01(\tR\x06method\x12\x18\n" +
-	"\abinding\x18\x04 \x01(\fR\abinding\x12\x1f\n" +
-	"\vbinding_url\x18\x05 \x01(\tR\n" +
-	"bindingUrl\"(\n" +
+	"\x03jws\x18\a \x01(\tR\x03jws\"\xeb\x01\n" +
+	"\x12DomainVerification\x12@\n" +
+	"\x06method\x18\x01 \x01(\x0e2(.meproto.did.v1.DomainVerificationMethodR\x06method\x12\x16\n" +
+	"\x06domain\x18\x02 \x01(\tR\x06domain\x12.\n" +
+	"\x03dns\x18\x03 \x01(\v2\x1a.meproto.did.v1.DNSBindingH\x00R\x03dns\x12@\n" +
+	"\twellknown\x18\x04 \x01(\v2 .meproto.did.v1.WellKnownBindingH\x00R\twellknownB\t\n" +
+	"\abinding\"J\n" +
+	"\n" +
+	"DNSBinding\x12\x1f\n" +
+	"\vrecord_name\x18\x01 \x01(\tR\n" +
+	"recordName\x12\x1b\n" +
+	"\ttxt_value\x18\x02 \x01(\tR\btxtValue\">\n" +
+	"\x10WellKnownBinding\x12\x10\n" +
+	"\x03uri\x18\x01 \x01(\tR\x03uri\x12\x18\n" +
+	"\acontent\x18\x02 \x01(\fR\acontent\"(\n" +
 	"\fUpdatePolicy\x12\x18\n" +
-	"\aallowed\x18\x01 \x03(\tR\aallowed\"\x82\x06\n" +
+	"\aallowed\x18\x01 \x03(\tR\aallowed\"\xcd\x06\n" +
 	"\vDIDDocument\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1e\n" +
 	"\n" +
 	"controller\x18\x02 \x01(\tR\n" +
 	"controller\x12\x10\n" +
-	"\x03ctx\x18\x03 \x03(\tR\x03ctx\x12\x12\n" +
-	"\x04also\x18\x04 \x03(\tR\x04also\x12\x1c\n" +
+	"\x03ctx\x18\x03 \x03(\tR\x03ctx\x12\"\n" +
+	"\ralso_known_as\x18\x04 \x03(\tR\valsoKnownAs\x12\x1c\n" +
 	"\tbiometric\x18\x05 \x01(\bR\tbiometric\x12\x1a\n" +
 	"\bhardware\x18\x06 \x01(\bR\bhardware\x12!\n" +
 	"\fdevice_model\x18\a \x01(\tR\vdeviceModel\x12`\n" +
@@ -894,11 +1082,13 @@ const file_did_did_v1_did_proto_rawDesc = "" +
 	"\tcore_cbor\x18\f \x01(\fR\bcoreCbor\x12\x1f\n" +
 	"\vkey_history\x18\r \x03(\tR\n" +
 	"keyHistory\x12%\n" +
-	"\x02vm\x18\x0e \x03(\v2\x15.meproto.did.v1.VMKeyR\x02vm\x12\x14\n" +
-	"\x05authn\x18\x0f \x03(\tR\x05authn\x12\x16\n" +
-	"\x06assert\x18\x10 \x03(\tR\x06assert\x12\x10\n" +
-	"\x03inv\x18\x11 \x03(\tR\x03inv\x12\x0e\n" +
-	"\x02ka\x18\x12 \x03(\tR\x02ka\x12)\n" +
+	"\x02vm\x18\x0e \x03(\v2\x15.meproto.did.v1.VMKeyR\x02vm\x12&\n" +
+	"\x0eauthentication\x18\x0f \x03(\tR\x0eauthentication\x12\x1c\n" +
+	"\tassertion\x18\x10 \x03(\tR\tassertion\x12\x1e\n" +
+	"\n" +
+	"invocation\x18\x11 \x03(\tR\n" +
+	"invocation\x12#\n" +
+	"\rkey_agreement\x18\x12 \x03(\tR\fkeyAgreement\x12)\n" +
 	"\x03svc\x18\x13 \x03(\v2\x17.meproto.did.v1.ServiceR\x03svc\x124\n" +
 	"\x06policy\x18\x14 \x01(\v2\x1c.meproto.did.v1.UpdatePolicyR\x06policy\x12-\n" +
 	"\x03att\x18\x15 \x03(\v2\x1b.meproto.did.v1.AttestationR\x03att\x12+\n" +
@@ -923,9 +1113,12 @@ const file_did_did_v1_did_proto_rawDesc = "" +
 	"\x04FACE\x10\x06\x12\b\n" +
 	"\x04IRIS\x10\a\x12\t\n" +
 	"\x05VOICE\x10\b\x12\v\n" +
-	"\aPATTERN\x10\t*P\n" +
-	"\x16DomainVerificationType\x12\x13\n" +
-	"\x0fDVT_UNSPECIFIED\x10\x00\x12\v\n" +
+	"\aPATTERN\x10\t*;\n" +
+	"\x16VerificationMethodType\x12\x13\n" +
+	"\x0fVMT_UNSPECIFIED\x10\x00\x12\f\n" +
+	"\bMULTIKEY\x10\x01*R\n" +
+	"\x18DomainVerificationMethod\x12\x13\n" +
+	"\x0fDVM_UNSPECIFIED\x10\x00\x12\v\n" +
 	"\aDNS_TXT\x10\x01\x12\x14\n" +
 	"\x10HTTPS_WELL_KNOWN\x10\x02B\xab\x01\n" +
 	"\x12com.meproto.did.v1B\bDidProtoP\x01Z1github.com/meproto/protos/gen/go/did/did_v1;didv1\xa2\x02\x03MDX\xaa\x02\x0eMeproto.Did.V1\xca\x02\x0eMeproto\\Did\\V1\xe2\x02\x1aMeproto\\Did\\V1\\GPBMetadata\xea\x02\x10Meproto::Did::V1b\x06proto3"
@@ -942,36 +1135,42 @@ func file_did_did_v1_did_proto_rawDescGZIP() []byte {
 	return file_did_did_v1_did_proto_rawDescData
 }
 
-var file_did_did_v1_did_proto_enumTypes = make([]protoimpl.EnumInfo, 3)
-var file_did_did_v1_did_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
+var file_did_did_v1_did_proto_enumTypes = make([]protoimpl.EnumInfo, 4)
+var file_did_did_v1_did_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
 var file_did_did_v1_did_proto_goTypes = []any{
-	(Algorithm)(0),              // 0: meproto.did.v1.Algorithm
-	(UserVerificationMethod)(0), // 1: meproto.did.v1.UserVerificationMethod
-	(DomainVerificationType)(0), // 2: meproto.did.v1.DomainVerificationType
-	(*VMKey)(nil),               // 3: meproto.did.v1.VMKey
-	(*Service)(nil),             // 4: meproto.did.v1.Service
-	(*Attestation)(nil),         // 5: meproto.did.v1.Attestation
-	(*Proof)(nil),               // 6: meproto.did.v1.Proof
-	(*DomainVerification)(nil),  // 7: meproto.did.v1.DomainVerification
-	(*UpdatePolicy)(nil),        // 8: meproto.did.v1.UpdatePolicy
-	(*DIDDocument)(nil),         // 9: meproto.did.v1.DIDDocument
+	(Algorithm)(0),                // 0: meproto.did.v1.Algorithm
+	(UserVerificationMethod)(0),   // 1: meproto.did.v1.UserVerificationMethod
+	(VerificationMethodType)(0),   // 2: meproto.did.v1.VerificationMethodType
+	(DomainVerificationMethod)(0), // 3: meproto.did.v1.DomainVerificationMethod
+	(*VMKey)(nil),                 // 4: meproto.did.v1.VMKey
+	(*Service)(nil),               // 5: meproto.did.v1.Service
+	(*Attestation)(nil),           // 6: meproto.did.v1.Attestation
+	(*Proof)(nil),                 // 7: meproto.did.v1.Proof
+	(*DomainVerification)(nil),    // 8: meproto.did.v1.DomainVerification
+	(*DNSBinding)(nil),            // 9: meproto.did.v1.DNSBinding
+	(*WellKnownBinding)(nil),      // 10: meproto.did.v1.WellKnownBinding
+	(*UpdatePolicy)(nil),          // 11: meproto.did.v1.UpdatePolicy
+	(*DIDDocument)(nil),           // 12: meproto.did.v1.DIDDocument
 }
 var file_did_did_v1_did_proto_depIdxs = []int32{
-	0,  // 0: meproto.did.v1.VMKey.alg:type_name -> meproto.did.v1.Algorithm
-	0,  // 1: meproto.did.v1.Attestation.alg:type_name -> meproto.did.v1.Algorithm
-	2,  // 2: meproto.did.v1.DomainVerification.t:type_name -> meproto.did.v1.DomainVerificationType
-	1,  // 3: meproto.did.v1.DIDDocument.user_verification_method:type_name -> meproto.did.v1.UserVerificationMethod
-	3,  // 4: meproto.did.v1.DIDDocument.vm:type_name -> meproto.did.v1.VMKey
-	4,  // 5: meproto.did.v1.DIDDocument.svc:type_name -> meproto.did.v1.Service
-	8,  // 6: meproto.did.v1.DIDDocument.policy:type_name -> meproto.did.v1.UpdatePolicy
-	5,  // 7: meproto.did.v1.DIDDocument.att:type_name -> meproto.did.v1.Attestation
-	6,  // 8: meproto.did.v1.DIDDocument.proof:type_name -> meproto.did.v1.Proof
-	7,  // 9: meproto.did.v1.DIDDocument.dv:type_name -> meproto.did.v1.DomainVerification
-	10, // [10:10] is the sub-list for method output_type
-	10, // [10:10] is the sub-list for method input_type
-	10, // [10:10] is the sub-list for extension type_name
-	10, // [10:10] is the sub-list for extension extendee
-	0,  // [0:10] is the sub-list for field type_name
+	2,  // 0: meproto.did.v1.VMKey.type:type_name -> meproto.did.v1.VerificationMethodType
+	0,  // 1: meproto.did.v1.VMKey.alg:type_name -> meproto.did.v1.Algorithm
+	0,  // 2: meproto.did.v1.Attestation.alg:type_name -> meproto.did.v1.Algorithm
+	3,  // 3: meproto.did.v1.DomainVerification.method:type_name -> meproto.did.v1.DomainVerificationMethod
+	9,  // 4: meproto.did.v1.DomainVerification.dns:type_name -> meproto.did.v1.DNSBinding
+	10, // 5: meproto.did.v1.DomainVerification.wellknown:type_name -> meproto.did.v1.WellKnownBinding
+	1,  // 6: meproto.did.v1.DIDDocument.user_verification_method:type_name -> meproto.did.v1.UserVerificationMethod
+	4,  // 7: meproto.did.v1.DIDDocument.vm:type_name -> meproto.did.v1.VMKey
+	5,  // 8: meproto.did.v1.DIDDocument.svc:type_name -> meproto.did.v1.Service
+	11, // 9: meproto.did.v1.DIDDocument.policy:type_name -> meproto.did.v1.UpdatePolicy
+	6,  // 10: meproto.did.v1.DIDDocument.att:type_name -> meproto.did.v1.Attestation
+	7,  // 11: meproto.did.v1.DIDDocument.proof:type_name -> meproto.did.v1.Proof
+	8,  // 12: meproto.did.v1.DIDDocument.dv:type_name -> meproto.did.v1.DomainVerification
+	13, // [13:13] is the sub-list for method output_type
+	13, // [13:13] is the sub-list for method input_type
+	13, // [13:13] is the sub-list for extension type_name
+	13, // [13:13] is the sub-list for extension extendee
+	0,  // [0:13] is the sub-list for field type_name
 }
 
 func init() { file_did_did_v1_did_proto_init() }
@@ -979,13 +1178,17 @@ func file_did_did_v1_did_proto_init() {
 	if File_did_did_v1_did_proto != nil {
 		return
 	}
+	file_did_did_v1_did_proto_msgTypes[4].OneofWrappers = []any{
+		(*DomainVerification_Dns)(nil),
+		(*DomainVerification_Wellknown)(nil),
+	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_did_did_v1_did_proto_rawDesc), len(file_did_did_v1_did_proto_rawDesc)),
-			NumEnums:      3,
-			NumMessages:   7,
+			NumEnums:      4,
+			NumMessages:   9,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

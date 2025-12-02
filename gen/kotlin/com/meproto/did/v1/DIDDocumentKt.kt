@@ -174,45 +174,45 @@ public object DIDDocumentKt {
      * generics.
      */
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
-    public class AlsoProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
+    public class AlsoKnownAsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
      * ```
      * Metadata
      * ```
      *
-     * `repeated string also = 4 [json_name = "also"];`
-     * @return A list containing the also.
+     * `repeated string also_known_as = 4 [json_name = "alsoKnownAs"];`
+     * @return A list containing the alsoKnownAs.
      */
-    public val also: com.google.protobuf.kotlin.DslList<kotlin.String, AlsoProxy>
+    public val alsoKnownAs: com.google.protobuf.kotlin.DslList<kotlin.String, AlsoKnownAsProxy>
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
       get() = com.google.protobuf.kotlin.DslList(
-        _builder.alsoList
+        _builder.alsoKnownAsList
       )
     /**
      * ```
      * Metadata
      * ```
      *
-     * `repeated string also = 4 [json_name = "also"];`
-     * @param value The also to add.
+     * `repeated string also_known_as = 4 [json_name = "alsoKnownAs"];`
+     * @param value The alsoKnownAs to add.
      */
     @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("addAlso")
-    public fun com.google.protobuf.kotlin.DslList<kotlin.String, AlsoProxy>.add(value: kotlin.String) {
-      _builder.addAlso(value)
+@kotlin.jvm.JvmName("addAlsoKnownAs")
+    public fun com.google.protobuf.kotlin.DslList<kotlin.String, AlsoKnownAsProxy>.add(value: kotlin.String) {
+      _builder.addAlsoKnownAs(value)
     }
     /**
      * ```
      * Metadata
      * ```
      *
-     * `repeated string also = 4 [json_name = "also"];`
-     * @param value The also to add.
+     * `repeated string also_known_as = 4 [json_name = "alsoKnownAs"];`
+     * @param value The alsoKnownAs to add.
      */
     @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("plusAssignAlso")
+@kotlin.jvm.JvmName("plusAssignAlsoKnownAs")
     @Suppress("NOTHING_TO_INLINE")
-    public inline operator fun com.google.protobuf.kotlin.DslList<kotlin.String, AlsoProxy>.plusAssign(value: kotlin.String) {
+    public inline operator fun com.google.protobuf.kotlin.DslList<kotlin.String, AlsoKnownAsProxy>.plusAssign(value: kotlin.String) {
       add(value)
     }
     /**
@@ -220,26 +220,26 @@ public object DIDDocumentKt {
      * Metadata
      * ```
      *
-     * `repeated string also = 4 [json_name = "also"];`
-     * @param values The also to add.
+     * `repeated string also_known_as = 4 [json_name = "alsoKnownAs"];`
+     * @param values The alsoKnownAs to add.
      */
     @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("addAllAlso")
-    public fun com.google.protobuf.kotlin.DslList<kotlin.String, AlsoProxy>.addAll(values: kotlin.collections.Iterable<kotlin.String>) {
-      _builder.addAllAlso(values)
+@kotlin.jvm.JvmName("addAllAlsoKnownAs")
+    public fun com.google.protobuf.kotlin.DslList<kotlin.String, AlsoKnownAsProxy>.addAll(values: kotlin.collections.Iterable<kotlin.String>) {
+      _builder.addAllAlsoKnownAs(values)
     }
     /**
      * ```
      * Metadata
      * ```
      *
-     * `repeated string also = 4 [json_name = "also"];`
-     * @param values The also to add.
+     * `repeated string also_known_as = 4 [json_name = "alsoKnownAs"];`
+     * @param values The alsoKnownAs to add.
      */
     @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("plusAssignAllAlso")
+@kotlin.jvm.JvmName("plusAssignAllAlsoKnownAs")
     @Suppress("NOTHING_TO_INLINE")
-    public inline operator fun com.google.protobuf.kotlin.DslList<kotlin.String, AlsoProxy>.plusAssign(values: kotlin.collections.Iterable<kotlin.String>) {
+    public inline operator fun com.google.protobuf.kotlin.DslList<kotlin.String, AlsoKnownAsProxy>.plusAssign(values: kotlin.collections.Iterable<kotlin.String>) {
       addAll(values)
     }
     /**
@@ -247,25 +247,25 @@ public object DIDDocumentKt {
      * Metadata
      * ```
      *
-     * `repeated string also = 4 [json_name = "also"];`
+     * `repeated string also_known_as = 4 [json_name = "alsoKnownAs"];`
      * @param index The index to set the value at.
-     * @param value The also to set.
+     * @param value The alsoKnownAs to set.
      */
     @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("setAlso")
-    public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, AlsoProxy>.set(index: kotlin.Int, value: kotlin.String) {
-      _builder.setAlso(index, value)
+@kotlin.jvm.JvmName("setAlsoKnownAs")
+    public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, AlsoKnownAsProxy>.set(index: kotlin.Int, value: kotlin.String) {
+      _builder.setAlsoKnownAs(index, value)
     }/**
      * ```
      * Metadata
      * ```
      *
-     * `repeated string also = 4 [json_name = "also"];`
+     * `repeated string also_known_as = 4 [json_name = "alsoKnownAs"];`
      */
     @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("setAlso")
-    public fun com.google.protobuf.kotlin.DslList<kotlin.String, AlsoProxy>.clear() {
-      _builder.clearAlso()
+@kotlin.jvm.JvmName("setAlsoKnownAs")
+    public fun com.google.protobuf.kotlin.DslList<kotlin.String, AlsoKnownAsProxy>.clear() {
+      _builder.clearAlsoKnownAs()
     }
     /**
      * `bool biometric = 5 [json_name = "biometric"];`
@@ -592,280 +592,280 @@ public object DIDDocumentKt {
      * generics.
      */
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
-    public class AuthnProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
+    public class AuthenticationProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated string authn = 15 [json_name = "authn"];`
-     * @return A list containing the authn.
+     * `repeated string authentication = 15 [json_name = "authentication"];`
+     * @return A list containing the authentication.
      */
-    public val authn: com.google.protobuf.kotlin.DslList<kotlin.String, AuthnProxy>
+    public val authentication: com.google.protobuf.kotlin.DslList<kotlin.String, AuthenticationProxy>
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
       get() = com.google.protobuf.kotlin.DslList(
-        _builder.authnList
+        _builder.authenticationList
       )
     /**
-     * `repeated string authn = 15 [json_name = "authn"];`
-     * @param value The authn to add.
+     * `repeated string authentication = 15 [json_name = "authentication"];`
+     * @param value The authentication to add.
      */
     @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("addAuthn")
-    public fun com.google.protobuf.kotlin.DslList<kotlin.String, AuthnProxy>.add(value: kotlin.String) {
-      _builder.addAuthn(value)
+@kotlin.jvm.JvmName("addAuthentication")
+    public fun com.google.protobuf.kotlin.DslList<kotlin.String, AuthenticationProxy>.add(value: kotlin.String) {
+      _builder.addAuthentication(value)
     }
     /**
-     * `repeated string authn = 15 [json_name = "authn"];`
-     * @param value The authn to add.
+     * `repeated string authentication = 15 [json_name = "authentication"];`
+     * @param value The authentication to add.
      */
     @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("plusAssignAuthn")
+@kotlin.jvm.JvmName("plusAssignAuthentication")
     @Suppress("NOTHING_TO_INLINE")
-    public inline operator fun com.google.protobuf.kotlin.DslList<kotlin.String, AuthnProxy>.plusAssign(value: kotlin.String) {
+    public inline operator fun com.google.protobuf.kotlin.DslList<kotlin.String, AuthenticationProxy>.plusAssign(value: kotlin.String) {
       add(value)
     }
     /**
-     * `repeated string authn = 15 [json_name = "authn"];`
-     * @param values The authn to add.
+     * `repeated string authentication = 15 [json_name = "authentication"];`
+     * @param values The authentication to add.
      */
     @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("addAllAuthn")
-    public fun com.google.protobuf.kotlin.DslList<kotlin.String, AuthnProxy>.addAll(values: kotlin.collections.Iterable<kotlin.String>) {
-      _builder.addAllAuthn(values)
+@kotlin.jvm.JvmName("addAllAuthentication")
+    public fun com.google.protobuf.kotlin.DslList<kotlin.String, AuthenticationProxy>.addAll(values: kotlin.collections.Iterable<kotlin.String>) {
+      _builder.addAllAuthentication(values)
     }
     /**
-     * `repeated string authn = 15 [json_name = "authn"];`
-     * @param values The authn to add.
+     * `repeated string authentication = 15 [json_name = "authentication"];`
+     * @param values The authentication to add.
      */
     @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("plusAssignAllAuthn")
+@kotlin.jvm.JvmName("plusAssignAllAuthentication")
     @Suppress("NOTHING_TO_INLINE")
-    public inline operator fun com.google.protobuf.kotlin.DslList<kotlin.String, AuthnProxy>.plusAssign(values: kotlin.collections.Iterable<kotlin.String>) {
+    public inline operator fun com.google.protobuf.kotlin.DslList<kotlin.String, AuthenticationProxy>.plusAssign(values: kotlin.collections.Iterable<kotlin.String>) {
       addAll(values)
     }
     /**
-     * `repeated string authn = 15 [json_name = "authn"];`
+     * `repeated string authentication = 15 [json_name = "authentication"];`
      * @param index The index to set the value at.
-     * @param value The authn to set.
+     * @param value The authentication to set.
      */
     @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("setAuthn")
-    public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, AuthnProxy>.set(index: kotlin.Int, value: kotlin.String) {
-      _builder.setAuthn(index, value)
+@kotlin.jvm.JvmName("setAuthentication")
+    public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, AuthenticationProxy>.set(index: kotlin.Int, value: kotlin.String) {
+      _builder.setAuthentication(index, value)
     }/**
-     * `repeated string authn = 15 [json_name = "authn"];`
+     * `repeated string authentication = 15 [json_name = "authentication"];`
      */
     @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("setAuthn")
-    public fun com.google.protobuf.kotlin.DslList<kotlin.String, AuthnProxy>.clear() {
-      _builder.clearAuthn()
+@kotlin.jvm.JvmName("setAuthentication")
+    public fun com.google.protobuf.kotlin.DslList<kotlin.String, AuthenticationProxy>.clear() {
+      _builder.clearAuthentication()
     }
     /**
      * An uninstantiable, behaviorless type to represent the field in
      * generics.
      */
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
-    public class AssertProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
+    public class AssertionProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated string assert = 16 [json_name = "assert"];`
-     * @return A list containing the assert.
+     * `repeated string assertion = 16 [json_name = "assertion"];`
+     * @return A list containing the assertion.
      */
-    public val assert: com.google.protobuf.kotlin.DslList<kotlin.String, AssertProxy>
+    public val assertion: com.google.protobuf.kotlin.DslList<kotlin.String, AssertionProxy>
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
       get() = com.google.protobuf.kotlin.DslList(
-        _builder.assertList
+        _builder.assertionList
       )
     /**
-     * `repeated string assert = 16 [json_name = "assert"];`
-     * @param value The assert to add.
+     * `repeated string assertion = 16 [json_name = "assertion"];`
+     * @param value The assertion to add.
      */
     @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("addAssert")
-    public fun com.google.protobuf.kotlin.DslList<kotlin.String, AssertProxy>.add(value: kotlin.String) {
-      _builder.addAssert(value)
+@kotlin.jvm.JvmName("addAssertion")
+    public fun com.google.protobuf.kotlin.DslList<kotlin.String, AssertionProxy>.add(value: kotlin.String) {
+      _builder.addAssertion(value)
     }
     /**
-     * `repeated string assert = 16 [json_name = "assert"];`
-     * @param value The assert to add.
+     * `repeated string assertion = 16 [json_name = "assertion"];`
+     * @param value The assertion to add.
      */
     @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("plusAssignAssert")
+@kotlin.jvm.JvmName("plusAssignAssertion")
     @Suppress("NOTHING_TO_INLINE")
-    public inline operator fun com.google.protobuf.kotlin.DslList<kotlin.String, AssertProxy>.plusAssign(value: kotlin.String) {
+    public inline operator fun com.google.protobuf.kotlin.DslList<kotlin.String, AssertionProxy>.plusAssign(value: kotlin.String) {
       add(value)
     }
     /**
-     * `repeated string assert = 16 [json_name = "assert"];`
-     * @param values The assert to add.
+     * `repeated string assertion = 16 [json_name = "assertion"];`
+     * @param values The assertion to add.
      */
     @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("addAllAssert")
-    public fun com.google.protobuf.kotlin.DslList<kotlin.String, AssertProxy>.addAll(values: kotlin.collections.Iterable<kotlin.String>) {
-      _builder.addAllAssert(values)
+@kotlin.jvm.JvmName("addAllAssertion")
+    public fun com.google.protobuf.kotlin.DslList<kotlin.String, AssertionProxy>.addAll(values: kotlin.collections.Iterable<kotlin.String>) {
+      _builder.addAllAssertion(values)
     }
     /**
-     * `repeated string assert = 16 [json_name = "assert"];`
-     * @param values The assert to add.
+     * `repeated string assertion = 16 [json_name = "assertion"];`
+     * @param values The assertion to add.
      */
     @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("plusAssignAllAssert")
+@kotlin.jvm.JvmName("plusAssignAllAssertion")
     @Suppress("NOTHING_TO_INLINE")
-    public inline operator fun com.google.protobuf.kotlin.DslList<kotlin.String, AssertProxy>.plusAssign(values: kotlin.collections.Iterable<kotlin.String>) {
+    public inline operator fun com.google.protobuf.kotlin.DslList<kotlin.String, AssertionProxy>.plusAssign(values: kotlin.collections.Iterable<kotlin.String>) {
       addAll(values)
     }
     /**
-     * `repeated string assert = 16 [json_name = "assert"];`
+     * `repeated string assertion = 16 [json_name = "assertion"];`
      * @param index The index to set the value at.
-     * @param value The assert to set.
+     * @param value The assertion to set.
      */
     @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("setAssert")
-    public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, AssertProxy>.set(index: kotlin.Int, value: kotlin.String) {
-      _builder.setAssert(index, value)
+@kotlin.jvm.JvmName("setAssertion")
+    public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, AssertionProxy>.set(index: kotlin.Int, value: kotlin.String) {
+      _builder.setAssertion(index, value)
     }/**
-     * `repeated string assert = 16 [json_name = "assert"];`
+     * `repeated string assertion = 16 [json_name = "assertion"];`
      */
     @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("setAssert")
-    public fun com.google.protobuf.kotlin.DslList<kotlin.String, AssertProxy>.clear() {
-      _builder.clearAssert()
+@kotlin.jvm.JvmName("setAssertion")
+    public fun com.google.protobuf.kotlin.DslList<kotlin.String, AssertionProxy>.clear() {
+      _builder.clearAssertion()
     }
     /**
      * An uninstantiable, behaviorless type to represent the field in
      * generics.
      */
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
-    public class InvProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
+    public class InvocationProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated string inv = 17 [json_name = "inv"];`
-     * @return A list containing the inv.
+     * `repeated string invocation = 17 [json_name = "invocation"];`
+     * @return A list containing the invocation.
      */
-    public val inv: com.google.protobuf.kotlin.DslList<kotlin.String, InvProxy>
+    public val invocation: com.google.protobuf.kotlin.DslList<kotlin.String, InvocationProxy>
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
       get() = com.google.protobuf.kotlin.DslList(
-        _builder.invList
+        _builder.invocationList
       )
     /**
-     * `repeated string inv = 17 [json_name = "inv"];`
-     * @param value The inv to add.
+     * `repeated string invocation = 17 [json_name = "invocation"];`
+     * @param value The invocation to add.
      */
     @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("addInv")
-    public fun com.google.protobuf.kotlin.DslList<kotlin.String, InvProxy>.add(value: kotlin.String) {
-      _builder.addInv(value)
+@kotlin.jvm.JvmName("addInvocation")
+    public fun com.google.protobuf.kotlin.DslList<kotlin.String, InvocationProxy>.add(value: kotlin.String) {
+      _builder.addInvocation(value)
     }
     /**
-     * `repeated string inv = 17 [json_name = "inv"];`
-     * @param value The inv to add.
+     * `repeated string invocation = 17 [json_name = "invocation"];`
+     * @param value The invocation to add.
      */
     @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("plusAssignInv")
+@kotlin.jvm.JvmName("plusAssignInvocation")
     @Suppress("NOTHING_TO_INLINE")
-    public inline operator fun com.google.protobuf.kotlin.DslList<kotlin.String, InvProxy>.plusAssign(value: kotlin.String) {
+    public inline operator fun com.google.protobuf.kotlin.DslList<kotlin.String, InvocationProxy>.plusAssign(value: kotlin.String) {
       add(value)
     }
     /**
-     * `repeated string inv = 17 [json_name = "inv"];`
-     * @param values The inv to add.
+     * `repeated string invocation = 17 [json_name = "invocation"];`
+     * @param values The invocation to add.
      */
     @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("addAllInv")
-    public fun com.google.protobuf.kotlin.DslList<kotlin.String, InvProxy>.addAll(values: kotlin.collections.Iterable<kotlin.String>) {
-      _builder.addAllInv(values)
+@kotlin.jvm.JvmName("addAllInvocation")
+    public fun com.google.protobuf.kotlin.DslList<kotlin.String, InvocationProxy>.addAll(values: kotlin.collections.Iterable<kotlin.String>) {
+      _builder.addAllInvocation(values)
     }
     /**
-     * `repeated string inv = 17 [json_name = "inv"];`
-     * @param values The inv to add.
+     * `repeated string invocation = 17 [json_name = "invocation"];`
+     * @param values The invocation to add.
      */
     @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("plusAssignAllInv")
+@kotlin.jvm.JvmName("plusAssignAllInvocation")
     @Suppress("NOTHING_TO_INLINE")
-    public inline operator fun com.google.protobuf.kotlin.DslList<kotlin.String, InvProxy>.plusAssign(values: kotlin.collections.Iterable<kotlin.String>) {
+    public inline operator fun com.google.protobuf.kotlin.DslList<kotlin.String, InvocationProxy>.plusAssign(values: kotlin.collections.Iterable<kotlin.String>) {
       addAll(values)
     }
     /**
-     * `repeated string inv = 17 [json_name = "inv"];`
+     * `repeated string invocation = 17 [json_name = "invocation"];`
      * @param index The index to set the value at.
-     * @param value The inv to set.
+     * @param value The invocation to set.
      */
     @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("setInv")
-    public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, InvProxy>.set(index: kotlin.Int, value: kotlin.String) {
-      _builder.setInv(index, value)
+@kotlin.jvm.JvmName("setInvocation")
+    public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, InvocationProxy>.set(index: kotlin.Int, value: kotlin.String) {
+      _builder.setInvocation(index, value)
     }/**
-     * `repeated string inv = 17 [json_name = "inv"];`
+     * `repeated string invocation = 17 [json_name = "invocation"];`
      */
     @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("setInv")
-    public fun com.google.protobuf.kotlin.DslList<kotlin.String, InvProxy>.clear() {
-      _builder.clearInv()
+@kotlin.jvm.JvmName("setInvocation")
+    public fun com.google.protobuf.kotlin.DslList<kotlin.String, InvocationProxy>.clear() {
+      _builder.clearInvocation()
     }
     /**
      * An uninstantiable, behaviorless type to represent the field in
      * generics.
      */
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
-    public class KaProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
+    public class KeyAgreementProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated string ka = 18 [json_name = "ka"];`
-     * @return A list containing the ka.
+     * `repeated string key_agreement = 18 [json_name = "keyAgreement"];`
+     * @return A list containing the keyAgreement.
      */
-    public val ka: com.google.protobuf.kotlin.DslList<kotlin.String, KaProxy>
+    public val keyAgreement: com.google.protobuf.kotlin.DslList<kotlin.String, KeyAgreementProxy>
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
       get() = com.google.protobuf.kotlin.DslList(
-        _builder.kaList
+        _builder.keyAgreementList
       )
     /**
-     * `repeated string ka = 18 [json_name = "ka"];`
-     * @param value The ka to add.
+     * `repeated string key_agreement = 18 [json_name = "keyAgreement"];`
+     * @param value The keyAgreement to add.
      */
     @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("addKa")
-    public fun com.google.protobuf.kotlin.DslList<kotlin.String, KaProxy>.add(value: kotlin.String) {
-      _builder.addKa(value)
+@kotlin.jvm.JvmName("addKeyAgreement")
+    public fun com.google.protobuf.kotlin.DslList<kotlin.String, KeyAgreementProxy>.add(value: kotlin.String) {
+      _builder.addKeyAgreement(value)
     }
     /**
-     * `repeated string ka = 18 [json_name = "ka"];`
-     * @param value The ka to add.
+     * `repeated string key_agreement = 18 [json_name = "keyAgreement"];`
+     * @param value The keyAgreement to add.
      */
     @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("plusAssignKa")
+@kotlin.jvm.JvmName("plusAssignKeyAgreement")
     @Suppress("NOTHING_TO_INLINE")
-    public inline operator fun com.google.protobuf.kotlin.DslList<kotlin.String, KaProxy>.plusAssign(value: kotlin.String) {
+    public inline operator fun com.google.protobuf.kotlin.DslList<kotlin.String, KeyAgreementProxy>.plusAssign(value: kotlin.String) {
       add(value)
     }
     /**
-     * `repeated string ka = 18 [json_name = "ka"];`
-     * @param values The ka to add.
+     * `repeated string key_agreement = 18 [json_name = "keyAgreement"];`
+     * @param values The keyAgreement to add.
      */
     @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("addAllKa")
-    public fun com.google.protobuf.kotlin.DslList<kotlin.String, KaProxy>.addAll(values: kotlin.collections.Iterable<kotlin.String>) {
-      _builder.addAllKa(values)
+@kotlin.jvm.JvmName("addAllKeyAgreement")
+    public fun com.google.protobuf.kotlin.DslList<kotlin.String, KeyAgreementProxy>.addAll(values: kotlin.collections.Iterable<kotlin.String>) {
+      _builder.addAllKeyAgreement(values)
     }
     /**
-     * `repeated string ka = 18 [json_name = "ka"];`
-     * @param values The ka to add.
+     * `repeated string key_agreement = 18 [json_name = "keyAgreement"];`
+     * @param values The keyAgreement to add.
      */
     @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("plusAssignAllKa")
+@kotlin.jvm.JvmName("plusAssignAllKeyAgreement")
     @Suppress("NOTHING_TO_INLINE")
-    public inline operator fun com.google.protobuf.kotlin.DslList<kotlin.String, KaProxy>.plusAssign(values: kotlin.collections.Iterable<kotlin.String>) {
+    public inline operator fun com.google.protobuf.kotlin.DslList<kotlin.String, KeyAgreementProxy>.plusAssign(values: kotlin.collections.Iterable<kotlin.String>) {
       addAll(values)
     }
     /**
-     * `repeated string ka = 18 [json_name = "ka"];`
+     * `repeated string key_agreement = 18 [json_name = "keyAgreement"];`
      * @param index The index to set the value at.
-     * @param value The ka to set.
+     * @param value The keyAgreement to set.
      */
     @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("setKa")
-    public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, KaProxy>.set(index: kotlin.Int, value: kotlin.String) {
-      _builder.setKa(index, value)
+@kotlin.jvm.JvmName("setKeyAgreement")
+    public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, KeyAgreementProxy>.set(index: kotlin.Int, value: kotlin.String) {
+      _builder.setKeyAgreement(index, value)
     }/**
-     * `repeated string ka = 18 [json_name = "ka"];`
+     * `repeated string key_agreement = 18 [json_name = "keyAgreement"];`
      */
     @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("setKa")
-    public fun com.google.protobuf.kotlin.DslList<kotlin.String, KaProxy>.clear() {
-      _builder.clearKa()
+@kotlin.jvm.JvmName("setKeyAgreement")
+    public fun com.google.protobuf.kotlin.DslList<kotlin.String, KeyAgreementProxy>.clear() {
+      _builder.clearKeyAgreement()
     }
     /**
      * An uninstantiable, behaviorless type to represent the field in

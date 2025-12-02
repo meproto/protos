@@ -153,20 +153,54 @@ public enum Meproto_Did_V1_UserVerificationMethod: SwiftProtobuf.Enum, Swift.Cas
 
 }
 
-public enum Meproto_Did_V1_DomainVerificationType: SwiftProtobuf.Enum, Swift.CaseIterable {
+public enum Meproto_Did_V1_VerificationMethodType: SwiftProtobuf.Enum, Swift.CaseIterable {
   public typealias RawValue = Int
-  case dvtUnspecified // = 0
+  case vmtUnspecified // = 0
+  case multikey // = 1
+  case UNRECOGNIZED(Int)
+
+  public init() {
+    self = .vmtUnspecified
+  }
+
+  public init?(rawValue: Int) {
+    switch rawValue {
+    case 0: self = .vmtUnspecified
+    case 1: self = .multikey
+    default: self = .UNRECOGNIZED(rawValue)
+    }
+  }
+
+  public var rawValue: Int {
+    switch self {
+    case .vmtUnspecified: return 0
+    case .multikey: return 1
+    case .UNRECOGNIZED(let i): return i
+    }
+  }
+
+  // The compiler won't synthesize support with the UNRECOGNIZED case.
+  public static let allCases: [Meproto_Did_V1_VerificationMethodType] = [
+    .vmtUnspecified,
+    .multikey,
+  ]
+
+}
+
+public enum Meproto_Did_V1_DomainVerificationMethod: SwiftProtobuf.Enum, Swift.CaseIterable {
+  public typealias RawValue = Int
+  case dvmUnspecified // = 0
   case dnsTxt // = 1
   case httpsWellKnown // = 2
   case UNRECOGNIZED(Int)
 
   public init() {
-    self = .dvtUnspecified
+    self = .dvmUnspecified
   }
 
   public init?(rawValue: Int) {
     switch rawValue {
-    case 0: self = .dvtUnspecified
+    case 0: self = .dvmUnspecified
     case 1: self = .dnsTxt
     case 2: self = .httpsWellKnown
     default: self = .UNRECOGNIZED(rawValue)
@@ -175,7 +209,7 @@ public enum Meproto_Did_V1_DomainVerificationType: SwiftProtobuf.Enum, Swift.Cas
 
   public var rawValue: Int {
     switch self {
-    case .dvtUnspecified: return 0
+    case .dvmUnspecified: return 0
     case .dnsTxt: return 1
     case .httpsWellKnown: return 2
     case .UNRECOGNIZED(let i): return i
@@ -183,8 +217,8 @@ public enum Meproto_Did_V1_DomainVerificationType: SwiftProtobuf.Enum, Swift.Cas
   }
 
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  public static let allCases: [Meproto_Did_V1_DomainVerificationType] = [
-    .dvtUnspecified,
+  public static let allCases: [Meproto_Did_V1_DomainVerificationMethod] = [
+    .dvmUnspecified,
     .dnsTxt,
     .httpsWellKnown,
   ]
@@ -200,8 +234,13 @@ public struct Meproto_Did_V1_VMKey: Sendable {
 
   public var controller: String = String()
 
+  /// always MULTIKEY for now
+  public var type: Meproto_Did_V1_VerificationMethodType = .vmtUnspecified
+
+  /// optional but helpful for fast routing
   public var alg: Meproto_Did_V1_Algorithm = .algUnspecified
 
+  /// multikey-encoded public key
   public var pk: Data = Data()
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -221,7 +260,7 @@ public struct Meproto_Did_V1_Service: Sendable {
   public var version: String = String()
 
   /// JSON blob
-  public var endpoint: Data = Data()
+  public var serviceData: Data = Data()
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -235,7 +274,7 @@ public struct Meproto_Did_V1_Attestation: Sendable {
 
   public var alg: Meproto_Did_V1_Algorithm = .algUnspecified
 
-  public var vm: String = String()
+  public var verificationMethod: String = String()
 
   public var sig: Data = Data()
 
@@ -273,15 +312,64 @@ public struct Meproto_Did_V1_DomainVerification: Sendable {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  public var t: Meproto_Did_V1_DomainVerificationType = .dvtUnspecified
+  public var method: Meproto_Did_V1_DomainVerificationMethod = .dvmUnspecified
 
   public var domain: String = String()
 
-  public var method: String = String()
+  public var binding: Meproto_Did_V1_DomainVerification.OneOf_Binding? = nil
 
-  public var binding: Data = Data()
+  public var dns: Meproto_Did_V1_DNSBinding {
+    get {
+      if case .dns(let v)? = binding {return v}
+      return Meproto_Did_V1_DNSBinding()
+    }
+    set {binding = .dns(newValue)}
+  }
 
-  public var bindingURL: String = String()
+  public var wellknown: Meproto_Did_V1_WellKnownBinding {
+    get {
+      if case .wellknown(let v)? = binding {return v}
+      return Meproto_Did_V1_WellKnownBinding()
+    }
+    set {binding = .wellknown(newValue)}
+  }
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public enum OneOf_Binding: Equatable, Sendable {
+    case dns(Meproto_Did_V1_DNSBinding)
+    case wellknown(Meproto_Did_V1_WellKnownBinding)
+
+  }
+
+  public init() {}
+}
+
+public struct Meproto_Did_V1_DNSBinding: Sendable {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  /// default: "_did"
+  public var recordName: String = String()
+
+  /// TXT record value
+  public var txtValue: String = String()
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public init() {}
+}
+
+public struct Meproto_Did_V1_WellKnownBinding: Sendable {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  /// default: "/.well-known/did-configuration.json"
+  public var uri: String = String()
+
+  public var content: Data = Data()
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -323,9 +411,9 @@ public struct Meproto_Did_V1_DIDDocument: @unchecked Sendable {
   }
 
   /// Metadata
-  public var also: [String] {
-    get {return _storage._also}
-    set {_uniqueStorage()._also = newValue}
+  public var alsoKnownAs: [String] {
+    get {return _storage._alsoKnownAs}
+    set {_uniqueStorage()._alsoKnownAs = newValue}
   }
 
   public var biometric: Bool {
@@ -380,24 +468,24 @@ public struct Meproto_Did_V1_DIDDocument: @unchecked Sendable {
     set {_uniqueStorage()._vm = newValue}
   }
 
-  public var authn: [String] {
-    get {return _storage._authn}
-    set {_uniqueStorage()._authn = newValue}
+  public var authentication: [String] {
+    get {return _storage._authentication}
+    set {_uniqueStorage()._authentication = newValue}
   }
 
-  public var assert: [String] {
-    get {return _storage._assert}
-    set {_uniqueStorage()._assert = newValue}
+  public var assertion: [String] {
+    get {return _storage._assertion}
+    set {_uniqueStorage()._assertion = newValue}
   }
 
-  public var inv: [String] {
-    get {return _storage._inv}
-    set {_uniqueStorage()._inv = newValue}
+  public var invocation: [String] {
+    get {return _storage._invocation}
+    set {_uniqueStorage()._invocation = newValue}
   }
 
-  public var ka: [String] {
-    get {return _storage._ka}
-    set {_uniqueStorage()._ka = newValue}
+  public var keyAgreement: [String] {
+    get {return _storage._keyAgreement}
+    set {_uniqueStorage()._keyAgreement = newValue}
   }
 
   /// Services
@@ -456,13 +544,17 @@ extension Meproto_Did_V1_UserVerificationMethod: SwiftProtobuf._ProtoNameProvidi
   public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0UVM_UNSPECIFIED\0\u{1}NONE\0\u{1}PIN\0\u{1}PASSCODE\0\u{1}PASSWORD\0\u{1}FINGERPRINT\0\u{1}FACE\0\u{1}IRIS\0\u{1}VOICE\0\u{1}PATTERN\0")
 }
 
-extension Meproto_Did_V1_DomainVerificationType: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0DVT_UNSPECIFIED\0\u{1}DNS_TXT\0\u{1}HTTPS_WELL_KNOWN\0")
+extension Meproto_Did_V1_VerificationMethodType: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0VMT_UNSPECIFIED\0\u{1}MULTIKEY\0")
+}
+
+extension Meproto_Did_V1_DomainVerificationMethod: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0DVM_UNSPECIFIED\0\u{1}DNS_TXT\0\u{1}HTTPS_WELL_KNOWN\0")
 }
 
 extension Meproto_Did_V1_VMKey: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".VMKey"
-  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}id\0\u{1}controller\0\u{1}alg\0\u{1}pk\0")
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}id\0\u{1}controller\0\u{1}type\0\u{1}alg\0\u{1}pk\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -472,8 +564,9 @@ extension Meproto_Did_V1_VMKey: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularStringField(value: &self.id) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.controller) }()
-      case 3: try { try decoder.decodeSingularEnumField(value: &self.alg) }()
-      case 4: try { try decoder.decodeSingularBytesField(value: &self.pk) }()
+      case 3: try { try decoder.decodeSingularEnumField(value: &self.type) }()
+      case 4: try { try decoder.decodeSingularEnumField(value: &self.alg) }()
+      case 5: try { try decoder.decodeSingularBytesField(value: &self.pk) }()
       default: break
       }
     }
@@ -486,11 +579,14 @@ extension Meproto_Did_V1_VMKey: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     if !self.controller.isEmpty {
       try visitor.visitSingularStringField(value: self.controller, fieldNumber: 2)
     }
+    if self.type != .vmtUnspecified {
+      try visitor.visitSingularEnumField(value: self.type, fieldNumber: 3)
+    }
     if self.alg != .algUnspecified {
-      try visitor.visitSingularEnumField(value: self.alg, fieldNumber: 3)
+      try visitor.visitSingularEnumField(value: self.alg, fieldNumber: 4)
     }
     if !self.pk.isEmpty {
-      try visitor.visitSingularBytesField(value: self.pk, fieldNumber: 4)
+      try visitor.visitSingularBytesField(value: self.pk, fieldNumber: 5)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -498,6 +594,7 @@ extension Meproto_Did_V1_VMKey: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
   public static func ==(lhs: Meproto_Did_V1_VMKey, rhs: Meproto_Did_V1_VMKey) -> Bool {
     if lhs.id != rhs.id {return false}
     if lhs.controller != rhs.controller {return false}
+    if lhs.type != rhs.type {return false}
     if lhs.alg != rhs.alg {return false}
     if lhs.pk != rhs.pk {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
@@ -507,7 +604,7 @@ extension Meproto_Did_V1_VMKey: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
 
 extension Meproto_Did_V1_Service: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".Service"
-  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}id\0\u{1}type\0\u{1}version\0\u{1}endpoint\0")
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}id\0\u{1}type\0\u{1}version\0\u{3}service_data\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -518,7 +615,7 @@ extension Meproto_Did_V1_Service: SwiftProtobuf.Message, SwiftProtobuf._MessageI
       case 1: try { try decoder.decodeSingularStringField(value: &self.id) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.type) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.version) }()
-      case 4: try { try decoder.decodeSingularBytesField(value: &self.endpoint) }()
+      case 4: try { try decoder.decodeSingularBytesField(value: &self.serviceData) }()
       default: break
       }
     }
@@ -534,8 +631,8 @@ extension Meproto_Did_V1_Service: SwiftProtobuf.Message, SwiftProtobuf._MessageI
     if !self.version.isEmpty {
       try visitor.visitSingularStringField(value: self.version, fieldNumber: 3)
     }
-    if !self.endpoint.isEmpty {
-      try visitor.visitSingularBytesField(value: self.endpoint, fieldNumber: 4)
+    if !self.serviceData.isEmpty {
+      try visitor.visitSingularBytesField(value: self.serviceData, fieldNumber: 4)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -544,7 +641,7 @@ extension Meproto_Did_V1_Service: SwiftProtobuf.Message, SwiftProtobuf._MessageI
     if lhs.id != rhs.id {return false}
     if lhs.type != rhs.type {return false}
     if lhs.version != rhs.version {return false}
-    if lhs.endpoint != rhs.endpoint {return false}
+    if lhs.serviceData != rhs.serviceData {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -552,7 +649,7 @@ extension Meproto_Did_V1_Service: SwiftProtobuf.Message, SwiftProtobuf._MessageI
 
 extension Meproto_Did_V1_Attestation: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".Attestation"
-  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}alg\0\u{1}vm\0\u{1}sig\0")
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}alg\0\u{3}verification_method\0\u{1}sig\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -561,7 +658,7 @@ extension Meproto_Did_V1_Attestation: SwiftProtobuf.Message, SwiftProtobuf._Mess
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularEnumField(value: &self.alg) }()
-      case 2: try { try decoder.decodeSingularStringField(value: &self.vm) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.verificationMethod) }()
       case 3: try { try decoder.decodeSingularBytesField(value: &self.sig) }()
       default: break
       }
@@ -572,8 +669,8 @@ extension Meproto_Did_V1_Attestation: SwiftProtobuf.Message, SwiftProtobuf._Mess
     if self.alg != .algUnspecified {
       try visitor.visitSingularEnumField(value: self.alg, fieldNumber: 1)
     }
-    if !self.vm.isEmpty {
-      try visitor.visitSingularStringField(value: self.vm, fieldNumber: 2)
+    if !self.verificationMethod.isEmpty {
+      try visitor.visitSingularStringField(value: self.verificationMethod, fieldNumber: 2)
     }
     if !self.sig.isEmpty {
       try visitor.visitSingularBytesField(value: self.sig, fieldNumber: 3)
@@ -583,7 +680,7 @@ extension Meproto_Did_V1_Attestation: SwiftProtobuf.Message, SwiftProtobuf._Mess
 
   public static func ==(lhs: Meproto_Did_V1_Attestation, rhs: Meproto_Did_V1_Attestation) -> Bool {
     if lhs.alg != rhs.alg {return false}
-    if lhs.vm != rhs.vm {return false}
+    if lhs.verificationMethod != rhs.verificationMethod {return false}
     if lhs.sig != rhs.sig {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
@@ -652,7 +749,7 @@ extension Meproto_Did_V1_Proof: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
 
 extension Meproto_Did_V1_DomainVerification: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".DomainVerification"
-  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}t\0\u{1}domain\0\u{1}method\0\u{1}binding\0\u{3}binding_url\0")
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}method\0\u{1}domain\0\u{1}dns\0\u{1}wellknown\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -660,41 +757,138 @@ extension Meproto_Did_V1_DomainVerification: SwiftProtobuf.Message, SwiftProtobu
       // allocates stack space for every case branch when no optimizations are
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
-      case 1: try { try decoder.decodeSingularEnumField(value: &self.t) }()
+      case 1: try { try decoder.decodeSingularEnumField(value: &self.method) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.domain) }()
-      case 3: try { try decoder.decodeSingularStringField(value: &self.method) }()
-      case 4: try { try decoder.decodeSingularBytesField(value: &self.binding) }()
-      case 5: try { try decoder.decodeSingularStringField(value: &self.bindingURL) }()
+      case 3: try {
+        var v: Meproto_Did_V1_DNSBinding?
+        var hadOneofValue = false
+        if let current = self.binding {
+          hadOneofValue = true
+          if case .dns(let m) = current {v = m}
+        }
+        try decoder.decodeSingularMessageField(value: &v)
+        if let v = v {
+          if hadOneofValue {try decoder.handleConflictingOneOf()}
+          self.binding = .dns(v)
+        }
+      }()
+      case 4: try {
+        var v: Meproto_Did_V1_WellKnownBinding?
+        var hadOneofValue = false
+        if let current = self.binding {
+          hadOneofValue = true
+          if case .wellknown(let m) = current {v = m}
+        }
+        try decoder.decodeSingularMessageField(value: &v)
+        if let v = v {
+          if hadOneofValue {try decoder.handleConflictingOneOf()}
+          self.binding = .wellknown(v)
+        }
+      }()
       default: break
       }
     }
   }
 
   public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if self.t != .dvtUnspecified {
-      try visitor.visitSingularEnumField(value: self.t, fieldNumber: 1)
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    if self.method != .dvmUnspecified {
+      try visitor.visitSingularEnumField(value: self.method, fieldNumber: 1)
     }
     if !self.domain.isEmpty {
       try visitor.visitSingularStringField(value: self.domain, fieldNumber: 2)
     }
-    if !self.method.isEmpty {
-      try visitor.visitSingularStringField(value: self.method, fieldNumber: 3)
-    }
-    if !self.binding.isEmpty {
-      try visitor.visitSingularBytesField(value: self.binding, fieldNumber: 4)
-    }
-    if !self.bindingURL.isEmpty {
-      try visitor.visitSingularStringField(value: self.bindingURL, fieldNumber: 5)
+    switch self.binding {
+    case .dns?: try {
+      guard case .dns(let v)? = self.binding else { preconditionFailure() }
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
+    }()
+    case .wellknown?: try {
+      guard case .wellknown(let v)? = self.binding else { preconditionFailure() }
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
+    }()
+    case nil: break
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: Meproto_Did_V1_DomainVerification, rhs: Meproto_Did_V1_DomainVerification) -> Bool {
-    if lhs.t != rhs.t {return false}
-    if lhs.domain != rhs.domain {return false}
     if lhs.method != rhs.method {return false}
+    if lhs.domain != rhs.domain {return false}
     if lhs.binding != rhs.binding {return false}
-    if lhs.bindingURL != rhs.bindingURL {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Meproto_Did_V1_DNSBinding: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".DNSBinding"
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}record_name\0\u{3}txt_value\0")
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.recordName) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.txtValue) }()
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.recordName.isEmpty {
+      try visitor.visitSingularStringField(value: self.recordName, fieldNumber: 1)
+    }
+    if !self.txtValue.isEmpty {
+      try visitor.visitSingularStringField(value: self.txtValue, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: Meproto_Did_V1_DNSBinding, rhs: Meproto_Did_V1_DNSBinding) -> Bool {
+    if lhs.recordName != rhs.recordName {return false}
+    if lhs.txtValue != rhs.txtValue {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Meproto_Did_V1_WellKnownBinding: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".WellKnownBinding"
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}uri\0\u{1}content\0")
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.uri) }()
+      case 2: try { try decoder.decodeSingularBytesField(value: &self.content) }()
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.uri.isEmpty {
+      try visitor.visitSingularStringField(value: self.uri, fieldNumber: 1)
+    }
+    if !self.content.isEmpty {
+      try visitor.visitSingularBytesField(value: self.content, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: Meproto_Did_V1_WellKnownBinding, rhs: Meproto_Did_V1_WellKnownBinding) -> Bool {
+    if lhs.uri != rhs.uri {return false}
+    if lhs.content != rhs.content {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -732,13 +926,13 @@ extension Meproto_Did_V1_UpdatePolicy: SwiftProtobuf.Message, SwiftProtobuf._Mes
 
 extension Meproto_Did_V1_DIDDocument: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".DIDDocument"
-  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}id\0\u{1}controller\0\u{1}ctx\0\u{1}also\0\u{1}biometric\0\u{1}hardware\0\u{3}device_model\0\u{3}user_verification_method\0\u{1}seq\0\u{1}prev\0\u{1}core\0\u{3}core_cbor\0\u{3}key_history\0\u{1}vm\0\u{1}authn\0\u{1}assert\0\u{1}inv\0\u{1}ka\0\u{1}svc\0\u{1}policy\0\u{1}att\0\u{1}proof\0\u{1}dv\0")
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}id\0\u{1}controller\0\u{1}ctx\0\u{3}also_known_as\0\u{1}biometric\0\u{1}hardware\0\u{3}device_model\0\u{3}user_verification_method\0\u{1}seq\0\u{1}prev\0\u{1}core\0\u{3}core_cbor\0\u{3}key_history\0\u{1}vm\0\u{1}authentication\0\u{1}assertion\0\u{1}invocation\0\u{3}key_agreement\0\u{1}svc\0\u{1}policy\0\u{1}att\0\u{1}proof\0\u{1}dv\0")
 
   fileprivate class _StorageClass {
     var _id: String = String()
     var _controller: String = String()
     var _ctx: [String] = []
-    var _also: [String] = []
+    var _alsoKnownAs: [String] = []
     var _biometric: Bool = false
     var _hardware: Bool = false
     var _deviceModel: String = String()
@@ -749,10 +943,10 @@ extension Meproto_Did_V1_DIDDocument: SwiftProtobuf.Message, SwiftProtobuf._Mess
     var _coreCbor: Data = Data()
     var _keyHistory: [String] = []
     var _vm: [Meproto_Did_V1_VMKey] = []
-    var _authn: [String] = []
-    var _assert: [String] = []
-    var _inv: [String] = []
-    var _ka: [String] = []
+    var _authentication: [String] = []
+    var _assertion: [String] = []
+    var _invocation: [String] = []
+    var _keyAgreement: [String] = []
     var _svc: [Meproto_Did_V1_Service] = []
     var _policy: Meproto_Did_V1_UpdatePolicy? = nil
     var _att: [Meproto_Did_V1_Attestation] = []
@@ -771,7 +965,7 @@ extension Meproto_Did_V1_DIDDocument: SwiftProtobuf.Message, SwiftProtobuf._Mess
       _id = source._id
       _controller = source._controller
       _ctx = source._ctx
-      _also = source._also
+      _alsoKnownAs = source._alsoKnownAs
       _biometric = source._biometric
       _hardware = source._hardware
       _deviceModel = source._deviceModel
@@ -782,10 +976,10 @@ extension Meproto_Did_V1_DIDDocument: SwiftProtobuf.Message, SwiftProtobuf._Mess
       _coreCbor = source._coreCbor
       _keyHistory = source._keyHistory
       _vm = source._vm
-      _authn = source._authn
-      _assert = source._assert
-      _inv = source._inv
-      _ka = source._ka
+      _authentication = source._authentication
+      _assertion = source._assertion
+      _invocation = source._invocation
+      _keyAgreement = source._keyAgreement
       _svc = source._svc
       _policy = source._policy
       _att = source._att
@@ -812,7 +1006,7 @@ extension Meproto_Did_V1_DIDDocument: SwiftProtobuf.Message, SwiftProtobuf._Mess
         case 1: try { try decoder.decodeSingularStringField(value: &_storage._id) }()
         case 2: try { try decoder.decodeSingularStringField(value: &_storage._controller) }()
         case 3: try { try decoder.decodeRepeatedStringField(value: &_storage._ctx) }()
-        case 4: try { try decoder.decodeRepeatedStringField(value: &_storage._also) }()
+        case 4: try { try decoder.decodeRepeatedStringField(value: &_storage._alsoKnownAs) }()
         case 5: try { try decoder.decodeSingularBoolField(value: &_storage._biometric) }()
         case 6: try { try decoder.decodeSingularBoolField(value: &_storage._hardware) }()
         case 7: try { try decoder.decodeSingularStringField(value: &_storage._deviceModel) }()
@@ -823,10 +1017,10 @@ extension Meproto_Did_V1_DIDDocument: SwiftProtobuf.Message, SwiftProtobuf._Mess
         case 12: try { try decoder.decodeSingularBytesField(value: &_storage._coreCbor) }()
         case 13: try { try decoder.decodeRepeatedStringField(value: &_storage._keyHistory) }()
         case 14: try { try decoder.decodeRepeatedMessageField(value: &_storage._vm) }()
-        case 15: try { try decoder.decodeRepeatedStringField(value: &_storage._authn) }()
-        case 16: try { try decoder.decodeRepeatedStringField(value: &_storage._assert) }()
-        case 17: try { try decoder.decodeRepeatedStringField(value: &_storage._inv) }()
-        case 18: try { try decoder.decodeRepeatedStringField(value: &_storage._ka) }()
+        case 15: try { try decoder.decodeRepeatedStringField(value: &_storage._authentication) }()
+        case 16: try { try decoder.decodeRepeatedStringField(value: &_storage._assertion) }()
+        case 17: try { try decoder.decodeRepeatedStringField(value: &_storage._invocation) }()
+        case 18: try { try decoder.decodeRepeatedStringField(value: &_storage._keyAgreement) }()
         case 19: try { try decoder.decodeRepeatedMessageField(value: &_storage._svc) }()
         case 20: try { try decoder.decodeSingularMessageField(value: &_storage._policy) }()
         case 21: try { try decoder.decodeRepeatedMessageField(value: &_storage._att) }()
@@ -853,8 +1047,8 @@ extension Meproto_Did_V1_DIDDocument: SwiftProtobuf.Message, SwiftProtobuf._Mess
       if !_storage._ctx.isEmpty {
         try visitor.visitRepeatedStringField(value: _storage._ctx, fieldNumber: 3)
       }
-      if !_storage._also.isEmpty {
-        try visitor.visitRepeatedStringField(value: _storage._also, fieldNumber: 4)
+      if !_storage._alsoKnownAs.isEmpty {
+        try visitor.visitRepeatedStringField(value: _storage._alsoKnownAs, fieldNumber: 4)
       }
       if _storage._biometric != false {
         try visitor.visitSingularBoolField(value: _storage._biometric, fieldNumber: 5)
@@ -886,17 +1080,17 @@ extension Meproto_Did_V1_DIDDocument: SwiftProtobuf.Message, SwiftProtobuf._Mess
       if !_storage._vm.isEmpty {
         try visitor.visitRepeatedMessageField(value: _storage._vm, fieldNumber: 14)
       }
-      if !_storage._authn.isEmpty {
-        try visitor.visitRepeatedStringField(value: _storage._authn, fieldNumber: 15)
+      if !_storage._authentication.isEmpty {
+        try visitor.visitRepeatedStringField(value: _storage._authentication, fieldNumber: 15)
       }
-      if !_storage._assert.isEmpty {
-        try visitor.visitRepeatedStringField(value: _storage._assert, fieldNumber: 16)
+      if !_storage._assertion.isEmpty {
+        try visitor.visitRepeatedStringField(value: _storage._assertion, fieldNumber: 16)
       }
-      if !_storage._inv.isEmpty {
-        try visitor.visitRepeatedStringField(value: _storage._inv, fieldNumber: 17)
+      if !_storage._invocation.isEmpty {
+        try visitor.visitRepeatedStringField(value: _storage._invocation, fieldNumber: 17)
       }
-      if !_storage._ka.isEmpty {
-        try visitor.visitRepeatedStringField(value: _storage._ka, fieldNumber: 18)
+      if !_storage._keyAgreement.isEmpty {
+        try visitor.visitRepeatedStringField(value: _storage._keyAgreement, fieldNumber: 18)
       }
       if !_storage._svc.isEmpty {
         try visitor.visitRepeatedMessageField(value: _storage._svc, fieldNumber: 19)
@@ -925,7 +1119,7 @@ extension Meproto_Did_V1_DIDDocument: SwiftProtobuf.Message, SwiftProtobuf._Mess
         if _storage._id != rhs_storage._id {return false}
         if _storage._controller != rhs_storage._controller {return false}
         if _storage._ctx != rhs_storage._ctx {return false}
-        if _storage._also != rhs_storage._also {return false}
+        if _storage._alsoKnownAs != rhs_storage._alsoKnownAs {return false}
         if _storage._biometric != rhs_storage._biometric {return false}
         if _storage._hardware != rhs_storage._hardware {return false}
         if _storage._deviceModel != rhs_storage._deviceModel {return false}
@@ -936,10 +1130,10 @@ extension Meproto_Did_V1_DIDDocument: SwiftProtobuf.Message, SwiftProtobuf._Mess
         if _storage._coreCbor != rhs_storage._coreCbor {return false}
         if _storage._keyHistory != rhs_storage._keyHistory {return false}
         if _storage._vm != rhs_storage._vm {return false}
-        if _storage._authn != rhs_storage._authn {return false}
-        if _storage._assert != rhs_storage._assert {return false}
-        if _storage._inv != rhs_storage._inv {return false}
-        if _storage._ka != rhs_storage._ka {return false}
+        if _storage._authentication != rhs_storage._authentication {return false}
+        if _storage._assertion != rhs_storage._assertion {return false}
+        if _storage._invocation != rhs_storage._invocation {return false}
+        if _storage._keyAgreement != rhs_storage._keyAgreement {return false}
         if _storage._svc != rhs_storage._svc {return false}
         if _storage._policy != rhs_storage._policy {return false}
         if _storage._att != rhs_storage._att {return false}

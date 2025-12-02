@@ -30,27 +30,27 @@ public object DomainVerificationKt {
     internal fun _build(): com.meproto.did.v1.DomainVerification = _builder.build()
 
     /**
-     * `.meproto.did.v1.DomainVerificationType t = 1 [json_name = "t"];`
+     * `.meproto.did.v1.DomainVerificationMethod method = 1 [json_name = "method"];`
      */
-    public var t: com.meproto.did.v1.DomainVerificationType
-      @kotlin.jvm.JvmName("getT")
-        get() = _builder.t
-      @kotlin.jvm.JvmName("setT")
+    public var method: com.meproto.did.v1.DomainVerificationMethod
+      @kotlin.jvm.JvmName("getMethod")
+        get() = _builder.method
+      @kotlin.jvm.JvmName("setMethod")
         set(value) {
-        _builder.t = value
+        _builder.method = value
       }
-    public var tValue: kotlin.Int
-      @kotlin.jvm.JvmName("getTValue")
-        get() = _builder.tValue
-      @kotlin.jvm.JvmName("setTValue")
+    public var methodValue: kotlin.Int
+      @kotlin.jvm.JvmName("getMethodValue")
+        get() = _builder.methodValue
+      @kotlin.jvm.JvmName("setMethodValue")
         set(value) {
-        _builder.tValue = value
+        _builder.methodValue = value
       }
     /**
-     * `.meproto.did.v1.DomainVerificationType t = 1 [json_name = "t"];`
+     * `.meproto.did.v1.DomainVerificationMethod method = 1 [json_name = "method"];`
      */
-    public fun clearT() {
-      _builder.clearT()
+    public fun clearMethod() {
+      _builder.clearMethod()
     }
 
     /**
@@ -71,58 +71,68 @@ public object DomainVerificationKt {
     }
 
     /**
-     * `string method = 3 [json_name = "method"];`
+     * `.meproto.did.v1.DNSBinding dns = 3 [json_name = "dns"];`
      */
-    public var method: kotlin.String
-      @kotlin.jvm.JvmName("getMethod")
-        get() = _builder.method
-      @kotlin.jvm.JvmName("setMethod")
+    public var dns: com.meproto.did.v1.DNSBinding
+      @kotlin.jvm.JvmName("getDns")
+        get() = _builder.dns
+      @kotlin.jvm.JvmName("setDns")
         set(value) {
-        _builder.method = value
+        _builder.dns = value
       }
     /**
-     * `string method = 3 [json_name = "method"];`
+     * `.meproto.did.v1.DNSBinding dns = 3 [json_name = "dns"];`
      */
-    public fun clearMethod() {
-      _builder.clearMethod()
+    public fun clearDns() {
+      _builder.clearDns()
+    }
+    /**
+     * `.meproto.did.v1.DNSBinding dns = 3 [json_name = "dns"];`
+     * @return Whether the dns field is set.
+     */
+    public fun hasDns(): kotlin.Boolean {
+      return _builder.hasDns()
     }
 
     /**
-     * `bytes binding = 4 [json_name = "binding"];`
+     * `.meproto.did.v1.WellKnownBinding wellknown = 4 [json_name = "wellknown"];`
      */
-    public var binding: com.google.protobuf.ByteString
-      @kotlin.jvm.JvmName("getBinding")
-        get() = _builder.binding
-      @kotlin.jvm.JvmName("setBinding")
+    public var wellknown: com.meproto.did.v1.WellKnownBinding
+      @kotlin.jvm.JvmName("getWellknown")
+        get() = _builder.wellknown
+      @kotlin.jvm.JvmName("setWellknown")
         set(value) {
-        _builder.binding = value
+        _builder.wellknown = value
       }
     /**
-     * `bytes binding = 4 [json_name = "binding"];`
+     * `.meproto.did.v1.WellKnownBinding wellknown = 4 [json_name = "wellknown"];`
      */
+    public fun clearWellknown() {
+      _builder.clearWellknown()
+    }
+    /**
+     * `.meproto.did.v1.WellKnownBinding wellknown = 4 [json_name = "wellknown"];`
+     * @return Whether the wellknown field is set.
+     */
+    public fun hasWellknown(): kotlin.Boolean {
+      return _builder.hasWellknown()
+    }
+    public val bindingCase: com.meproto.did.v1.DomainVerification.BindingCase
+    @kotlin.jvm.JvmName("getBindingCase")
+      get() = _builder.getBindingCase()
+
     public fun clearBinding() {
       _builder.clearBinding()
-    }
-
-    /**
-     * `string binding_url = 5 [json_name = "bindingUrl"];`
-     */
-    public var bindingUrl: kotlin.String
-      @kotlin.jvm.JvmName("getBindingUrl")
-        get() = _builder.bindingUrl
-      @kotlin.jvm.JvmName("setBindingUrl")
-        set(value) {
-        _builder.bindingUrl = value
-      }
-    /**
-     * `string binding_url = 5 [json_name = "bindingUrl"];`
-     */
-    public fun clearBindingUrl() {
-      _builder.clearBindingUrl()
     }
   }
 }
 @kotlin.jvm.JvmSynthetic
 public inline fun com.meproto.did.v1.DomainVerification.copy(block: `com.meproto.did.v1`.DomainVerificationKt.Dsl.() -> kotlin.Unit): com.meproto.did.v1.DomainVerification =
   `com.meproto.did.v1`.DomainVerificationKt.Dsl._create(this.toBuilder()).apply { block() }._build()
+
+public val com.meproto.did.v1.DomainVerificationOrBuilder.dnsOrNull: com.meproto.did.v1.DNSBinding?
+  get() = if (hasDns()) getDns() else null
+
+public val com.meproto.did.v1.DomainVerificationOrBuilder.wellknownOrNull: com.meproto.did.v1.WellKnownBinding?
+  get() = if (hasWellknown()) getWellknown() else null
 

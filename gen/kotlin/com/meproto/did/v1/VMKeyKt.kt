@@ -64,7 +64,43 @@ public object VMKeyKt {
     }
 
     /**
-     * `.meproto.did.v1.Algorithm alg = 3 [json_name = "alg"];`
+     * ```
+     * always MULTIKEY for now
+     * ```
+     *
+     * `.meproto.did.v1.VerificationMethodType type = 3 [json_name = "type"];`
+     */
+    public var type: com.meproto.did.v1.VerificationMethodType
+      @kotlin.jvm.JvmName("getType")
+        get() = _builder.type
+      @kotlin.jvm.JvmName("setType")
+        set(value) {
+        _builder.type = value
+      }
+    public var typeValue: kotlin.Int
+      @kotlin.jvm.JvmName("getTypeValue")
+        get() = _builder.typeValue
+      @kotlin.jvm.JvmName("setTypeValue")
+        set(value) {
+        _builder.typeValue = value
+      }
+    /**
+     * ```
+     * always MULTIKEY for now
+     * ```
+     *
+     * `.meproto.did.v1.VerificationMethodType type = 3 [json_name = "type"];`
+     */
+    public fun clearType() {
+      _builder.clearType()
+    }
+
+    /**
+     * ```
+     * optional but helpful for fast routing
+     * ```
+     *
+     * `.meproto.did.v1.Algorithm alg = 4 [json_name = "alg"];`
      */
     public var alg: com.meproto.did.v1.Algorithm
       @kotlin.jvm.JvmName("getAlg")
@@ -81,14 +117,22 @@ public object VMKeyKt {
         _builder.algValue = value
       }
     /**
-     * `.meproto.did.v1.Algorithm alg = 3 [json_name = "alg"];`
+     * ```
+     * optional but helpful for fast routing
+     * ```
+     *
+     * `.meproto.did.v1.Algorithm alg = 4 [json_name = "alg"];`
      */
     public fun clearAlg() {
       _builder.clearAlg()
     }
 
     /**
-     * `bytes pk = 4 [json_name = "pk"];`
+     * ```
+     * multikey-encoded public key
+     * ```
+     *
+     * `bytes pk = 5 [json_name = "pk"];`
      */
     public var pk: com.google.protobuf.ByteString
       @kotlin.jvm.JvmName("getPk")
@@ -98,7 +142,11 @@ public object VMKeyKt {
         _builder.pk = value
       }
     /**
-     * `bytes pk = 4 [json_name = "pk"];`
+     * ```
+     * multikey-encoded public key
+     * ```
+     *
+     * `bytes pk = 5 [json_name = "pk"];`
      */
     public fun clearPk() {
       _builder.clearPk()
