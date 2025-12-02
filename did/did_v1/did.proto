@@ -6,11 +6,6 @@ package meproto.did.v1;
 //  ENUMS
 // ===========================
 
-enum KeyType {
-  KEYTYPE_UNSPECIFIED = 0;
-  MULTIKEY = 1;
-}
-
 enum Algorithm {
   ALG_UNSPECIFIED = 0;
   ED25519        = 1;   // EdDSA over Curve25519
@@ -47,9 +42,8 @@ enum DomainVerificationType {
 message VMKey {
   string id = 1;
   string controller = 2;
-  KeyType type = 3;
-  Algorithm alg = 4;
-  string pk = 5;
+  Algorithm alg = 3;
+  bytes pk = 4;
 }
 
 // ===========================
@@ -60,7 +54,7 @@ message Service {
   string id = 1;
   string type = 2;
   string version = 3;
-  bytes endpoint = 4;
+  bytes endpoint = 4; // JSON blob
 }
 
 // ===========================

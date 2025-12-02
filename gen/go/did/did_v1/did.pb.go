@@ -21,52 +21,6 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type KeyType int32
-
-const (
-	KeyType_KEYTYPE_UNSPECIFIED KeyType = 0
-	KeyType_MULTIKEY            KeyType = 1
-)
-
-// Enum value maps for KeyType.
-var (
-	KeyType_name = map[int32]string{
-		0: "KEYTYPE_UNSPECIFIED",
-		1: "MULTIKEY",
-	}
-	KeyType_value = map[string]int32{
-		"KEYTYPE_UNSPECIFIED": 0,
-		"MULTIKEY":            1,
-	}
-)
-
-func (x KeyType) Enum() *KeyType {
-	p := new(KeyType)
-	*p = x
-	return p
-}
-
-func (x KeyType) String() string {
-	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
-}
-
-func (KeyType) Descriptor() protoreflect.EnumDescriptor {
-	return file_did_did_v1_did_proto_enumTypes[0].Descriptor()
-}
-
-func (KeyType) Type() protoreflect.EnumType {
-	return &file_did_did_v1_did_proto_enumTypes[0]
-}
-
-func (x KeyType) Number() protoreflect.EnumNumber {
-	return protoreflect.EnumNumber(x)
-}
-
-// Deprecated: Use KeyType.Descriptor instead.
-func (KeyType) EnumDescriptor() ([]byte, []int) {
-	return file_did_did_v1_did_proto_rawDescGZIP(), []int{0}
-}
-
 type Algorithm int32
 
 const (
@@ -112,11 +66,11 @@ func (x Algorithm) String() string {
 }
 
 func (Algorithm) Descriptor() protoreflect.EnumDescriptor {
-	return file_did_did_v1_did_proto_enumTypes[1].Descriptor()
+	return file_did_did_v1_did_proto_enumTypes[0].Descriptor()
 }
 
 func (Algorithm) Type() protoreflect.EnumType {
-	return &file_did_did_v1_did_proto_enumTypes[1]
+	return &file_did_did_v1_did_proto_enumTypes[0]
 }
 
 func (x Algorithm) Number() protoreflect.EnumNumber {
@@ -125,7 +79,7 @@ func (x Algorithm) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use Algorithm.Descriptor instead.
 func (Algorithm) EnumDescriptor() ([]byte, []int) {
-	return file_did_did_v1_did_proto_rawDescGZIP(), []int{1}
+	return file_did_did_v1_did_proto_rawDescGZIP(), []int{0}
 }
 
 type UserVerificationMethod int32
@@ -182,11 +136,11 @@ func (x UserVerificationMethod) String() string {
 }
 
 func (UserVerificationMethod) Descriptor() protoreflect.EnumDescriptor {
-	return file_did_did_v1_did_proto_enumTypes[2].Descriptor()
+	return file_did_did_v1_did_proto_enumTypes[1].Descriptor()
 }
 
 func (UserVerificationMethod) Type() protoreflect.EnumType {
-	return &file_did_did_v1_did_proto_enumTypes[2]
+	return &file_did_did_v1_did_proto_enumTypes[1]
 }
 
 func (x UserVerificationMethod) Number() protoreflect.EnumNumber {
@@ -195,7 +149,7 @@ func (x UserVerificationMethod) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use UserVerificationMethod.Descriptor instead.
 func (UserVerificationMethod) EnumDescriptor() ([]byte, []int) {
-	return file_did_did_v1_did_proto_rawDescGZIP(), []int{2}
+	return file_did_did_v1_did_proto_rawDescGZIP(), []int{1}
 }
 
 type DomainVerificationType int32
@@ -231,11 +185,11 @@ func (x DomainVerificationType) String() string {
 }
 
 func (DomainVerificationType) Descriptor() protoreflect.EnumDescriptor {
-	return file_did_did_v1_did_proto_enumTypes[3].Descriptor()
+	return file_did_did_v1_did_proto_enumTypes[2].Descriptor()
 }
 
 func (DomainVerificationType) Type() protoreflect.EnumType {
-	return &file_did_did_v1_did_proto_enumTypes[3]
+	return &file_did_did_v1_did_proto_enumTypes[2]
 }
 
 func (x DomainVerificationType) Number() protoreflect.EnumNumber {
@@ -244,16 +198,15 @@ func (x DomainVerificationType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use DomainVerificationType.Descriptor instead.
 func (DomainVerificationType) EnumDescriptor() ([]byte, []int) {
-	return file_did_did_v1_did_proto_rawDescGZIP(), []int{3}
+	return file_did_did_v1_did_proto_rawDescGZIP(), []int{2}
 }
 
 type VMKey struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Controller    string                 `protobuf:"bytes,2,opt,name=controller,proto3" json:"controller,omitempty"`
-	Type          KeyType                `protobuf:"varint,3,opt,name=type,proto3,enum=meproto.did.v1.KeyType" json:"type,omitempty"`
-	Alg           Algorithm              `protobuf:"varint,4,opt,name=alg,proto3,enum=meproto.did.v1.Algorithm" json:"alg,omitempty"`
-	Pk            string                 `protobuf:"bytes,5,opt,name=pk,proto3" json:"pk,omitempty"`
+	Alg           Algorithm              `protobuf:"varint,3,opt,name=alg,proto3,enum=meproto.did.v1.Algorithm" json:"alg,omitempty"`
+	Pk            []byte                 `protobuf:"bytes,4,opt,name=pk,proto3" json:"pk,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -302,13 +255,6 @@ func (x *VMKey) GetController() string {
 	return ""
 }
 
-func (x *VMKey) GetType() KeyType {
-	if x != nil {
-		return x.Type
-	}
-	return KeyType_KEYTYPE_UNSPECIFIED
-}
-
 func (x *VMKey) GetAlg() Algorithm {
 	if x != nil {
 		return x.Alg
@@ -316,11 +262,11 @@ func (x *VMKey) GetAlg() Algorithm {
 	return Algorithm_ALG_UNSPECIFIED
 }
 
-func (x *VMKey) GetPk() string {
+func (x *VMKey) GetPk() []byte {
 	if x != nil {
 		return x.Pk
 	}
-	return ""
+	return nil
 }
 
 type Service struct {
@@ -328,7 +274,7 @@ type Service struct {
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Type          string                 `protobuf:"bytes,2,opt,name=type,proto3" json:"type,omitempty"`
 	Version       string                 `protobuf:"bytes,3,opt,name=version,proto3" json:"version,omitempty"`
-	Endpoint      []byte                 `protobuf:"bytes,4,opt,name=endpoint,proto3" json:"endpoint,omitempty"`
+	Endpoint      []byte                 `protobuf:"bytes,4,opt,name=endpoint,proto3" json:"endpoint,omitempty"` // JSON blob
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -904,15 +850,14 @@ var File_did_did_v1_did_proto protoreflect.FileDescriptor
 
 const file_did_did_v1_did_proto_rawDesc = "" +
 	"\n" +
-	"\x14did/did_v1/did.proto\x12\x0emeproto.did.v1\"\xa1\x01\n" +
+	"\x14did/did_v1/did.proto\x12\x0emeproto.did.v1\"t\n" +
 	"\x05VMKey\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1e\n" +
 	"\n" +
 	"controller\x18\x02 \x01(\tR\n" +
 	"controller\x12+\n" +
-	"\x04type\x18\x03 \x01(\x0e2\x17.meproto.did.v1.KeyTypeR\x04type\x12+\n" +
-	"\x03alg\x18\x04 \x01(\x0e2\x19.meproto.did.v1.AlgorithmR\x03alg\x12\x0e\n" +
-	"\x02pk\x18\x05 \x01(\tR\x02pk\"c\n" +
+	"\x03alg\x18\x03 \x01(\x0e2\x19.meproto.did.v1.AlgorithmR\x03alg\x12\x0e\n" +
+	"\x02pk\x18\x04 \x01(\fR\x02pk\"c\n" +
 	"\aService\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04type\x18\x02 \x01(\tR\x04type\x12\x18\n" +
@@ -967,10 +912,7 @@ const file_did_did_v1_did_proto_rawDesc = "" +
 	"\x06policy\x18\x14 \x01(\v2\x1c.meproto.did.v1.UpdatePolicyR\x06policy\x12-\n" +
 	"\x03att\x18\x15 \x03(\v2\x1b.meproto.did.v1.AttestationR\x03att\x12+\n" +
 	"\x05proof\x18\x16 \x01(\v2\x15.meproto.did.v1.ProofR\x05proof\x122\n" +
-	"\x02dv\x18\x17 \x03(\v2\".meproto.did.v1.DomainVerificationR\x02dv*0\n" +
-	"\aKeyType\x12\x17\n" +
-	"\x13KEYTYPE_UNSPECIFIED\x10\x00\x12\f\n" +
-	"\bMULTIKEY\x10\x01*s\n" +
+	"\x02dv\x18\x17 \x03(\v2\".meproto.did.v1.DomainVerificationR\x02dv*s\n" +
 	"\tAlgorithm\x12\x13\n" +
 	"\x0fALG_UNSPECIFIED\x10\x00\x12\v\n" +
 	"\aED25519\x10\x01\x12\n" +
@@ -1009,38 +951,36 @@ func file_did_did_v1_did_proto_rawDescGZIP() []byte {
 	return file_did_did_v1_did_proto_rawDescData
 }
 
-var file_did_did_v1_did_proto_enumTypes = make([]protoimpl.EnumInfo, 4)
+var file_did_did_v1_did_proto_enumTypes = make([]protoimpl.EnumInfo, 3)
 var file_did_did_v1_did_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
 var file_did_did_v1_did_proto_goTypes = []any{
-	(KeyType)(0),                // 0: meproto.did.v1.KeyType
-	(Algorithm)(0),              // 1: meproto.did.v1.Algorithm
-	(UserVerificationMethod)(0), // 2: meproto.did.v1.UserVerificationMethod
-	(DomainVerificationType)(0), // 3: meproto.did.v1.DomainVerificationType
-	(*VMKey)(nil),               // 4: meproto.did.v1.VMKey
-	(*Service)(nil),             // 5: meproto.did.v1.Service
-	(*Attestation)(nil),         // 6: meproto.did.v1.Attestation
-	(*Proof)(nil),               // 7: meproto.did.v1.Proof
-	(*DomainVerification)(nil),  // 8: meproto.did.v1.DomainVerification
-	(*UpdatePolicy)(nil),        // 9: meproto.did.v1.UpdatePolicy
-	(*DIDDocument)(nil),         // 10: meproto.did.v1.DIDDocument
+	(Algorithm)(0),              // 0: meproto.did.v1.Algorithm
+	(UserVerificationMethod)(0), // 1: meproto.did.v1.UserVerificationMethod
+	(DomainVerificationType)(0), // 2: meproto.did.v1.DomainVerificationType
+	(*VMKey)(nil),               // 3: meproto.did.v1.VMKey
+	(*Service)(nil),             // 4: meproto.did.v1.Service
+	(*Attestation)(nil),         // 5: meproto.did.v1.Attestation
+	(*Proof)(nil),               // 6: meproto.did.v1.Proof
+	(*DomainVerification)(nil),  // 7: meproto.did.v1.DomainVerification
+	(*UpdatePolicy)(nil),        // 8: meproto.did.v1.UpdatePolicy
+	(*DIDDocument)(nil),         // 9: meproto.did.v1.DIDDocument
 }
 var file_did_did_v1_did_proto_depIdxs = []int32{
-	0,  // 0: meproto.did.v1.VMKey.type:type_name -> meproto.did.v1.KeyType
-	1,  // 1: meproto.did.v1.VMKey.alg:type_name -> meproto.did.v1.Algorithm
-	1,  // 2: meproto.did.v1.Attestation.alg:type_name -> meproto.did.v1.Algorithm
-	3,  // 3: meproto.did.v1.DomainVerification.t:type_name -> meproto.did.v1.DomainVerificationType
-	2,  // 4: meproto.did.v1.DIDDocument.user_verification_method:type_name -> meproto.did.v1.UserVerificationMethod
-	4,  // 5: meproto.did.v1.DIDDocument.vm:type_name -> meproto.did.v1.VMKey
-	5,  // 6: meproto.did.v1.DIDDocument.svc:type_name -> meproto.did.v1.Service
-	9,  // 7: meproto.did.v1.DIDDocument.policy:type_name -> meproto.did.v1.UpdatePolicy
-	6,  // 8: meproto.did.v1.DIDDocument.att:type_name -> meproto.did.v1.Attestation
-	7,  // 9: meproto.did.v1.DIDDocument.proof:type_name -> meproto.did.v1.Proof
-	8,  // 10: meproto.did.v1.DIDDocument.dv:type_name -> meproto.did.v1.DomainVerification
-	11, // [11:11] is the sub-list for method output_type
-	11, // [11:11] is the sub-list for method input_type
-	11, // [11:11] is the sub-list for extension type_name
-	11, // [11:11] is the sub-list for extension extendee
-	0,  // [0:11] is the sub-list for field type_name
+	0,  // 0: meproto.did.v1.VMKey.alg:type_name -> meproto.did.v1.Algorithm
+	0,  // 1: meproto.did.v1.Attestation.alg:type_name -> meproto.did.v1.Algorithm
+	2,  // 2: meproto.did.v1.DomainVerification.t:type_name -> meproto.did.v1.DomainVerificationType
+	1,  // 3: meproto.did.v1.DIDDocument.user_verification_method:type_name -> meproto.did.v1.UserVerificationMethod
+	3,  // 4: meproto.did.v1.DIDDocument.vm:type_name -> meproto.did.v1.VMKey
+	4,  // 5: meproto.did.v1.DIDDocument.svc:type_name -> meproto.did.v1.Service
+	8,  // 6: meproto.did.v1.DIDDocument.policy:type_name -> meproto.did.v1.UpdatePolicy
+	5,  // 7: meproto.did.v1.DIDDocument.att:type_name -> meproto.did.v1.Attestation
+	6,  // 8: meproto.did.v1.DIDDocument.proof:type_name -> meproto.did.v1.Proof
+	7,  // 9: meproto.did.v1.DIDDocument.dv:type_name -> meproto.did.v1.DomainVerification
+	10, // [10:10] is the sub-list for method output_type
+	10, // [10:10] is the sub-list for method input_type
+	10, // [10:10] is the sub-list for extension type_name
+	10, // [10:10] is the sub-list for extension extendee
+	0,  // [0:10] is the sub-list for field type_name
 }
 
 func init() { file_did_did_v1_did_proto_init() }
@@ -1053,7 +993,7 @@ func file_did_did_v1_did_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_did_did_v1_did_proto_rawDesc), len(file_did_did_v1_did_proto_rawDesc)),
-			NumEnums:      4,
+			NumEnums:      3,
 			NumMessages:   7,
 			NumExtensions: 0,
 			NumServices:   0,

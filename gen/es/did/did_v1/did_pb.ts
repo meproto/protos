@@ -10,7 +10,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file did/did_v1/did.proto.
  */
 export const file_did_did_v1_did: GenFile = /*@__PURE__*/
-  fileDesc("ChRkaWQvZGlkX3YxL2RpZC5wcm90bxIObWVwcm90by5kaWQudjEiggEKBVZNS2V5EgoKAmlkGAEgASgJEhIKCmNvbnRyb2xsZXIYAiABKAkSJQoEdHlwZRgDIAEoDjIXLm1lcHJvdG8uZGlkLnYxLktleVR5cGUSJgoDYWxnGAQgASgOMhkubWVwcm90by5kaWQudjEuQWxnb3JpdGhtEgoKAnBrGAUgASgJIkYKB1NlcnZpY2USCgoCaWQYASABKAkSDAoEdHlwZRgCIAEoCRIPCgd2ZXJzaW9uGAMgASgJEhAKCGVuZHBvaW50GAQgASgMIk4KC0F0dGVzdGF0aW9uEiYKA2FsZxgBIAEoDjIZLm1lcHJvdG8uZGlkLnYxLkFsZ29yaXRobRIKCgJ2bRgCIAEoCRILCgNzaWcYAyABKAwicQoFUHJvb2YSCgoCaWQYASABKAkSDAoEdHlwZRgCIAEoCRITCgtjcnlwdG9zdWl0ZRgDIAEoCRIPCgdwdXJwb3NlGAQgASgJEgoKAnZtGAUgASgJEg8KB2NyZWF0ZWQYBiABKAkSCwoDandzGAcgASgJIp4BChJEb21haW5WZXJpZmljYXRpb24SMQoBdBgBIAEoDjImLm1lcHJvdG8uZGlkLnYxLkRvbWFpblZlcmlmaWNhdGlvblR5cGUSDgoGZG9tYWluGAIgASgJEg4KBm1ldGhvZBgDIAEoCRINCgVwcm9vZhgEIAEoDBIRCglwcm9vZl91cmwYBSABKAkSEwoLdmVyaWZpZWRfYXQYBiABKAkiHwoMVXBkYXRlUG9saWN5Eg8KB2FsbG93ZWQYASADKAkizQQKC0RJRERvY3VtZW50EgoKAmlkGAEgASgJEhIKCmNvbnRyb2xsZXIYAiABKAkSCwoDY3R4GAMgAygJEgwKBGFsc28YBCADKAkSEQoJYmlvbWV0cmljGAUgASgIEhAKCGhhcmR3YXJlGAYgASgIEhQKDGRldmljZV9tb2RlbBgHIAEoCRJIChh1c2VyX3ZlcmlmaWNhdGlvbl9tZXRob2QYCCABKA4yJi5tZXByb3RvLmRpZC52MS5Vc2VyVmVyaWZpY2F0aW9uTWV0aG9kEgsKA3NlcRgJIAEoBBIMCgRwcmV2GAogASgJEgwKBGNvcmUYCyABKAkSEQoJY29yZV9jYm9yGAwgASgMEhMKC2tleV9oaXN0b3J5GA0gAygJEiEKAnZtGA4gAygLMhUubWVwcm90by5kaWQudjEuVk1LZXkSDQoFYXV0aG4YDyADKAkSDgoGYXNzZXJ0GBAgAygJEgsKA2ludhgRIAMoCRIKCgJrYRgSIAMoCRIkCgNzdmMYEyADKAsyFy5tZXByb3RvLmRpZC52MS5TZXJ2aWNlEiwKBnBvbGljeRgUIAEoCzIcLm1lcHJvdG8uZGlkLnYxLlVwZGF0ZVBvbGljeRIoCgNhdHQYFSADKAsyGy5tZXByb3RvLmRpZC52MS5BdHRlc3RhdGlvbhIkCgVwcm9vZhgWIAEoCzIVLm1lcHJvdG8uZGlkLnYxLlByb29mEi4KAmR2GBcgAygLMiIubWVwcm90by5kaWQudjEuRG9tYWluVmVyaWZpY2F0aW9uKjAKB0tleVR5cGUSFwoTS0VZVFlQRV9VTlNQRUNJRklFRBAAEgwKCE1VTFRJS0VZEAEqcwoJQWxnb3JpdGhtEhMKD0FMR19VTlNQRUNJRklFRBAAEgsKB0VEMjU1MTkQARIKCgZYMjU1MTkQAhIJCgVFUzI1NhADEg0KCVNFQ1AyNTZLMRAEEg0KCU1MX0RTQV84NxAFEg8KC01MX0tFTV8xMDI0EAYqmQEKFlVzZXJWZXJpZmljYXRpb25NZXRob2QSEwoPVVZNX1VOU1BFQ0lGSUVEEAASCAoETk9ORRABEgcKA1BJThACEgwKCFBBU1NDT0RFEAMSDAoIUEFTU1dPUkQQBBIPCgtGSU5HRVJQUklOVBAFEggKBEZBQ0UQBhIICgRJUklTEAcSCQoFVk9JQ0UQCBILCgdQQVRURVJOEAkqUAoWRG9tYWluVmVyaWZpY2F0aW9uVHlwZRITCg9EVlRfVU5TUEVDSUZJRUQQABILCgdETlNfVFhUEAESFAoQSFRUUFNfV0VMTF9LTk9XThACQqsBChJjb20ubWVwcm90by5kaWQudjFCCERpZFByb3RvUAFaMWdpdGh1Yi5jb20vbWVwcm90by9wcm90b3MvZ2VuL2dvL2RpZC9kaWRfdjE7ZGlkdjGiAgNNRFiqAg5NZXByb3RvLkRpZC5WMcoCDk1lcHJvdG9cRGlkXFYx4gIaTWVwcm90b1xEaWRcVjFcR1BCTWV0YWRhdGHqAhBNZXByb3RvOjpEaWQ6OlYxYgZwcm90bzM");
+  fileDesc("ChRkaWQvZGlkX3YxL2RpZC5wcm90bxIObWVwcm90by5kaWQudjEiWwoFVk1LZXkSCgoCaWQYASABKAkSEgoKY29udHJvbGxlchgCIAEoCRImCgNhbGcYAyABKA4yGS5tZXByb3RvLmRpZC52MS5BbGdvcml0aG0SCgoCcGsYBCABKAwiRgoHU2VydmljZRIKCgJpZBgBIAEoCRIMCgR0eXBlGAIgASgJEg8KB3ZlcnNpb24YAyABKAkSEAoIZW5kcG9pbnQYBCABKAwiTgoLQXR0ZXN0YXRpb24SJgoDYWxnGAEgASgOMhkubWVwcm90by5kaWQudjEuQWxnb3JpdGhtEgoKAnZtGAIgASgJEgsKA3NpZxgDIAEoDCJxCgVQcm9vZhIKCgJpZBgBIAEoCRIMCgR0eXBlGAIgASgJEhMKC2NyeXB0b3N1aXRlGAMgASgJEg8KB3B1cnBvc2UYBCABKAkSCgoCdm0YBSABKAkSDwoHY3JlYXRlZBgGIAEoCRILCgNqd3MYByABKAkingEKEkRvbWFpblZlcmlmaWNhdGlvbhIxCgF0GAEgASgOMiYubWVwcm90by5kaWQudjEuRG9tYWluVmVyaWZpY2F0aW9uVHlwZRIOCgZkb21haW4YAiABKAkSDgoGbWV0aG9kGAMgASgJEg0KBXByb29mGAQgASgMEhEKCXByb29mX3VybBgFIAEoCRITCgt2ZXJpZmllZF9hdBgGIAEoCSIfCgxVcGRhdGVQb2xpY3kSDwoHYWxsb3dlZBgBIAMoCSLNBAoLRElERG9jdW1lbnQSCgoCaWQYASABKAkSEgoKY29udHJvbGxlchgCIAEoCRILCgNjdHgYAyADKAkSDAoEYWxzbxgEIAMoCRIRCgliaW9tZXRyaWMYBSABKAgSEAoIaGFyZHdhcmUYBiABKAgSFAoMZGV2aWNlX21vZGVsGAcgASgJEkgKGHVzZXJfdmVyaWZpY2F0aW9uX21ldGhvZBgIIAEoDjImLm1lcHJvdG8uZGlkLnYxLlVzZXJWZXJpZmljYXRpb25NZXRob2QSCwoDc2VxGAkgASgEEgwKBHByZXYYCiABKAkSDAoEY29yZRgLIAEoCRIRCgljb3JlX2Nib3IYDCABKAwSEwoLa2V5X2hpc3RvcnkYDSADKAkSIQoCdm0YDiADKAsyFS5tZXByb3RvLmRpZC52MS5WTUtleRINCgVhdXRobhgPIAMoCRIOCgZhc3NlcnQYECADKAkSCwoDaW52GBEgAygJEgoKAmthGBIgAygJEiQKA3N2YxgTIAMoCzIXLm1lcHJvdG8uZGlkLnYxLlNlcnZpY2USLAoGcG9saWN5GBQgASgLMhwubWVwcm90by5kaWQudjEuVXBkYXRlUG9saWN5EigKA2F0dBgVIAMoCzIbLm1lcHJvdG8uZGlkLnYxLkF0dGVzdGF0aW9uEiQKBXByb29mGBYgASgLMhUubWVwcm90by5kaWQudjEuUHJvb2YSLgoCZHYYFyADKAsyIi5tZXByb3RvLmRpZC52MS5Eb21haW5WZXJpZmljYXRpb24qcwoJQWxnb3JpdGhtEhMKD0FMR19VTlNQRUNJRklFRBAAEgsKB0VEMjU1MTkQARIKCgZYMjU1MTkQAhIJCgVFUzI1NhADEg0KCVNFQ1AyNTZLMRAEEg0KCU1MX0RTQV84NxAFEg8KC01MX0tFTV8xMDI0EAYqmQEKFlVzZXJWZXJpZmljYXRpb25NZXRob2QSEwoPVVZNX1VOU1BFQ0lGSUVEEAASCAoETk9ORRABEgcKA1BJThACEgwKCFBBU1NDT0RFEAMSDAoIUEFTU1dPUkQQBBIPCgtGSU5HRVJQUklOVBAFEggKBEZBQ0UQBhIICgRJUklTEAcSCQoFVk9JQ0UQCBILCgdQQVRURVJOEAkqUAoWRG9tYWluVmVyaWZpY2F0aW9uVHlwZRITCg9EVlRfVU5TUEVDSUZJRUQQABILCgdETlNfVFhUEAESFAoQSFRUUFNfV0VMTF9LTk9XThACQqsBChJjb20ubWVwcm90by5kaWQudjFCCERpZFByb3RvUAFaMWdpdGh1Yi5jb20vbWVwcm90by9wcm90b3MvZ2VuL2dvL2RpZC9kaWRfdjE7ZGlkdjGiAgNNRFiqAg5NZXByb3RvLkRpZC5WMcoCDk1lcHJvdG9cRGlkXFYx4gIaTWVwcm90b1xEaWRcVjFcR1BCTWV0YWRhdGHqAhBNZXByb3RvOjpEaWQ6OlYxYgZwcm90bzM");
 
 /**
  * @generated from message meproto.did.v1.VMKey
@@ -27,19 +27,14 @@ export type VMKey = Message<"meproto.did.v1.VMKey"> & {
   controller: string;
 
   /**
-   * @generated from field: meproto.did.v1.KeyType type = 3;
-   */
-  type: KeyType;
-
-  /**
-   * @generated from field: meproto.did.v1.Algorithm alg = 4;
+   * @generated from field: meproto.did.v1.Algorithm alg = 3;
    */
   alg: Algorithm;
 
   /**
-   * @generated from field: string pk = 5;
+   * @generated from field: bytes pk = 4;
    */
-  pk: string;
+  pk: Uint8Array;
 };
 
 /**
@@ -69,6 +64,8 @@ export type Service = Message<"meproto.did.v1.Service"> & {
   version: string;
 
   /**
+   * JSON blob
+   *
    * @generated from field: bytes endpoint = 4;
    */
   endpoint: Uint8Array;
@@ -360,27 +357,6 @@ export const DIDDocumentSchema: GenMessage<DIDDocument> = /*@__PURE__*/
   messageDesc(file_did_did_v1_did, 6);
 
 /**
- * @generated from enum meproto.did.v1.KeyType
- */
-export enum KeyType {
-  /**
-   * @generated from enum value: KEYTYPE_UNSPECIFIED = 0;
-   */
-  KEYTYPE_UNSPECIFIED = 0,
-
-  /**
-   * @generated from enum value: MULTIKEY = 1;
-   */
-  MULTIKEY = 1,
-}
-
-/**
- * Describes the enum meproto.did.v1.KeyType.
- */
-export const KeyTypeSchema: GenEnum<KeyType> = /*@__PURE__*/
-  enumDesc(file_did_did_v1_did, 0);
-
-/**
  * @generated from enum meproto.did.v1.Algorithm
  */
 export enum Algorithm {
@@ -436,7 +412,7 @@ export enum Algorithm {
  * Describes the enum meproto.did.v1.Algorithm.
  */
 export const AlgorithmSchema: GenEnum<Algorithm> = /*@__PURE__*/
-  enumDesc(file_did_did_v1_did, 1);
+  enumDesc(file_did_did_v1_did, 0);
 
 /**
  * @generated from enum meproto.did.v1.UserVerificationMethod
@@ -497,7 +473,7 @@ export enum UserVerificationMethod {
  * Describes the enum meproto.did.v1.UserVerificationMethod.
  */
 export const UserVerificationMethodSchema: GenEnum<UserVerificationMethod> = /*@__PURE__*/
-  enumDesc(file_did_did_v1_did, 2);
+  enumDesc(file_did_did_v1_did, 1);
 
 /**
  * @generated from enum meproto.did.v1.DomainVerificationType
@@ -523,5 +499,5 @@ export enum DomainVerificationType {
  * Describes the enum meproto.did.v1.DomainVerificationType.
  */
 export const DomainVerificationTypeSchema: GenEnum<DomainVerificationType> = /*@__PURE__*/
-  enumDesc(file_did_did_v1_did, 3);
+  enumDesc(file_did_did_v1_did, 2);
 

@@ -64,31 +64,7 @@ public object VMKeyKt {
     }
 
     /**
-     * `.meproto.did.v1.KeyType type = 3 [json_name = "type"];`
-     */
-    public var type: com.meproto.did.v1.KeyType
-      @kotlin.jvm.JvmName("getType")
-        get() = _builder.type
-      @kotlin.jvm.JvmName("setType")
-        set(value) {
-        _builder.type = value
-      }
-    public var typeValue: kotlin.Int
-      @kotlin.jvm.JvmName("getTypeValue")
-        get() = _builder.typeValue
-      @kotlin.jvm.JvmName("setTypeValue")
-        set(value) {
-        _builder.typeValue = value
-      }
-    /**
-     * `.meproto.did.v1.KeyType type = 3 [json_name = "type"];`
-     */
-    public fun clearType() {
-      _builder.clearType()
-    }
-
-    /**
-     * `.meproto.did.v1.Algorithm alg = 4 [json_name = "alg"];`
+     * `.meproto.did.v1.Algorithm alg = 3 [json_name = "alg"];`
      */
     public var alg: com.meproto.did.v1.Algorithm
       @kotlin.jvm.JvmName("getAlg")
@@ -105,16 +81,16 @@ public object VMKeyKt {
         _builder.algValue = value
       }
     /**
-     * `.meproto.did.v1.Algorithm alg = 4 [json_name = "alg"];`
+     * `.meproto.did.v1.Algorithm alg = 3 [json_name = "alg"];`
      */
     public fun clearAlg() {
       _builder.clearAlg()
     }
 
     /**
-     * `string pk = 5 [json_name = "pk"];`
+     * `bytes pk = 4 [json_name = "pk"];`
      */
-    public var pk: kotlin.String
+    public var pk: com.google.protobuf.ByteString
       @kotlin.jvm.JvmName("getPk")
         get() = _builder.pk
       @kotlin.jvm.JvmName("setPk")
@@ -122,7 +98,7 @@ public object VMKeyKt {
         _builder.pk = value
       }
     /**
-     * `string pk = 5 [json_name = "pk"];`
+     * `bytes pk = 4 [json_name = "pk"];`
      */
     public fun clearPk() {
       _builder.clearPk()

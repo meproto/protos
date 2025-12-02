@@ -81,6 +81,10 @@ public object ServiceKt {
     }
 
     /**
+     * ```
+     * JSON blob
+     * ```
+     *
      * `bytes endpoint = 4 [json_name = "endpoint"];`
      */
     public var endpoint: com.google.protobuf.ByteString
@@ -91,6 +95,10 @@ public object ServiceKt {
         _builder.endpoint = value
       }
     /**
+     * ```
+     * JSON blob
+     * ```
+     *
      * `bytes endpoint = 4 [json_name = "endpoint"];`
      */
     public fun clearEndpoint() {

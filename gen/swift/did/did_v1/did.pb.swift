@@ -21,40 +21,6 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-public enum Meproto_Did_V1_KeyType: SwiftProtobuf.Enum, Swift.CaseIterable {
-  public typealias RawValue = Int
-  case unspecified // = 0
-  case multikey // = 1
-  case UNRECOGNIZED(Int)
-
-  public init() {
-    self = .unspecified
-  }
-
-  public init?(rawValue: Int) {
-    switch rawValue {
-    case 0: self = .unspecified
-    case 1: self = .multikey
-    default: self = .UNRECOGNIZED(rawValue)
-    }
-  }
-
-  public var rawValue: Int {
-    switch self {
-    case .unspecified: return 0
-    case .multikey: return 1
-    case .UNRECOGNIZED(let i): return i
-    }
-  }
-
-  // The compiler won't synthesize support with the UNRECOGNIZED case.
-  public static let allCases: [Meproto_Did_V1_KeyType] = [
-    .unspecified,
-    .multikey,
-  ]
-
-}
-
 public enum Meproto_Did_V1_Algorithm: SwiftProtobuf.Enum, Swift.CaseIterable {
   public typealias RawValue = Int
   case algUnspecified // = 0
@@ -234,11 +200,9 @@ public struct Meproto_Did_V1_VMKey: Sendable {
 
   public var controller: String = String()
 
-  public var type: Meproto_Did_V1_KeyType = .unspecified
-
   public var alg: Meproto_Did_V1_Algorithm = .algUnspecified
 
-  public var pk: String = String()
+  public var pk: Data = Data()
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -256,6 +220,7 @@ public struct Meproto_Did_V1_Service: Sendable {
 
   public var version: String = String()
 
+  /// JSON blob
   public var endpoint: Data = Data()
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -485,10 +450,6 @@ public struct Meproto_Did_V1_DIDDocument: @unchecked Sendable {
 
 fileprivate let _protobuf_package = "meproto.did.v1"
 
-extension Meproto_Did_V1_KeyType: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0KEYTYPE_UNSPECIFIED\0\u{1}MULTIKEY\0")
-}
-
 extension Meproto_Did_V1_Algorithm: SwiftProtobuf._ProtoNameProviding {
   public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0ALG_UNSPECIFIED\0\u{1}ED25519\0\u{1}X25519\0\u{1}ES256\0\u{1}SECP256K1\0\u{1}ML_DSA_87\0\u{1}ML_KEM_1024\0")
 }
@@ -503,7 +464,7 @@ extension Meproto_Did_V1_DomainVerificationType: SwiftProtobuf._ProtoNameProvidi
 
 extension Meproto_Did_V1_VMKey: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".VMKey"
-  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}id\0\u{1}controller\0\u{1}type\0\u{1}alg\0\u{1}pk\0")
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}id\0\u{1}controller\0\u{1}alg\0\u{1}pk\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -513,9 +474,8 @@ extension Meproto_Did_V1_VMKey: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularStringField(value: &self.id) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.controller) }()
-      case 3: try { try decoder.decodeSingularEnumField(value: &self.type) }()
-      case 4: try { try decoder.decodeSingularEnumField(value: &self.alg) }()
-      case 5: try { try decoder.decodeSingularStringField(value: &self.pk) }()
+      case 3: try { try decoder.decodeSingularEnumField(value: &self.alg) }()
+      case 4: try { try decoder.decodeSingularBytesField(value: &self.pk) }()
       default: break
       }
     }
@@ -528,14 +488,11 @@ extension Meproto_Did_V1_VMKey: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     if !self.controller.isEmpty {
       try visitor.visitSingularStringField(value: self.controller, fieldNumber: 2)
     }
-    if self.type != .unspecified {
-      try visitor.visitSingularEnumField(value: self.type, fieldNumber: 3)
-    }
     if self.alg != .algUnspecified {
-      try visitor.visitSingularEnumField(value: self.alg, fieldNumber: 4)
+      try visitor.visitSingularEnumField(value: self.alg, fieldNumber: 3)
     }
     if !self.pk.isEmpty {
-      try visitor.visitSingularStringField(value: self.pk, fieldNumber: 5)
+      try visitor.visitSingularBytesField(value: self.pk, fieldNumber: 4)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -543,7 +500,6 @@ extension Meproto_Did_V1_VMKey: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
   public static func ==(lhs: Meproto_Did_V1_VMKey, rhs: Meproto_Did_V1_VMKey) -> Bool {
     if lhs.id != rhs.id {return false}
     if lhs.controller != rhs.controller {return false}
-    if lhs.type != rhs.type {return false}
     if lhs.alg != rhs.alg {return false}
     if lhs.pk != rhs.pk {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
