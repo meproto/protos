@@ -88,54 +88,37 @@ public object DomainVerificationKt {
     }
 
     /**
-     * `bytes proof = 4 [json_name = "proof"];`
+     * `bytes binding = 4 [json_name = "binding"];`
      */
-    public var proof: com.google.protobuf.ByteString
-      @kotlin.jvm.JvmName("getProof")
-        get() = _builder.proof
-      @kotlin.jvm.JvmName("setProof")
+    public var binding: com.google.protobuf.ByteString
+      @kotlin.jvm.JvmName("getBinding")
+        get() = _builder.binding
+      @kotlin.jvm.JvmName("setBinding")
         set(value) {
-        _builder.proof = value
+        _builder.binding = value
       }
     /**
-     * `bytes proof = 4 [json_name = "proof"];`
+     * `bytes binding = 4 [json_name = "binding"];`
      */
-    public fun clearProof() {
-      _builder.clearProof()
+    public fun clearBinding() {
+      _builder.clearBinding()
     }
 
     /**
-     * `string proof_url = 5 [json_name = "proofUrl"];`
+     * `string binding_url = 5 [json_name = "bindingUrl"];`
      */
-    public var proofUrl: kotlin.String
-      @kotlin.jvm.JvmName("getProofUrl")
-        get() = _builder.proofUrl
-      @kotlin.jvm.JvmName("setProofUrl")
+    public var bindingUrl: kotlin.String
+      @kotlin.jvm.JvmName("getBindingUrl")
+        get() = _builder.bindingUrl
+      @kotlin.jvm.JvmName("setBindingUrl")
         set(value) {
-        _builder.proofUrl = value
+        _builder.bindingUrl = value
       }
     /**
-     * `string proof_url = 5 [json_name = "proofUrl"];`
+     * `string binding_url = 5 [json_name = "bindingUrl"];`
      */
-    public fun clearProofUrl() {
-      _builder.clearProofUrl()
-    }
-
-    /**
-     * `string verified_at = 6 [json_name = "verifiedAt"];`
-     */
-    public var verifiedAt: kotlin.String
-      @kotlin.jvm.JvmName("getVerifiedAt")
-        get() = _builder.verifiedAt
-      @kotlin.jvm.JvmName("setVerifiedAt")
-        set(value) {
-        _builder.verifiedAt = value
-      }
-    /**
-     * `string verified_at = 6 [json_name = "verifiedAt"];`
-     */
-    public fun clearVerifiedAt() {
-      _builder.clearVerifiedAt()
+    public fun clearBindingUrl() {
+      _builder.clearBindingUrl()
     }
   }
 }

@@ -279,11 +279,9 @@ public struct Meproto_Did_V1_DomainVerification: Sendable {
 
   public var method: String = String()
 
-  public var proof: Data = Data()
+  public var binding: Data = Data()
 
-  public var proofURL: String = String()
-
-  public var verifiedAt: String = String()
+  public var bindingURL: String = String()
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -654,7 +652,7 @@ extension Meproto_Did_V1_Proof: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
 
 extension Meproto_Did_V1_DomainVerification: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".DomainVerification"
-  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}t\0\u{1}domain\0\u{1}method\0\u{1}proof\0\u{3}proof_url\0\u{3}verified_at\0")
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}t\0\u{1}domain\0\u{1}method\0\u{1}binding\0\u{3}binding_url\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -665,9 +663,8 @@ extension Meproto_Did_V1_DomainVerification: SwiftProtobuf.Message, SwiftProtobu
       case 1: try { try decoder.decodeSingularEnumField(value: &self.t) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.domain) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self.method) }()
-      case 4: try { try decoder.decodeSingularBytesField(value: &self.proof) }()
-      case 5: try { try decoder.decodeSingularStringField(value: &self.proofURL) }()
-      case 6: try { try decoder.decodeSingularStringField(value: &self.verifiedAt) }()
+      case 4: try { try decoder.decodeSingularBytesField(value: &self.binding) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.bindingURL) }()
       default: break
       }
     }
@@ -683,14 +680,11 @@ extension Meproto_Did_V1_DomainVerification: SwiftProtobuf.Message, SwiftProtobu
     if !self.method.isEmpty {
       try visitor.visitSingularStringField(value: self.method, fieldNumber: 3)
     }
-    if !self.proof.isEmpty {
-      try visitor.visitSingularBytesField(value: self.proof, fieldNumber: 4)
+    if !self.binding.isEmpty {
+      try visitor.visitSingularBytesField(value: self.binding, fieldNumber: 4)
     }
-    if !self.proofURL.isEmpty {
-      try visitor.visitSingularStringField(value: self.proofURL, fieldNumber: 5)
-    }
-    if !self.verifiedAt.isEmpty {
-      try visitor.visitSingularStringField(value: self.verifiedAt, fieldNumber: 6)
+    if !self.bindingURL.isEmpty {
+      try visitor.visitSingularStringField(value: self.bindingURL, fieldNumber: 5)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -699,9 +693,8 @@ extension Meproto_Did_V1_DomainVerification: SwiftProtobuf.Message, SwiftProtobu
     if lhs.t != rhs.t {return false}
     if lhs.domain != rhs.domain {return false}
     if lhs.method != rhs.method {return false}
-    if lhs.proof != rhs.proof {return false}
-    if lhs.proofURL != rhs.proofURL {return false}
-    if lhs.verifiedAt != rhs.verifiedAt {return false}
+    if lhs.binding != rhs.binding {return false}
+    if lhs.bindingURL != rhs.bindingURL {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

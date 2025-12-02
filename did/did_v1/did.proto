@@ -89,9 +89,8 @@ message DomainVerification {
   DomainVerificationType t = 1;
   string domain = 2;
   string method = 3;
-  bytes proof = 4;
-  string proof_url = 5;
-  string verified_at = 6;
+  bytes binding = 4;
+  string binding_url = 5;
 }
 
 // ===========================

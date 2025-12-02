@@ -494,9 +494,8 @@ type DomainVerification struct {
 	T             DomainVerificationType `protobuf:"varint,1,opt,name=t,proto3,enum=meproto.did.v1.DomainVerificationType" json:"t,omitempty"`
 	Domain        string                 `protobuf:"bytes,2,opt,name=domain,proto3" json:"domain,omitempty"`
 	Method        string                 `protobuf:"bytes,3,opt,name=method,proto3" json:"method,omitempty"`
-	Proof         []byte                 `protobuf:"bytes,4,opt,name=proof,proto3" json:"proof,omitempty"`
-	ProofUrl      string                 `protobuf:"bytes,5,opt,name=proof_url,json=proofUrl,proto3" json:"proof_url,omitempty"`
-	VerifiedAt    string                 `protobuf:"bytes,6,opt,name=verified_at,json=verifiedAt,proto3" json:"verified_at,omitempty"`
+	Binding       []byte                 `protobuf:"bytes,4,opt,name=binding,proto3" json:"binding,omitempty"`
+	BindingUrl    string                 `protobuf:"bytes,5,opt,name=binding_url,json=bindingUrl,proto3" json:"binding_url,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -552,23 +551,16 @@ func (x *DomainVerification) GetMethod() string {
 	return ""
 }
 
-func (x *DomainVerification) GetProof() []byte {
+func (x *DomainVerification) GetBinding() []byte {
 	if x != nil {
-		return x.Proof
+		return x.Binding
 	}
 	return nil
 }
 
-func (x *DomainVerification) GetProofUrl() string {
+func (x *DomainVerification) GetBindingUrl() string {
 	if x != nil {
-		return x.ProofUrl
-	}
-	return ""
-}
-
-func (x *DomainVerification) GetVerifiedAt() string {
-	if x != nil {
-		return x.VerifiedAt
+		return x.BindingUrl
 	}
 	return ""
 }
@@ -874,15 +866,14 @@ const file_did_did_v1_did_proto_rawDesc = "" +
 	"\apurpose\x18\x04 \x01(\tR\apurpose\x12\x0e\n" +
 	"\x02vm\x18\x05 \x01(\tR\x02vm\x12\x18\n" +
 	"\acreated\x18\x06 \x01(\tR\acreated\x12\x10\n" +
-	"\x03jws\x18\a \x01(\tR\x03jws\"\xce\x01\n" +
+	"\x03jws\x18\a \x01(\tR\x03jws\"\xb5\x01\n" +
 	"\x12DomainVerification\x124\n" +
 	"\x01t\x18\x01 \x01(\x0e2&.meproto.did.v1.DomainVerificationTypeR\x01t\x12\x16\n" +
 	"\x06domain\x18\x02 \x01(\tR\x06domain\x12\x16\n" +
-	"\x06method\x18\x03 \x01(\tR\x06method\x12\x14\n" +
-	"\x05proof\x18\x04 \x01(\fR\x05proof\x12\x1b\n" +
-	"\tproof_url\x18\x05 \x01(\tR\bproofUrl\x12\x1f\n" +
-	"\vverified_at\x18\x06 \x01(\tR\n" +
-	"verifiedAt\"(\n" +
+	"\x06method\x18\x03 \x01(\tR\x06method\x12\x18\n" +
+	"\abinding\x18\x04 \x01(\fR\abinding\x12\x1f\n" +
+	"\vbinding_url\x18\x05 \x01(\tR\n" +
+	"bindingUrl\"(\n" +
 	"\fUpdatePolicy\x12\x18\n" +
 	"\aallowed\x18\x01 \x03(\tR\aallowed\"\x82\x06\n" +
 	"\vDIDDocument\x12\x0e\n" +
