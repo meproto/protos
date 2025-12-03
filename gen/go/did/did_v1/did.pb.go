@@ -696,7 +696,7 @@ func (x *DNSBinding) GetTxtValue() string {
 type WellKnownBinding struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Uri           string                 `protobuf:"bytes,1,opt,name=uri,proto3" json:"uri,omitempty"` // default: "/.well-known/did-configuration.json"
-	Content       []byte                 `protobuf:"bytes,2,opt,name=content,proto3" json:"content,omitempty"`
+	Content       string                 `protobuf:"bytes,2,opt,name=content,proto3" json:"content,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -738,11 +738,11 @@ func (x *WellKnownBinding) GetUri() string {
 	return ""
 }
 
-func (x *WellKnownBinding) GetContent() []byte {
+func (x *WellKnownBinding) GetContent() string {
 	if x != nil {
 		return x.Content
 	}
-	return nil
+	return ""
 }
 
 type UpdatePolicy struct {
@@ -1061,7 +1061,7 @@ const file_did_did_v1_did_proto_rawDesc = "" +
 	"\ttxt_value\x18\x02 \x01(\tR\btxtValue\">\n" +
 	"\x10WellKnownBinding\x12\x10\n" +
 	"\x03uri\x18\x01 \x01(\tR\x03uri\x12\x18\n" +
-	"\acontent\x18\x02 \x01(\fR\acontent\"(\n" +
+	"\acontent\x18\x02 \x01(\tR\acontent\"(\n" +
 	"\fUpdatePolicy\x12\x18\n" +
 	"\aallowed\x18\x01 \x03(\tR\aallowed\"\xcd\x06\n" +
 	"\vDIDDocument\x12\x0e\n" +

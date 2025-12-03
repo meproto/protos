@@ -108,7 +108,7 @@ message DNSBinding {
 
 message WellKnownBinding {
   string uri = 1; // default: "/.well-known/did-configuration.json"
-  bytes content = 2;
+  string content = 2;
 }
 
 // ===========================

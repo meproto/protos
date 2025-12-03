@@ -55,9 +55,9 @@ public object WellKnownBindingKt {
     }
 
     /**
-     * `bytes content = 2 [json_name = "content"];`
+     * `string content = 2 [json_name = "content"];`
      */
-    public var content: com.google.protobuf.ByteString
+    public var content: kotlin.String
       @kotlin.jvm.JvmName("getContent")
         get() = _builder.content
       @kotlin.jvm.JvmName("setContent")
@@ -65,7 +65,7 @@ public object WellKnownBindingKt {
         _builder.content = value
       }
     /**
-     * `bytes content = 2 [json_name = "content"];`
+     * `string content = 2 [json_name = "content"];`
      */
     public fun clearContent() {
       _builder.clearContent()

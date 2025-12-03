@@ -369,7 +369,7 @@ public struct Meproto_Did_V1_WellKnownBinding: Sendable {
   /// default: "/.well-known/did-configuration.json"
   public var uri: String = String()
 
-  public var content: Data = Data()
+  public var content: String = String()
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -870,7 +870,7 @@ extension Meproto_Did_V1_WellKnownBinding: SwiftProtobuf.Message, SwiftProtobuf.
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularStringField(value: &self.uri) }()
-      case 2: try { try decoder.decodeSingularBytesField(value: &self.content) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.content) }()
       default: break
       }
     }
@@ -881,7 +881,7 @@ extension Meproto_Did_V1_WellKnownBinding: SwiftProtobuf.Message, SwiftProtobuf.
       try visitor.visitSingularStringField(value: self.uri, fieldNumber: 1)
     }
     if !self.content.isEmpty {
-      try visitor.visitSingularBytesField(value: self.content, fieldNumber: 2)
+      try visitor.visitSingularStringField(value: self.content, fieldNumber: 2)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
