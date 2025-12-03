@@ -8,12 +8,12 @@ package meproto.did.v1;
 
 enum Algorithm {
   ALG_UNSPECIFIED = 0;
-  ED25519        = 1;   // EdDSA over Curve25519
-  X25519         = 2;   // X25519 key agreement (was missing before)
-  ES256          = 3;   // P-256 / secp256r1
-  SECP256K1      = 4;   // Bitcoin/Ethereum curve
-  ML_DSA_87      = 5;   // Dilithium-level signature
-  ML_KEM_1024    = 6;   // Kyber KEM 1024
+  ED25519        = 1;   // EdDSA / signature
+  X25519         = 2;   // ECDH / key agreement
+  ES256          = 3;   // P-256 / secp256r1 / DI proofs + ZK
+  SECP256K1      = 4;   // Wallet keys (BTC/ETH)
+  ML_DSA_87      = 5;   // PQ signature
+  ML_KEM_1024    = 6;   // PQ key agreement (Kyber)
 }
 
 enum UserVerificationMethod {
@@ -41,15 +41,15 @@ enum DomainVerificationMethod {
 }
 
 // ===========================
-//  CORE KEY
+//  VERIFICATION METHOD KEY
 // ===========================
 
 message VMKey {
-  string id = 1;
-  string controller = 2;
-  VerificationMethodType type = 3;  // always MULTIKEY for now
-  Algorithm alg = 4;      // optional but helpful for fast routing
-  bytes pk = 5;           // multikey-encoded public key
+  string id = 1;                            // e.g., "#ed25519"
+  string controller = 2;                    // always DID subject for did:me
+  VerificationMethodType type = 3;          // MULTIKEY
+  Algorithm alg = 4;                        // e.g., ED25519, ML_DSA_87, etc.
+  bytes pk = 5;                             // multikey-encoded public key (raw)
 }
 
 // ===========================
@@ -64,27 +64,27 @@ message Service {
 }
 
 // ===========================
-//  ATTESTATION
+//  ATTESTATION (core update signatures)
 // ===========================
 
 message Attestation {
-  Algorithm alg = 1;
-  string verification_method = 2;
-  bytes sig = 3;
+  Algorithm alg = 1;               // ED25519 or ML_DSA_87
+  string verification_method = 2;  // reference to VMKey.id
+  bytes sig = 3;                   // signature over canonical core CBOR
 }
 
 // ===========================
-//  PROOF
+//  DATA INTEGRITY PROOF (P-256)
 // ===========================
 
 message Proof {
   string id = 1;
   string type = 2;
-  string cryptosuite = 3;
-  string purpose = 4;
-  string vm = 5;
-  string created = 6;
-  string jws = 7;
+  string cryptosuite = 3;   // e.g., "es256-jws-cid-2025"
+  string purpose = 4;       // assertionMethod
+  string vm = 5;            // VMKey.id reference
+  string created = 6;       // ISO8601 timestamp
+  string jws = 7;           // compact JWS
 }
 
 // ===========================
@@ -102,12 +102,12 @@ message DomainVerification {
 }
 
 message DNSBinding {
-  string record_name = 1;   // default: "_did"
+  string record_name = 1;   // default: "_didme"
   string txt_value = 2;     // TXT record value
 }
 
 message WellKnownBinding {
-  string uri = 1; // default: "/.well-known/did-configuration.json"
+  string uri = 1; // default: "/.well-known/didme"
   string content = 2;
 }
 
@@ -116,7 +116,8 @@ message WellKnownBinding {
 // ===========================
 
 message UpdatePolicy {
-  repeated string allowed = 1;
+  repeated string allowed = 1;         // VM ids that MAY sign updates (OR list)
+  repeated Algorithm required_alg = 2; // Algorithms that MUST be present (AND list)
 }
 
 // ===========================
@@ -139,17 +140,17 @@ message DIDDocument {
   UserVerificationMethod user_verification_method = 8;
 
   // Core state
-  uint64 seq = 9;
-  string prev = 10;
-  string core = 11;
-  bytes core_cbor = 12;
+  uint64 seq = 9;               // sequence
+  string prev = 10;             // prior CID or empty
+  string core = 11;             // currentCore CID
+  bytes core_cbor = 12;         // canonical core object
   repeated string key_history = 13;
 
   // Verification relationships
-  repeated VMKey vm = 14;
+  repeated VMKey vm = 14;           // full VM set
   repeated string authentication = 15;
   repeated string assertion = 16;
-  repeated string invocation = 17;
+  repeated string invocation = 17;  // capabilityInvocation
   repeated string key_agreement = 18;
 
   // Services

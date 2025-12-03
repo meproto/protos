@@ -25,22 +25,22 @@ public enum Meproto_Did_V1_Algorithm: SwiftProtobuf.Enum, Swift.CaseIterable {
   public typealias RawValue = Int
   case algUnspecified // = 0
 
-  /// EdDSA over Curve25519
+  /// EdDSA / signature
   case ed25519 // = 1
 
-  /// X25519 key agreement (was missing before)
+  /// ECDH / key agreement
   case x25519 // = 2
 
-  /// P-256 / secp256r1
+  /// P-256 / secp256r1 / DI proofs + ZK
   case es256 // = 3
 
-  /// Bitcoin/Ethereum curve
+  /// Wallet keys (BTC/ETH)
   case secp256K1 // = 4
 
-  /// Dilithium-level signature
+  /// PQ signature
   case mlDsa87 // = 5
 
-  /// Kyber KEM 1024
+  /// PQ key agreement (Kyber)
   case mlKem1024 // = 6
   case UNRECOGNIZED(Int)
 
@@ -230,17 +230,19 @@ public struct Meproto_Did_V1_VMKey: Sendable {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
+  /// e.g., "#ed25519"
   public var id: String = String()
 
+  /// always DID subject for did:me
   public var controller: String = String()
 
-  /// always MULTIKEY for now
+  /// MULTIKEY
   public var type: Meproto_Did_V1_VerificationMethodType = .vmtUnspecified
 
-  /// optional but helpful for fast routing
+  /// e.g., ED25519, ML_DSA_87, etc.
   public var alg: Meproto_Did_V1_Algorithm = .algUnspecified
 
-  /// multikey-encoded public key
+  /// multikey-encoded public key (raw)
   public var pk: Data = Data()
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -272,10 +274,13 @@ public struct Meproto_Did_V1_Attestation: Sendable {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
+  /// ED25519 or ML_DSA_87
   public var alg: Meproto_Did_V1_Algorithm = .algUnspecified
 
+  /// reference to VMKey.id
   public var verificationMethod: String = String()
 
+  /// signature over canonical core CBOR
   public var sig: Data = Data()
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -292,14 +297,19 @@ public struct Meproto_Did_V1_Proof: Sendable {
 
   public var type: String = String()
 
+  /// e.g., "es256-jws-cid-2025"
   public var cryptosuite: String = String()
 
+  /// assertionMethod
   public var purpose: String = String()
 
+  /// VMKey.id reference
   public var vm: String = String()
 
+  /// ISO8601 timestamp
   public var created: String = String()
 
+  /// compact JWS
   public var jws: String = String()
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -350,7 +360,7 @@ public struct Meproto_Did_V1_DNSBinding: Sendable {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  /// default: "_did"
+  /// default: "_didme"
   public var recordName: String = String()
 
   /// TXT record value
@@ -366,7 +376,7 @@ public struct Meproto_Did_V1_WellKnownBinding: Sendable {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  /// default: "/.well-known/did-configuration.json"
+  /// default: "/.well-known/didme"
   public var uri: String = String()
 
   public var content: String = String()
@@ -381,7 +391,11 @@ public struct Meproto_Did_V1_UpdatePolicy: Sendable {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
+  /// VM ids that MAY sign updates (OR list)
   public var allowed: [String] = []
+
+  /// Algorithms that MUST be present (AND list)
+  public var requiredAlg: [Meproto_Did_V1_Algorithm] = []
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -442,16 +456,19 @@ public struct Meproto_Did_V1_DIDDocument: @unchecked Sendable {
     set {_uniqueStorage()._seq = newValue}
   }
 
+  /// prior CID or empty
   public var prev: String {
     get {return _storage._prev}
     set {_uniqueStorage()._prev = newValue}
   }
 
+  /// currentCore CID
   public var core: String {
     get {return _storage._core}
     set {_uniqueStorage()._core = newValue}
   }
 
+  /// canonical core object
   public var coreCbor: Data {
     get {return _storage._coreCbor}
     set {_uniqueStorage()._coreCbor = newValue}
@@ -478,6 +495,7 @@ public struct Meproto_Did_V1_DIDDocument: @unchecked Sendable {
     set {_uniqueStorage()._assertion = newValue}
   }
 
+  /// capabilityInvocation
   public var invocation: [String] {
     get {return _storage._invocation}
     set {_uniqueStorage()._invocation = newValue}
@@ -896,7 +914,7 @@ extension Meproto_Did_V1_WellKnownBinding: SwiftProtobuf.Message, SwiftProtobuf.
 
 extension Meproto_Did_V1_UpdatePolicy: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".UpdatePolicy"
-  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}allowed\0")
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}allowed\0\u{3}required_alg\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -905,6 +923,7 @@ extension Meproto_Did_V1_UpdatePolicy: SwiftProtobuf.Message, SwiftProtobuf._Mes
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeRepeatedStringField(value: &self.allowed) }()
+      case 2: try { try decoder.decodeRepeatedEnumField(value: &self.requiredAlg) }()
       default: break
       }
     }
@@ -914,11 +933,15 @@ extension Meproto_Did_V1_UpdatePolicy: SwiftProtobuf.Message, SwiftProtobuf._Mes
     if !self.allowed.isEmpty {
       try visitor.visitRepeatedStringField(value: self.allowed, fieldNumber: 1)
     }
+    if !self.requiredAlg.isEmpty {
+      try visitor.visitPackedEnumField(value: self.requiredAlg, fieldNumber: 2)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: Meproto_Did_V1_UpdatePolicy, rhs: Meproto_Did_V1_UpdatePolicy) -> Bool {
     if lhs.allowed != rhs.allowed {return false}
+    if lhs.requiredAlg != rhs.requiredAlg {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

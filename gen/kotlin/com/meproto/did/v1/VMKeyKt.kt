@@ -30,6 +30,10 @@ public object VMKeyKt {
     internal fun _build(): com.meproto.did.v1.VMKey = _builder.build()
 
     /**
+     * ```
+     * e.g., "#ed25519"
+     * ```
+     *
      * `string id = 1 [json_name = "id"];`
      */
     public var id: kotlin.String
@@ -40,6 +44,10 @@ public object VMKeyKt {
         _builder.id = value
       }
     /**
+     * ```
+     * e.g., "#ed25519"
+     * ```
+     *
      * `string id = 1 [json_name = "id"];`
      */
     public fun clearId() {
@@ -47,6 +55,10 @@ public object VMKeyKt {
     }
 
     /**
+     * ```
+     * always DID subject for did:me
+     * ```
+     *
      * `string controller = 2 [json_name = "controller"];`
      */
     public var controller: kotlin.String
@@ -57,6 +69,10 @@ public object VMKeyKt {
         _builder.controller = value
       }
     /**
+     * ```
+     * always DID subject for did:me
+     * ```
+     *
      * `string controller = 2 [json_name = "controller"];`
      */
     public fun clearController() {
@@ -65,7 +81,7 @@ public object VMKeyKt {
 
     /**
      * ```
-     * always MULTIKEY for now
+     * MULTIKEY
      * ```
      *
      * `.meproto.did.v1.VerificationMethodType type = 3 [json_name = "type"];`
@@ -86,7 +102,7 @@ public object VMKeyKt {
       }
     /**
      * ```
-     * always MULTIKEY for now
+     * MULTIKEY
      * ```
      *
      * `.meproto.did.v1.VerificationMethodType type = 3 [json_name = "type"];`
@@ -97,7 +113,7 @@ public object VMKeyKt {
 
     /**
      * ```
-     * optional but helpful for fast routing
+     * e.g., ED25519, ML_DSA_87, etc.
      * ```
      *
      * `.meproto.did.v1.Algorithm alg = 4 [json_name = "alg"];`
@@ -118,7 +134,7 @@ public object VMKeyKt {
       }
     /**
      * ```
-     * optional but helpful for fast routing
+     * e.g., ED25519, ML_DSA_87, etc.
      * ```
      *
      * `.meproto.did.v1.Algorithm alg = 4 [json_name = "alg"];`
@@ -129,7 +145,7 @@ public object VMKeyKt {
 
     /**
      * ```
-     * multikey-encoded public key
+     * multikey-encoded public key (raw)
      * ```
      *
      * `bytes pk = 5 [json_name = "pk"];`
@@ -143,7 +159,7 @@ public object VMKeyKt {
       }
     /**
      * ```
-     * multikey-encoded public key
+     * multikey-encoded public key (raw)
      * ```
      *
      * `bytes pk = 5 [json_name = "pk"];`

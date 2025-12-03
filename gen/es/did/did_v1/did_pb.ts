@@ -10,38 +10,42 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file did/did_v1/did.proto.
  */
 export const file_did_did_v1_did: GenFile = /*@__PURE__*/
-  fileDesc("ChRkaWQvZGlkX3YxL2RpZC5wcm90bxIObWVwcm90by5kaWQudjEikQEKBVZNS2V5EgoKAmlkGAEgASgJEhIKCmNvbnRyb2xsZXIYAiABKAkSNAoEdHlwZRgDIAEoDjImLm1lcHJvdG8uZGlkLnYxLlZlcmlmaWNhdGlvbk1ldGhvZFR5cGUSJgoDYWxnGAQgASgOMhkubWVwcm90by5kaWQudjEuQWxnb3JpdGhtEgoKAnBrGAUgASgMIkoKB1NlcnZpY2USCgoCaWQYASABKAkSDAoEdHlwZRgCIAEoCRIPCgd2ZXJzaW9uGAMgASgJEhQKDHNlcnZpY2VfZGF0YRgEIAEoDCJfCgtBdHRlc3RhdGlvbhImCgNhbGcYASABKA4yGS5tZXByb3RvLmRpZC52MS5BbGdvcml0aG0SGwoTdmVyaWZpY2F0aW9uX21ldGhvZBgCIAEoCRILCgNzaWcYAyABKAwicQoFUHJvb2YSCgoCaWQYASABKAkSDAoEdHlwZRgCIAEoCRITCgtjcnlwdG9zdWl0ZRgDIAEoCRIPCgdwdXJwb3NlGAQgASgJEgoKAnZtGAUgASgJEg8KB2NyZWF0ZWQYBiABKAkSCwoDandzGAcgASgJIssBChJEb21haW5WZXJpZmljYXRpb24SOAoGbWV0aG9kGAEgASgOMigubWVwcm90by5kaWQudjEuRG9tYWluVmVyaWZpY2F0aW9uTWV0aG9kEg4KBmRvbWFpbhgCIAEoCRIpCgNkbnMYAyABKAsyGi5tZXByb3RvLmRpZC52MS5ETlNCaW5kaW5nSAASNQoJd2VsbGtub3duGAQgASgLMiAubWVwcm90by5kaWQudjEuV2VsbEtub3duQmluZGluZ0gAQgkKB2JpbmRpbmciNAoKRE5TQmluZGluZxITCgtyZWNvcmRfbmFtZRgBIAEoCRIRCgl0eHRfdmFsdWUYAiABKAkiMAoQV2VsbEtub3duQmluZGluZxILCgN1cmkYASABKAkSDwoHY29udGVudBgCIAEoCSIfCgxVcGRhdGVQb2xpY3kSDwoHYWxsb3dlZBgBIAMoCSL0BAoLRElERG9jdW1lbnQSCgoCaWQYASABKAkSEgoKY29udHJvbGxlchgCIAEoCRILCgNjdHgYAyADKAkSFQoNYWxzb19rbm93bl9hcxgEIAMoCRIRCgliaW9tZXRyaWMYBSABKAgSEAoIaGFyZHdhcmUYBiABKAgSFAoMZGV2aWNlX21vZGVsGAcgASgJEkgKGHVzZXJfdmVyaWZpY2F0aW9uX21ldGhvZBgIIAEoDjImLm1lcHJvdG8uZGlkLnYxLlVzZXJWZXJpZmljYXRpb25NZXRob2QSCwoDc2VxGAkgASgEEgwKBHByZXYYCiABKAkSDAoEY29yZRgLIAEoCRIRCgljb3JlX2Nib3IYDCABKAwSEwoLa2V5X2hpc3RvcnkYDSADKAkSIQoCdm0YDiADKAsyFS5tZXByb3RvLmRpZC52MS5WTUtleRIWCg5hdXRoZW50aWNhdGlvbhgPIAMoCRIRCglhc3NlcnRpb24YECADKAkSEgoKaW52b2NhdGlvbhgRIAMoCRIVCg1rZXlfYWdyZWVtZW50GBIgAygJEiQKA3N2YxgTIAMoCzIXLm1lcHJvdG8uZGlkLnYxLlNlcnZpY2USLAoGcG9saWN5GBQgASgLMhwubWVwcm90by5kaWQudjEuVXBkYXRlUG9saWN5EigKA2F0dBgVIAMoCzIbLm1lcHJvdG8uZGlkLnYxLkF0dGVzdGF0aW9uEiQKBXByb29mGBYgASgLMhUubWVwcm90by5kaWQudjEuUHJvb2YSLgoCZHYYFyADKAsyIi5tZXByb3RvLmRpZC52MS5Eb21haW5WZXJpZmljYXRpb24qcwoJQWxnb3JpdGhtEhMKD0FMR19VTlNQRUNJRklFRBAAEgsKB0VEMjU1MTkQARIKCgZYMjU1MTkQAhIJCgVFUzI1NhADEg0KCVNFQ1AyNTZLMRAEEg0KCU1MX0RTQV84NxAFEg8KC01MX0tFTV8xMDI0EAYqmQEKFlVzZXJWZXJpZmljYXRpb25NZXRob2QSEwoPVVZNX1VOU1BFQ0lGSUVEEAASCAoETk9ORRABEgcKA1BJThACEgwKCFBBU1NDT0RFEAMSDAoIUEFTU1dPUkQQBBIPCgtGSU5HRVJQUklOVBAFEggKBEZBQ0UQBhIICgRJUklTEAcSCQoFVk9JQ0UQCBILCgdQQVRURVJOEAkqOwoWVmVyaWZpY2F0aW9uTWV0aG9kVHlwZRITCg9WTVRfVU5TUEVDSUZJRUQQABIMCghNVUxUSUtFWRABKlIKGERvbWFpblZlcmlmaWNhdGlvbk1ldGhvZBITCg9EVk1fVU5TUEVDSUZJRUQQABILCgdETlNfVFhUEAESFAoQSFRUUFNfV0VMTF9LTk9XThACQqsBChJjb20ubWVwcm90by5kaWQudjFCCERpZFByb3RvUAFaMWdpdGh1Yi5jb20vbWVwcm90by9wcm90b3MvZ2VuL2dvL2RpZC9kaWRfdjE7ZGlkdjGiAgNNRFiqAg5NZXByb3RvLkRpZC5WMcoCDk1lcHJvdG9cRGlkXFYx4gIaTWVwcm90b1xEaWRcVjFcR1BCTWV0YWRhdGHqAhBNZXByb3RvOjpEaWQ6OlYxYgZwcm90bzM");
+  fileDesc("ChRkaWQvZGlkX3YxL2RpZC5wcm90bxIObWVwcm90by5kaWQudjEikQEKBVZNS2V5EgoKAmlkGAEgASgJEhIKCmNvbnRyb2xsZXIYAiABKAkSNAoEdHlwZRgDIAEoDjImLm1lcHJvdG8uZGlkLnYxLlZlcmlmaWNhdGlvbk1ldGhvZFR5cGUSJgoDYWxnGAQgASgOMhkubWVwcm90by5kaWQudjEuQWxnb3JpdGhtEgoKAnBrGAUgASgMIkoKB1NlcnZpY2USCgoCaWQYASABKAkSDAoEdHlwZRgCIAEoCRIPCgd2ZXJzaW9uGAMgASgJEhQKDHNlcnZpY2VfZGF0YRgEIAEoDCJfCgtBdHRlc3RhdGlvbhImCgNhbGcYASABKA4yGS5tZXByb3RvLmRpZC52MS5BbGdvcml0aG0SGwoTdmVyaWZpY2F0aW9uX21ldGhvZBgCIAEoCRILCgNzaWcYAyABKAwicQoFUHJvb2YSCgoCaWQYASABKAkSDAoEdHlwZRgCIAEoCRITCgtjcnlwdG9zdWl0ZRgDIAEoCRIPCgdwdXJwb3NlGAQgASgJEgoKAnZtGAUgASgJEg8KB2NyZWF0ZWQYBiABKAkSCwoDandzGAcgASgJIssBChJEb21haW5WZXJpZmljYXRpb24SOAoGbWV0aG9kGAEgASgOMigubWVwcm90by5kaWQudjEuRG9tYWluVmVyaWZpY2F0aW9uTWV0aG9kEg4KBmRvbWFpbhgCIAEoCRIpCgNkbnMYAyABKAsyGi5tZXByb3RvLmRpZC52MS5ETlNCaW5kaW5nSAASNQoJd2VsbGtub3duGAQgASgLMiAubWVwcm90by5kaWQudjEuV2VsbEtub3duQmluZGluZ0gAQgkKB2JpbmRpbmciNAoKRE5TQmluZGluZxITCgtyZWNvcmRfbmFtZRgBIAEoCRIRCgl0eHRfdmFsdWUYAiABKAkiMAoQV2VsbEtub3duQmluZGluZxILCgN1cmkYASABKAkSDwoHY29udGVudBgCIAEoCSJQCgxVcGRhdGVQb2xpY3kSDwoHYWxsb3dlZBgBIAMoCRIvCgxyZXF1aXJlZF9hbGcYAiADKA4yGS5tZXByb3RvLmRpZC52MS5BbGdvcml0aG0i9AQKC0RJRERvY3VtZW50EgoKAmlkGAEgASgJEhIKCmNvbnRyb2xsZXIYAiABKAkSCwoDY3R4GAMgAygJEhUKDWFsc29fa25vd25fYXMYBCADKAkSEQoJYmlvbWV0cmljGAUgASgIEhAKCGhhcmR3YXJlGAYgASgIEhQKDGRldmljZV9tb2RlbBgHIAEoCRJIChh1c2VyX3ZlcmlmaWNhdGlvbl9tZXRob2QYCCABKA4yJi5tZXByb3RvLmRpZC52MS5Vc2VyVmVyaWZpY2F0aW9uTWV0aG9kEgsKA3NlcRgJIAEoBBIMCgRwcmV2GAogASgJEgwKBGNvcmUYCyABKAkSEQoJY29yZV9jYm9yGAwgASgMEhMKC2tleV9oaXN0b3J5GA0gAygJEiEKAnZtGA4gAygLMhUubWVwcm90by5kaWQudjEuVk1LZXkSFgoOYXV0aGVudGljYXRpb24YDyADKAkSEQoJYXNzZXJ0aW9uGBAgAygJEhIKCmludm9jYXRpb24YESADKAkSFQoNa2V5X2FncmVlbWVudBgSIAMoCRIkCgNzdmMYEyADKAsyFy5tZXByb3RvLmRpZC52MS5TZXJ2aWNlEiwKBnBvbGljeRgUIAEoCzIcLm1lcHJvdG8uZGlkLnYxLlVwZGF0ZVBvbGljeRIoCgNhdHQYFSADKAsyGy5tZXByb3RvLmRpZC52MS5BdHRlc3RhdGlvbhIkCgVwcm9vZhgWIAEoCzIVLm1lcHJvdG8uZGlkLnYxLlByb29mEi4KAmR2GBcgAygLMiIubWVwcm90by5kaWQudjEuRG9tYWluVmVyaWZpY2F0aW9uKnMKCUFsZ29yaXRobRITCg9BTEdfVU5TUEVDSUZJRUQQABILCgdFRDI1NTE5EAESCgoGWDI1NTE5EAISCQoFRVMyNTYQAxINCglTRUNQMjU2SzEQBBINCglNTF9EU0FfODcQBRIPCgtNTF9LRU1fMTAyNBAGKpkBChZVc2VyVmVyaWZpY2F0aW9uTWV0aG9kEhMKD1VWTV9VTlNQRUNJRklFRBAAEggKBE5PTkUQARIHCgNQSU4QAhIMCghQQVNTQ09ERRADEgwKCFBBU1NXT1JEEAQSDwoLRklOR0VSUFJJTlQQBRIICgRGQUNFEAYSCAoESVJJUxAHEgkKBVZPSUNFEAgSCwoHUEFUVEVSThAJKjsKFlZlcmlmaWNhdGlvbk1ldGhvZFR5cGUSEwoPVk1UX1VOU1BFQ0lGSUVEEAASDAoITVVMVElLRVkQASpSChhEb21haW5WZXJpZmljYXRpb25NZXRob2QSEwoPRFZNX1VOU1BFQ0lGSUVEEAASCwoHRE5TX1RYVBABEhQKEEhUVFBTX1dFTExfS05PV04QAkKrAQoSY29tLm1lcHJvdG8uZGlkLnYxQghEaWRQcm90b1ABWjFnaXRodWIuY29tL21lcHJvdG8vcHJvdG9zL2dlbi9nby9kaWQvZGlkX3YxO2RpZHYxogIDTURYqgIOTWVwcm90by5EaWQuVjHKAg5NZXByb3RvXERpZFxWMeICGk1lcHJvdG9cRGlkXFYxXEdQQk1ldGFkYXRh6gIQTWVwcm90bzo6RGlkOjpWMWIGcHJvdG8z");
 
 /**
  * @generated from message meproto.did.v1.VMKey
  */
 export type VMKey = Message<"meproto.did.v1.VMKey"> & {
   /**
+   * e.g., "#ed25519"
+   *
    * @generated from field: string id = 1;
    */
   id: string;
 
   /**
+   * always DID subject for did:me
+   *
    * @generated from field: string controller = 2;
    */
   controller: string;
 
   /**
-   * always MULTIKEY for now
+   * MULTIKEY
    *
    * @generated from field: meproto.did.v1.VerificationMethodType type = 3;
    */
   type: VerificationMethodType;
 
   /**
-   * optional but helpful for fast routing
+   * e.g., ED25519, ML_DSA_87, etc.
    *
    * @generated from field: meproto.did.v1.Algorithm alg = 4;
    */
   alg: Algorithm;
 
   /**
-   * multikey-encoded public key
+   * multikey-encoded public key (raw)
    *
    * @generated from field: bytes pk = 5;
    */
@@ -94,16 +98,22 @@ export const ServiceSchema: GenMessage<Service> = /*@__PURE__*/
  */
 export type Attestation = Message<"meproto.did.v1.Attestation"> & {
   /**
+   * ED25519 or ML_DSA_87
+   *
    * @generated from field: meproto.did.v1.Algorithm alg = 1;
    */
   alg: Algorithm;
 
   /**
+   * reference to VMKey.id
+   *
    * @generated from field: string verification_method = 2;
    */
   verificationMethod: string;
 
   /**
+   * signature over canonical core CBOR
+   *
    * @generated from field: bytes sig = 3;
    */
   sig: Uint8Array;
@@ -131,26 +141,36 @@ export type Proof = Message<"meproto.did.v1.Proof"> & {
   type: string;
 
   /**
+   * e.g., "es256-jws-cid-2025"
+   *
    * @generated from field: string cryptosuite = 3;
    */
   cryptosuite: string;
 
   /**
+   * assertionMethod
+   *
    * @generated from field: string purpose = 4;
    */
   purpose: string;
 
   /**
+   * VMKey.id reference
+   *
    * @generated from field: string vm = 5;
    */
   vm: string;
 
   /**
+   * ISO8601 timestamp
+   *
    * @generated from field: string created = 6;
    */
   created: string;
 
   /**
+   * compact JWS
+   *
    * @generated from field: string jws = 7;
    */
   jws: string;
@@ -207,7 +227,7 @@ export const DomainVerificationSchema: GenMessage<DomainVerification> = /*@__PUR
  */
 export type DNSBinding = Message<"meproto.did.v1.DNSBinding"> & {
   /**
-   * default: "_did"
+   * default: "_didme"
    *
    * @generated from field: string record_name = 1;
    */
@@ -233,7 +253,7 @@ export const DNSBindingSchema: GenMessage<DNSBinding> = /*@__PURE__*/
  */
 export type WellKnownBinding = Message<"meproto.did.v1.WellKnownBinding"> & {
   /**
-   * default: "/.well-known/did-configuration.json"
+   * default: "/.well-known/didme"
    *
    * @generated from field: string uri = 1;
    */
@@ -257,9 +277,18 @@ export const WellKnownBindingSchema: GenMessage<WellKnownBinding> = /*@__PURE__*
  */
 export type UpdatePolicy = Message<"meproto.did.v1.UpdatePolicy"> & {
   /**
+   * VM ids that MAY sign updates (OR list)
+   *
    * @generated from field: repeated string allowed = 1;
    */
   allowed: string[];
+
+  /**
+   * Algorithms that MUST be present (AND list)
+   *
+   * @generated from field: repeated meproto.did.v1.Algorithm required_alg = 2;
+   */
+  requiredAlg: Algorithm[];
 };
 
 /**
@@ -322,21 +351,29 @@ export type DIDDocument = Message<"meproto.did.v1.DIDDocument"> & {
   /**
    * Core state
    *
+   * sequence
+   *
    * @generated from field: uint64 seq = 9;
    */
   seq: bigint;
 
   /**
+   * prior CID or empty
+   *
    * @generated from field: string prev = 10;
    */
   prev: string;
 
   /**
+   * currentCore CID
+   *
    * @generated from field: string core = 11;
    */
   core: string;
 
   /**
+   * canonical core object
+   *
    * @generated from field: bytes core_cbor = 12;
    */
   coreCbor: Uint8Array;
@@ -348,6 +385,8 @@ export type DIDDocument = Message<"meproto.did.v1.DIDDocument"> & {
 
   /**
    * Verification relationships
+   *
+   * full VM set
    *
    * @generated from field: repeated meproto.did.v1.VMKey vm = 14;
    */
@@ -364,6 +403,8 @@ export type DIDDocument = Message<"meproto.did.v1.DIDDocument"> & {
   assertion: string[];
 
   /**
+   * capabilityInvocation
+   *
    * @generated from field: repeated string invocation = 17;
    */
   invocation: string[];
@@ -424,42 +465,42 @@ export enum Algorithm {
   ALG_UNSPECIFIED = 0,
 
   /**
-   * EdDSA over Curve25519
+   * EdDSA / signature
    *
    * @generated from enum value: ED25519 = 1;
    */
   ED25519 = 1,
 
   /**
-   * X25519 key agreement (was missing before)
+   * ECDH / key agreement
    *
    * @generated from enum value: X25519 = 2;
    */
   X25519 = 2,
 
   /**
-   * P-256 / secp256r1
+   * P-256 / secp256r1 / DI proofs + ZK
    *
    * @generated from enum value: ES256 = 3;
    */
   ES256 = 3,
 
   /**
-   * Bitcoin/Ethereum curve
+   * Wallet keys (BTC/ETH)
    *
    * @generated from enum value: SECP256K1 = 4;
    */
   SECP256K1 = 4,
 
   /**
-   * Dilithium-level signature
+   * PQ signature
    *
    * @generated from enum value: ML_DSA_87 = 5;
    */
   ML_DSA_87 = 5,
 
   /**
-   * Kyber KEM 1024
+   * PQ key agreement (Kyber)
    *
    * @generated from enum value: ML_KEM_1024 = 6;
    */

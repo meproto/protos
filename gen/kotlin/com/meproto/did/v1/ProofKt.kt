@@ -64,6 +64,10 @@ public object ProofKt {
     }
 
     /**
+     * ```
+     * e.g., "es256-jws-cid-2025"
+     * ```
+     *
      * `string cryptosuite = 3 [json_name = "cryptosuite"];`
      */
     public var cryptosuite: kotlin.String
@@ -74,6 +78,10 @@ public object ProofKt {
         _builder.cryptosuite = value
       }
     /**
+     * ```
+     * e.g., "es256-jws-cid-2025"
+     * ```
+     *
      * `string cryptosuite = 3 [json_name = "cryptosuite"];`
      */
     public fun clearCryptosuite() {
@@ -81,6 +89,10 @@ public object ProofKt {
     }
 
     /**
+     * ```
+     * assertionMethod
+     * ```
+     *
      * `string purpose = 4 [json_name = "purpose"];`
      */
     public var purpose: kotlin.String
@@ -91,6 +103,10 @@ public object ProofKt {
         _builder.purpose = value
       }
     /**
+     * ```
+     * assertionMethod
+     * ```
+     *
      * `string purpose = 4 [json_name = "purpose"];`
      */
     public fun clearPurpose() {
@@ -98,6 +114,10 @@ public object ProofKt {
     }
 
     /**
+     * ```
+     * VMKey.id reference
+     * ```
+     *
      * `string vm = 5 [json_name = "vm"];`
      */
     public var vm: kotlin.String
@@ -108,6 +128,10 @@ public object ProofKt {
         _builder.vm = value
       }
     /**
+     * ```
+     * VMKey.id reference
+     * ```
+     *
      * `string vm = 5 [json_name = "vm"];`
      */
     public fun clearVm() {
@@ -115,6 +139,10 @@ public object ProofKt {
     }
 
     /**
+     * ```
+     * ISO8601 timestamp
+     * ```
+     *
      * `string created = 6 [json_name = "created"];`
      */
     public var created: kotlin.String
@@ -125,6 +153,10 @@ public object ProofKt {
         _builder.created = value
       }
     /**
+     * ```
+     * ISO8601 timestamp
+     * ```
+     *
      * `string created = 6 [json_name = "created"];`
      */
     public fun clearCreated() {
@@ -132,6 +164,10 @@ public object ProofKt {
     }
 
     /**
+     * ```
+     * compact JWS
+     * ```
+     *
      * `string jws = 7 [json_name = "jws"];`
      */
     public var jws: kotlin.String
@@ -142,6 +178,10 @@ public object ProofKt {
         _builder.jws = value
       }
     /**
+     * ```
+     * compact JWS
+     * ```
+     *
      * `string jws = 7 [json_name = "jws"];`
      */
     public fun clearJws() {

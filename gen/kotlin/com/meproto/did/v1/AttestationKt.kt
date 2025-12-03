@@ -30,6 +30,10 @@ public object AttestationKt {
     internal fun _build(): com.meproto.did.v1.Attestation = _builder.build()
 
     /**
+     * ```
+     * ED25519 or ML_DSA_87
+     * ```
+     *
      * `.meproto.did.v1.Algorithm alg = 1 [json_name = "alg"];`
      */
     public var alg: com.meproto.did.v1.Algorithm
@@ -47,6 +51,10 @@ public object AttestationKt {
         _builder.algValue = value
       }
     /**
+     * ```
+     * ED25519 or ML_DSA_87
+     * ```
+     *
      * `.meproto.did.v1.Algorithm alg = 1 [json_name = "alg"];`
      */
     public fun clearAlg() {
@@ -54,6 +62,10 @@ public object AttestationKt {
     }
 
     /**
+     * ```
+     * reference to VMKey.id
+     * ```
+     *
      * `string verification_method = 2 [json_name = "verificationMethod"];`
      */
     public var verificationMethod: kotlin.String
@@ -64,6 +76,10 @@ public object AttestationKt {
         _builder.verificationMethod = value
       }
     /**
+     * ```
+     * reference to VMKey.id
+     * ```
+     *
      * `string verification_method = 2 [json_name = "verificationMethod"];`
      */
     public fun clearVerificationMethod() {
@@ -71,6 +87,10 @@ public object AttestationKt {
     }
 
     /**
+     * ```
+     * signature over canonical core CBOR
+     * ```
+     *
      * `bytes sig = 3 [json_name = "sig"];`
      */
     public var sig: com.google.protobuf.ByteString
@@ -81,6 +101,10 @@ public object AttestationKt {
         _builder.sig = value
       }
     /**
+     * ```
+     * signature over canonical core CBOR
+     * ```
+     *
      * `bytes sig = 3 [json_name = "sig"];`
      */
     public fun clearSig() {

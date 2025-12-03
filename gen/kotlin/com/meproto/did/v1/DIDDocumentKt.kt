@@ -368,6 +368,10 @@ public object DIDDocumentKt {
     }
 
     /**
+     * ```
+     * prior CID or empty
+     * ```
+     *
      * `string prev = 10 [json_name = "prev"];`
      */
     public var prev: kotlin.String
@@ -378,6 +382,10 @@ public object DIDDocumentKt {
         _builder.prev = value
       }
     /**
+     * ```
+     * prior CID or empty
+     * ```
+     *
      * `string prev = 10 [json_name = "prev"];`
      */
     public fun clearPrev() {
@@ -385,6 +393,10 @@ public object DIDDocumentKt {
     }
 
     /**
+     * ```
+     * currentCore CID
+     * ```
+     *
      * `string core = 11 [json_name = "core"];`
      */
     public var core: kotlin.String
@@ -395,6 +407,10 @@ public object DIDDocumentKt {
         _builder.core = value
       }
     /**
+     * ```
+     * currentCore CID
+     * ```
+     *
      * `string core = 11 [json_name = "core"];`
      */
     public fun clearCore() {
@@ -402,6 +418,10 @@ public object DIDDocumentKt {
     }
 
     /**
+     * ```
+     * canonical core object
+     * ```
+     *
      * `bytes core_cbor = 12 [json_name = "coreCbor"];`
      */
     public var coreCbor: com.google.protobuf.ByteString
@@ -412,6 +432,10 @@ public object DIDDocumentKt {
         _builder.coreCbor = value
       }
     /**
+     * ```
+     * canonical core object
+     * ```
+     *
      * `bytes core_cbor = 12 [json_name = "coreCbor"];`
      */
     public fun clearCoreCbor() {
@@ -734,6 +758,10 @@ public object DIDDocumentKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class InvocationProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
+     * ```
+     * capabilityInvocation
+     * ```
+     *
      * `repeated string invocation = 17 [json_name = "invocation"];`
      * @return A list containing the invocation.
      */
@@ -743,6 +771,10 @@ public object DIDDocumentKt {
         _builder.invocationList
       )
     /**
+     * ```
+     * capabilityInvocation
+     * ```
+     *
      * `repeated string invocation = 17 [json_name = "invocation"];`
      * @param value The invocation to add.
      */
@@ -752,6 +784,10 @@ public object DIDDocumentKt {
       _builder.addInvocation(value)
     }
     /**
+     * ```
+     * capabilityInvocation
+     * ```
+     *
      * `repeated string invocation = 17 [json_name = "invocation"];`
      * @param value The invocation to add.
      */
@@ -762,6 +798,10 @@ public object DIDDocumentKt {
       add(value)
     }
     /**
+     * ```
+     * capabilityInvocation
+     * ```
+     *
      * `repeated string invocation = 17 [json_name = "invocation"];`
      * @param values The invocation to add.
      */
@@ -771,6 +811,10 @@ public object DIDDocumentKt {
       _builder.addAllInvocation(values)
     }
     /**
+     * ```
+     * capabilityInvocation
+     * ```
+     *
      * `repeated string invocation = 17 [json_name = "invocation"];`
      * @param values The invocation to add.
      */
@@ -781,6 +825,10 @@ public object DIDDocumentKt {
       addAll(values)
     }
     /**
+     * ```
+     * capabilityInvocation
+     * ```
+     *
      * `repeated string invocation = 17 [json_name = "invocation"];`
      * @param index The index to set the value at.
      * @param value The invocation to set.
@@ -790,6 +838,10 @@ public object DIDDocumentKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, InvocationProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setInvocation(index, value)
     }/**
+     * ```
+     * capabilityInvocation
+     * ```
+     *
      * `repeated string invocation = 17 [json_name = "invocation"];`
      */
     @kotlin.jvm.JvmSynthetic

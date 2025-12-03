@@ -31,7 +31,7 @@ public object WellKnownBindingKt {
 
     /**
      * ```
-     * default: "/.well-known/did-configuration.json"
+     * default: "/.well-known/didme"
      * ```
      *
      * `string uri = 1 [json_name = "uri"];`
@@ -45,7 +45,7 @@ public object WellKnownBindingKt {
       }
     /**
      * ```
-     * default: "/.well-known/did-configuration.json"
+     * default: "/.well-known/didme"
      * ```
      *
      * `string uri = 1 [json_name = "uri"];`

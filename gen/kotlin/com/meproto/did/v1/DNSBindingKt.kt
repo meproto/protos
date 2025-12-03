@@ -31,7 +31,7 @@ public object DNSBindingKt {
 
     /**
      * ```
-     * default: "_did"
+     * default: "_didme"
      * ```
      *
      * `string record_name = 1 [json_name = "recordName"];`
@@ -45,7 +45,7 @@ public object DNSBindingKt {
       }
     /**
      * ```
-     * default: "_did"
+     * default: "_didme"
      * ```
      *
      * `string record_name = 1 [json_name = "recordName"];`

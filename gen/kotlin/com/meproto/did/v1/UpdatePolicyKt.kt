@@ -36,6 +36,10 @@ public object UpdatePolicyKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class AllowedProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
+     * ```
+     * VM ids that MAY sign updates (OR list)
+     * ```
+     *
      * `repeated string allowed = 1 [json_name = "allowed"];`
      * @return A list containing the allowed.
      */
@@ -45,6 +49,10 @@ public object UpdatePolicyKt {
         _builder.allowedList
       )
     /**
+     * ```
+     * VM ids that MAY sign updates (OR list)
+     * ```
+     *
      * `repeated string allowed = 1 [json_name = "allowed"];`
      * @param value The allowed to add.
      */
@@ -54,6 +62,10 @@ public object UpdatePolicyKt {
       _builder.addAllowed(value)
     }
     /**
+     * ```
+     * VM ids that MAY sign updates (OR list)
+     * ```
+     *
      * `repeated string allowed = 1 [json_name = "allowed"];`
      * @param value The allowed to add.
      */
@@ -64,6 +76,10 @@ public object UpdatePolicyKt {
       add(value)
     }
     /**
+     * ```
+     * VM ids that MAY sign updates (OR list)
+     * ```
+     *
      * `repeated string allowed = 1 [json_name = "allowed"];`
      * @param values The allowed to add.
      */
@@ -73,6 +89,10 @@ public object UpdatePolicyKt {
       _builder.addAllAllowed(values)
     }
     /**
+     * ```
+     * VM ids that MAY sign updates (OR list)
+     * ```
+     *
      * `repeated string allowed = 1 [json_name = "allowed"];`
      * @param values The allowed to add.
      */
@@ -83,6 +103,10 @@ public object UpdatePolicyKt {
       addAll(values)
     }
     /**
+     * ```
+     * VM ids that MAY sign updates (OR list)
+     * ```
+     *
      * `repeated string allowed = 1 [json_name = "allowed"];`
      * @param index The index to set the value at.
      * @param value The allowed to set.
@@ -92,12 +116,109 @@ public object UpdatePolicyKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, AllowedProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setAllowed(index, value)
     }/**
+     * ```
+     * VM ids that MAY sign updates (OR list)
+     * ```
+     *
      * `repeated string allowed = 1 [json_name = "allowed"];`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setAllowed")
     public fun com.google.protobuf.kotlin.DslList<kotlin.String, AllowedProxy>.clear() {
       _builder.clearAllowed()
+    }
+    /**
+     * An uninstantiable, behaviorless type to represent the field in
+     * generics.
+     */
+    @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
+    public class RequiredAlgProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
+    /**
+     * ```
+     * Algorithms that MUST be present (AND list)
+     * ```
+     *
+     * `repeated .meproto.did.v1.Algorithm required_alg = 2 [json_name = "requiredAlg"];`
+     */
+     public val requiredAlg: com.google.protobuf.kotlin.DslList<com.meproto.did.v1.Algorithm, RequiredAlgProxy>
+      @kotlin.jvm.JvmSynthetic
+  get() = com.google.protobuf.kotlin.DslList(
+        _builder.requiredAlgList
+      )
+    /**
+     * ```
+     * Algorithms that MUST be present (AND list)
+     * ```
+     *
+     * `repeated .meproto.did.v1.Algorithm required_alg = 2 [json_name = "requiredAlg"];`
+     * @param value The requiredAlg to add.
+     */
+    @kotlin.jvm.JvmSynthetic
+@kotlin.jvm.JvmName("addRequiredAlg")
+    public fun com.google.protobuf.kotlin.DslList<com.meproto.did.v1.Algorithm, RequiredAlgProxy>.add(value: com.meproto.did.v1.Algorithm) {
+      _builder.addRequiredAlg(value)
+    }/**
+     * ```
+     * Algorithms that MUST be present (AND list)
+     * ```
+     *
+     * `repeated .meproto.did.v1.Algorithm required_alg = 2 [json_name = "requiredAlg"];`
+     * @param value The requiredAlg to add.
+     */
+    @kotlin.jvm.JvmSynthetic
+@kotlin.jvm.JvmName("plusAssignRequiredAlg")
+    @Suppress("NOTHING_TO_INLINE")
+    public inline operator fun com.google.protobuf.kotlin.DslList<com.meproto.did.v1.Algorithm, RequiredAlgProxy>.plusAssign(value: com.meproto.did.v1.Algorithm) {
+      add(value)
+    }/**
+     * ```
+     * Algorithms that MUST be present (AND list)
+     * ```
+     *
+     * `repeated .meproto.did.v1.Algorithm required_alg = 2 [json_name = "requiredAlg"];`
+     * @param values The requiredAlg to add.
+     */
+    @kotlin.jvm.JvmSynthetic
+@kotlin.jvm.JvmName("addAllRequiredAlg")
+    public fun com.google.protobuf.kotlin.DslList<com.meproto.did.v1.Algorithm, RequiredAlgProxy>.addAll(values: kotlin.collections.Iterable<com.meproto.did.v1.Algorithm>) {
+      _builder.addAllRequiredAlg(values)
+    }/**
+     * ```
+     * Algorithms that MUST be present (AND list)
+     * ```
+     *
+     * `repeated .meproto.did.v1.Algorithm required_alg = 2 [json_name = "requiredAlg"];`
+     * @param values The requiredAlg to add.
+     */
+    @kotlin.jvm.JvmSynthetic
+@kotlin.jvm.JvmName("plusAssignAllRequiredAlg")
+    @Suppress("NOTHING_TO_INLINE")
+    public inline operator fun com.google.protobuf.kotlin.DslList<com.meproto.did.v1.Algorithm, RequiredAlgProxy>.plusAssign(values: kotlin.collections.Iterable<com.meproto.did.v1.Algorithm>) {
+      addAll(values)
+    }/**
+     * ```
+     * Algorithms that MUST be present (AND list)
+     * ```
+     *
+     * `repeated .meproto.did.v1.Algorithm required_alg = 2 [json_name = "requiredAlg"];`
+     * @param index The index to set the value at.
+     * @param value The requiredAlg to set.
+     */
+    @kotlin.jvm.JvmSynthetic
+@kotlin.jvm.JvmName("setRequiredAlg")
+    public operator fun com.google.protobuf.kotlin.DslList<com.meproto.did.v1.Algorithm, RequiredAlgProxy>.set(index: kotlin.Int, value: com.meproto.did.v1.Algorithm) {
+      _builder.setRequiredAlg(index, value)
+    }/**
+     * ```
+     * Algorithms that MUST be present (AND list)
+     * ```
+     *
+     * `repeated .meproto.did.v1.Algorithm required_alg = 2 [json_name = "requiredAlg"];`
+     */
+    @kotlin.jvm.JvmSynthetic
+@kotlin.jvm.JvmName("clearRequiredAlg")
+    public fun com.google.protobuf.kotlin.DslList<com.meproto.did.v1.Algorithm, RequiredAlgProxy>.clear() {
+      _builder.clearRequiredAlg()
     }}
 }
 @kotlin.jvm.JvmSynthetic
