@@ -56,7 +56,7 @@ public object DNSBindingKt {
 
     /**
      * ```
-     * TXT record value
+     * TXT record value (the DID)
      * ```
      *
      * `string txt_value = 2 [json_name = "txtValue"];`
@@ -70,7 +70,7 @@ public object DNSBindingKt {
       }
     /**
      * ```
-     * TXT record value
+     * TXT record value (the DID)
      * ```
      *
      * `string txt_value = 2 [json_name = "txtValue"];`

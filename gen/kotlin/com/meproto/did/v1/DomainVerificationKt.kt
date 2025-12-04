@@ -30,6 +30,10 @@ public object DomainVerificationKt {
     internal fun _build(): com.meproto.did.v1.DomainVerification = _builder.build()
 
     /**
+     * ```
+     * dns_txt or https_well_known
+     * ```
+     *
      * `.meproto.did.v1.DomainVerificationMethod method = 1 [json_name = "method"];`
      */
     public var method: com.meproto.did.v1.DomainVerificationMethod
@@ -47,6 +51,10 @@ public object DomainVerificationKt {
         _builder.methodValue = value
       }
     /**
+     * ```
+     * dns_txt or https_well_known
+     * ```
+     *
      * `.meproto.did.v1.DomainVerificationMethod method = 1 [json_name = "method"];`
      */
     public fun clearMethod() {

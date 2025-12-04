@@ -55,6 +55,10 @@ public object WellKnownBindingKt {
     }
 
     /**
+     * ```
+     * file content (the DID)
+     * ```
+     *
      * `string content = 2 [json_name = "content"];`
      */
     public var content: kotlin.String
@@ -65,6 +69,10 @@ public object WellKnownBindingKt {
         _builder.content = value
       }
     /**
+     * ```
+     * file content (the DID)
+     * ```
+     *
      * `string content = 2 [json_name = "content"];`
      */
     public fun clearContent() {

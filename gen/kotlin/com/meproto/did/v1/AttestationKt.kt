@@ -63,7 +63,7 @@ public object AttestationKt {
 
     /**
      * ```
-     * reference to VMKey.id
+     * reference to verification method
      * ```
      *
      * `string verification_method = 2 [json_name = "verificationMethod"];`
@@ -77,7 +77,7 @@ public object AttestationKt {
       }
     /**
      * ```
-     * reference to VMKey.id
+     * reference to verification method
      * ```
      *
      * `string verification_method = 2 [json_name = "verificationMethod"];`

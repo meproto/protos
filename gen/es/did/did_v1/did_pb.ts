@@ -10,53 +10,53 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file did/did_v1/did.proto.
  */
 export const file_did_did_v1_did: GenFile = /*@__PURE__*/
-  fileDesc("ChRkaWQvZGlkX3YxL2RpZC5wcm90bxIObWVwcm90by5kaWQudjEikQEKBVZNS2V5EgoKAmlkGAEgASgJEhIKCmNvbnRyb2xsZXIYAiABKAkSNAoEdHlwZRgDIAEoDjImLm1lcHJvdG8uZGlkLnYxLlZlcmlmaWNhdGlvbk1ldGhvZFR5cGUSJgoDYWxnGAQgASgOMhkubWVwcm90by5kaWQudjEuQWxnb3JpdGhtEgoKAnBrGAUgASgMIkoKB1NlcnZpY2USCgoCaWQYASABKAkSDAoEdHlwZRgCIAEoCRIPCgd2ZXJzaW9uGAMgASgJEhQKDHNlcnZpY2VfZGF0YRgEIAEoDCJfCgtBdHRlc3RhdGlvbhImCgNhbGcYASABKA4yGS5tZXByb3RvLmRpZC52MS5BbGdvcml0aG0SGwoTdmVyaWZpY2F0aW9uX21ldGhvZBgCIAEoCRILCgNzaWcYAyABKAwicQoFUHJvb2YSCgoCaWQYASABKAkSDAoEdHlwZRgCIAEoCRITCgtjcnlwdG9zdWl0ZRgDIAEoCRIPCgdwdXJwb3NlGAQgASgJEgoKAnZtGAUgASgJEg8KB2NyZWF0ZWQYBiABKAkSCwoDandzGAcgASgJIssBChJEb21haW5WZXJpZmljYXRpb24SOAoGbWV0aG9kGAEgASgOMigubWVwcm90by5kaWQudjEuRG9tYWluVmVyaWZpY2F0aW9uTWV0aG9kEg4KBmRvbWFpbhgCIAEoCRIpCgNkbnMYAyABKAsyGi5tZXByb3RvLmRpZC52MS5ETlNCaW5kaW5nSAASNQoJd2VsbGtub3duGAQgASgLMiAubWVwcm90by5kaWQudjEuV2VsbEtub3duQmluZGluZ0gAQgkKB2JpbmRpbmciNAoKRE5TQmluZGluZxITCgtyZWNvcmRfbmFtZRgBIAEoCRIRCgl0eHRfdmFsdWUYAiABKAkiMAoQV2VsbEtub3duQmluZGluZxILCgN1cmkYASABKAkSDwoHY29udGVudBgCIAEoCSJQCgxVcGRhdGVQb2xpY3kSDwoHYWxsb3dlZBgBIAMoCRIvCgxyZXF1aXJlZF9hbGcYAiADKA4yGS5tZXByb3RvLmRpZC52MS5BbGdvcml0aG0i9AQKC0RJRERvY3VtZW50EgoKAmlkGAEgASgJEhIKCmNvbnRyb2xsZXIYAiABKAkSCwoDY3R4GAMgAygJEhUKDWFsc29fa25vd25fYXMYBCADKAkSEQoJYmlvbWV0cmljGAUgASgIEhAKCGhhcmR3YXJlGAYgASgIEhQKDGRldmljZV9tb2RlbBgHIAEoCRJIChh1c2VyX3ZlcmlmaWNhdGlvbl9tZXRob2QYCCABKA4yJi5tZXByb3RvLmRpZC52MS5Vc2VyVmVyaWZpY2F0aW9uTWV0aG9kEgsKA3NlcRgJIAEoBBIMCgRwcmV2GAogASgJEgwKBGNvcmUYCyABKAkSEQoJY29yZV9jYm9yGAwgASgMEhMKC2tleV9oaXN0b3J5GA0gAygJEiEKAnZtGA4gAygLMhUubWVwcm90by5kaWQudjEuVk1LZXkSFgoOYXV0aGVudGljYXRpb24YDyADKAkSEQoJYXNzZXJ0aW9uGBAgAygJEhIKCmludm9jYXRpb24YESADKAkSFQoNa2V5X2FncmVlbWVudBgSIAMoCRIkCgNzdmMYEyADKAsyFy5tZXByb3RvLmRpZC52MS5TZXJ2aWNlEiwKBnBvbGljeRgUIAEoCzIcLm1lcHJvdG8uZGlkLnYxLlVwZGF0ZVBvbGljeRIoCgNhdHQYFSADKAsyGy5tZXByb3RvLmRpZC52MS5BdHRlc3RhdGlvbhIkCgVwcm9vZhgWIAEoCzIVLm1lcHJvdG8uZGlkLnYxLlByb29mEi4KAmR2GBcgAygLMiIubWVwcm90by5kaWQudjEuRG9tYWluVmVyaWZpY2F0aW9uKnMKCUFsZ29yaXRobRITCg9BTEdfVU5TUEVDSUZJRUQQABILCgdFRDI1NTE5EAESCgoGWDI1NTE5EAISCQoFRVMyNTYQAxINCglTRUNQMjU2SzEQBBINCglNTF9EU0FfODcQBRIPCgtNTF9LRU1fMTAyNBAGKpkBChZVc2VyVmVyaWZpY2F0aW9uTWV0aG9kEhMKD1VWTV9VTlNQRUNJRklFRBAAEggKBE5PTkUQARIHCgNQSU4QAhIMCghQQVNTQ09ERRADEgwKCFBBU1NXT1JEEAQSDwoLRklOR0VSUFJJTlQQBRIICgRGQUNFEAYSCAoESVJJUxAHEgkKBVZPSUNFEAgSCwoHUEFUVEVSThAJKjsKFlZlcmlmaWNhdGlvbk1ldGhvZFR5cGUSEwoPVk1UX1VOU1BFQ0lGSUVEEAASDAoITVVMVElLRVkQASpSChhEb21haW5WZXJpZmljYXRpb25NZXRob2QSEwoPRFZNX1VOU1BFQ0lGSUVEEAASCwoHRE5TX1RYVBABEhQKEEhUVFBTX1dFTExfS05PV04QAkKrAQoSY29tLm1lcHJvdG8uZGlkLnYxQghEaWRQcm90b1ABWjFnaXRodWIuY29tL21lcHJvdG8vcHJvdG9zL2dlbi9nby9kaWQvZGlkX3YxO2RpZHYxogIDTURYqgIOTWVwcm90by5EaWQuVjHKAg5NZXByb3RvXERpZFxWMeICGk1lcHJvdG9cRGlkXFYxXEdQQk1ldGFkYXRh6gIQTWVwcm90bzo6RGlkOjpWMWIGcHJvdG8z");
+  fileDesc("ChRkaWQvZGlkX3YxL2RpZC5wcm90bxIObWVwcm90by5kaWQudjEingEKElZlcmlmaWNhdGlvbk1ldGhvZBIKCgJpZBgBIAEoCRI0CgR0eXBlGAIgASgOMiYubWVwcm90by5kaWQudjEuVmVyaWZpY2F0aW9uTWV0aG9kVHlwZRISCgpjb250cm9sbGVyGAMgASgJEgoKAnBrGAQgASgMEiYKA2FsZxgFIAEoDjIZLm1lcHJvdG8uZGlkLnYxLkFsZ29yaXRobSJOCgdTZXJ2aWNlEgoKAmlkGAEgASgJEgwKBHR5cGUYAiABKAkSDwoHdmVyc2lvbhgDIAEoCRIYChBzZXJ2aWNlX2VuZHBvaW50GAQgASgMIl8KC0F0dGVzdGF0aW9uEiYKA2FsZxgBIAEoDjIZLm1lcHJvdG8uZGlkLnYxLkFsZ29yaXRobRIbChN2ZXJpZmljYXRpb25fbWV0aG9kGAIgASgJEgsKA3NpZxgDIAEoDCJyChJEYXRhSW50ZWdyaXR5UHJvb2YSDAoEdHlwZRgBIAEoCRITCgtjcnlwdG9zdWl0ZRgCIAEoCRIbChN2ZXJpZmljYXRpb25fbWV0aG9kGAMgASgJEg8KB2NyZWF0ZWQYBCABKAkSCwoDandzGAUgASgJIssBChJEb21haW5WZXJpZmljYXRpb24SOAoGbWV0aG9kGAEgASgOMigubWVwcm90by5kaWQudjEuRG9tYWluVmVyaWZpY2F0aW9uTWV0aG9kEg4KBmRvbWFpbhgCIAEoCRIpCgNkbnMYAyABKAsyGi5tZXByb3RvLmRpZC52MS5ETlNCaW5kaW5nSAASNQoJd2VsbGtub3duGAQgASgLMiAubWVwcm90by5kaWQudjEuV2VsbEtub3duQmluZGluZ0gAQgkKB2JpbmRpbmciNAoKRE5TQmluZGluZxITCgtyZWNvcmRfbmFtZRgBIAEoCRIRCgl0eHRfdmFsdWUYAiABKAkiMAoQV2VsbEtub3duQmluZGluZxILCgN1cmkYASABKAkSDwoHY29udGVudBgCIAEoCSJQCgxVcGRhdGVQb2xpY3kSDwoHYWxsb3dlZBgBIAMoCRIvCgxyZXF1aXJlZF9hbGcYAiADKA4yGS5tZXByb3RvLmRpZC52MS5BbGdvcml0aG0ikgUKC0RJRERvY3VtZW50EgoKAmlkGAEgASgJEhIKCmNvbnRyb2xsZXIYAiABKAkSDwoHY29udGV4dBgDIAMoCRIVCg1hbHNvX2tub3duX2FzGAQgAygJEhEKCWJpb21ldHJpYxgFIAEoCBIQCghoYXJkd2FyZRgGIAEoCBIUCgxkZXZpY2VfbW9kZWwYByABKAkSSAoYdXNlcl92ZXJpZmljYXRpb25fbWV0aG9kGAggASgOMiYubWVwcm90by5kaWQudjEuVXNlclZlcmlmaWNhdGlvbk1ldGhvZBILCgNzZXEYCSABKAQSDAoEcHJldhgKIAEoCRIMCgRjb3JlGAsgASgJEhEKCWNvcmVfY2JvchgMIAEoDBITCgtrZXlfaGlzdG9yeRgNIAMoCRIuCgJ2bRgOIAMoCzIiLm1lcHJvdG8uZGlkLnYxLlZlcmlmaWNhdGlvbk1ldGhvZBIWCg5hdXRoZW50aWNhdGlvbhgPIAMoCRIRCglhc3NlcnRpb24YECADKAkSEgoKaW52b2NhdGlvbhgRIAMoCRIVCg1rZXlfYWdyZWVtZW50GBIgAygJEiQKA3N2YxgTIAMoCzIXLm1lcHJvdG8uZGlkLnYxLlNlcnZpY2USLAoGcG9saWN5GBQgASgLMhwubWVwcm90by5kaWQudjEuVXBkYXRlUG9saWN5EigKA2F0dBgVIAMoCzIbLm1lcHJvdG8uZGlkLnYxLkF0dGVzdGF0aW9uEjEKBXByb29mGBYgASgLMiIubWVwcm90by5kaWQudjEuRGF0YUludGVncml0eVByb29mEi4KAmR2GBcgAygLMiIubWVwcm90by5kaWQudjEuRG9tYWluVmVyaWZpY2F0aW9uKnMKCUFsZ29yaXRobRITCg9BTEdfVU5TUEVDSUZJRUQQABILCgdFRDI1NTE5EAESCgoGWDI1NTE5EAISCQoFRVMyNTYQAxINCglTRUNQMjU2SzEQBBINCglNTF9EU0FfODcQBRIPCgtNTF9LRU1fMTAyNBAGKpkBChZVc2VyVmVyaWZpY2F0aW9uTWV0aG9kEhMKD1VWTV9VTlNQRUNJRklFRBAAEggKBE5PTkUQARIHCgNQSU4QAhIMCghQQVNTQ09ERRADEgwKCFBBU1NXT1JEEAQSDwoLRklOR0VSUFJJTlQQBRIICgRGQUNFEAYSCAoESVJJUxAHEgkKBVZPSUNFEAgSCwoHUEFUVEVSThAJKjsKFlZlcmlmaWNhdGlvbk1ldGhvZFR5cGUSEwoPVk1UX1VOU1BFQ0lGSUVEEAASDAoITVVMVElLRVkQASpSChhEb21haW5WZXJpZmljYXRpb25NZXRob2QSEwoPRFZNX1VOU1BFQ0lGSUVEEAASCwoHRE5TX1RYVBABEhQKEEhUVFBTX1dFTExfS05PV04QAkKrAQoSY29tLm1lcHJvdG8uZGlkLnYxQghEaWRQcm90b1ABWjFnaXRodWIuY29tL21lcHJvdG8vcHJvdG9zL2dlbi9nby9kaWQvZGlkX3YxO2RpZHYxogIDTURYqgIOTWVwcm90by5EaWQuVjHKAg5NZXByb3RvXERpZFxWMeICGk1lcHJvdG9cRGlkXFYxXEdQQk1ldGFkYXRh6gIQTWVwcm90bzo6RGlkOjpWMWIGcHJvdG8z");
 
 /**
- * @generated from message meproto.did.v1.VMKey
+ * @generated from message meproto.did.v1.VerificationMethod
  */
-export type VMKey = Message<"meproto.did.v1.VMKey"> & {
+export type VerificationMethod = Message<"meproto.did.v1.VerificationMethod"> & {
   /**
-   * e.g., "#ed25519"
+   * "#ed25519"
    *
    * @generated from field: string id = 1;
    */
   id: string;
 
   /**
-   * always DID subject for did:me
-   *
-   * @generated from field: string controller = 2;
-   */
-  controller: string;
-
-  /**
    * MULTIKEY
    *
-   * @generated from field: meproto.did.v1.VerificationMethodType type = 3;
+   * @generated from field: meproto.did.v1.VerificationMethodType type = 2;
    */
   type: VerificationMethodType;
 
   /**
-   * e.g., ED25519, ML_DSA_87, etc.
+   * DID subject
    *
-   * @generated from field: meproto.did.v1.Algorithm alg = 4;
+   * @generated from field: string controller = 3;
    */
-  alg: Algorithm;
+  controller: string;
 
   /**
-   * multikey-encoded public key (raw)
+   * multikey-encoded key
    *
-   * @generated from field: bytes pk = 5;
+   * @generated from field: bytes pk = 4;
    */
   pk: Uint8Array;
+
+  /**
+   * ED25519, ML_DSA_87, ...
+   *
+   * @generated from field: meproto.did.v1.Algorithm alg = 5;
+   */
+  alg: Algorithm;
 };
 
 /**
- * Describes the message meproto.did.v1.VMKey.
- * Use `create(VMKeySchema)` to create a new message.
+ * Describes the message meproto.did.v1.VerificationMethod.
+ * Use `create(VerificationMethodSchema)` to create a new message.
  */
-export const VMKeySchema: GenMessage<VMKey> = /*@__PURE__*/
+export const VerificationMethodSchema: GenMessage<VerificationMethod> = /*@__PURE__*/
   messageDesc(file_did_did_v1_did, 0);
 
 /**
@@ -79,11 +79,11 @@ export type Service = Message<"meproto.did.v1.Service"> & {
   version: string;
 
   /**
-   * JSON blob
+   * canonical JSON blob
    *
-   * @generated from field: bytes service_data = 4;
+   * @generated from field: bytes service_endpoint = 4;
    */
-  serviceData: Uint8Array;
+  serviceEndpoint: Uint8Array;
 };
 
 /**
@@ -105,7 +105,7 @@ export type Attestation = Message<"meproto.did.v1.Attestation"> & {
   alg: Algorithm;
 
   /**
-   * reference to VMKey.id
+   * reference to verification method
    *
    * @generated from field: string verification_method = 2;
    */
@@ -127,60 +127,50 @@ export const AttestationSchema: GenMessage<Attestation> = /*@__PURE__*/
   messageDesc(file_did_did_v1_did, 2);
 
 /**
- * @generated from message meproto.did.v1.Proof
+ * @generated from message meproto.did.v1.DataIntegrityProof
  */
-export type Proof = Message<"meproto.did.v1.Proof"> & {
+export type DataIntegrityProof = Message<"meproto.did.v1.DataIntegrityProof"> & {
   /**
-   * @generated from field: string id = 1;
-   */
-  id: string;
-
-  /**
-   * @generated from field: string type = 2;
+   * "DataIntegrityProof"
+   *
+   * @generated from field: string type = 1;
    */
   type: string;
 
   /**
-   * e.g., "es256-jws-cid-2025"
+   * "es256-jws-cid-2025"
    *
-   * @generated from field: string cryptosuite = 3;
+   * @generated from field: string cryptosuite = 2;
    */
   cryptosuite: string;
 
   /**
-   * assertionMethod
+   * reference to verification method
    *
-   * @generated from field: string purpose = 4;
+   * @generated from field: string verification_method = 3;
    */
-  purpose: string;
-
-  /**
-   * VMKey.id reference
-   *
-   * @generated from field: string vm = 5;
-   */
-  vm: string;
+  verificationMethod: string;
 
   /**
    * ISO8601 timestamp
    *
-   * @generated from field: string created = 6;
+   * @generated from field: string created = 4;
    */
   created: string;
 
   /**
-   * compact JWS
+   * compact JWS (the proof value)
    *
-   * @generated from field: string jws = 7;
+   * @generated from field: string jws = 5;
    */
   jws: string;
 };
 
 /**
- * Describes the message meproto.did.v1.Proof.
- * Use `create(ProofSchema)` to create a new message.
+ * Describes the message meproto.did.v1.DataIntegrityProof.
+ * Use `create(DataIntegrityProofSchema)` to create a new message.
  */
-export const ProofSchema: GenMessage<Proof> = /*@__PURE__*/
+export const DataIntegrityProofSchema: GenMessage<DataIntegrityProof> = /*@__PURE__*/
   messageDesc(file_did_did_v1_did, 3);
 
 /**
@@ -188,6 +178,8 @@ export const ProofSchema: GenMessage<Proof> = /*@__PURE__*/
  */
 export type DomainVerification = Message<"meproto.did.v1.DomainVerification"> & {
   /**
+   * dns_txt or https_well_known
+   *
    * @generated from field: meproto.did.v1.DomainVerificationMethod method = 1;
    */
   method: DomainVerificationMethod;
@@ -234,7 +226,7 @@ export type DNSBinding = Message<"meproto.did.v1.DNSBinding"> & {
   recordName: string;
 
   /**
-   * TXT record value
+   * TXT record value (the DID)
    *
    * @generated from field: string txt_value = 2;
    */
@@ -260,6 +252,8 @@ export type WellKnownBinding = Message<"meproto.did.v1.WellKnownBinding"> & {
   uri: string;
 
   /**
+   * file content (the DID)
+   *
    * @generated from field: string content = 2;
    */
   content: string;
@@ -277,14 +271,14 @@ export const WellKnownBindingSchema: GenMessage<WellKnownBinding> = /*@__PURE__*
  */
 export type UpdatePolicy = Message<"meproto.did.v1.UpdatePolicy"> & {
   /**
-   * VM ids that MAY sign updates (OR list)
+   * VM IDs that MAY sign updates (OR semantics)
    *
    * @generated from field: repeated string allowed = 1;
    */
   allowed: string[];
 
   /**
-   * Algorithms that MUST be present (AND list)
+   * Algorithms that MUST be present (AND semantics)
    *
    * @generated from field: repeated meproto.did.v1.Algorithm required_alg = 2;
    */
@@ -317,9 +311,9 @@ export type DIDDocument = Message<"meproto.did.v1.DIDDocument"> & {
   /**
    * @context
    *
-   * @generated from field: repeated string ctx = 3;
+   * @generated from field: repeated string context = 3;
    */
-  ctx: string[];
+  context: string[];
 
   /**
    * Metadata
@@ -388,9 +382,9 @@ export type DIDDocument = Message<"meproto.did.v1.DIDDocument"> & {
    *
    * full VM set
    *
-   * @generated from field: repeated meproto.did.v1.VMKey vm = 14;
+   * @generated from field: repeated meproto.did.v1.VerificationMethod vm = 14;
    */
-  vm: VMKey[];
+  vm: VerificationMethod[];
 
   /**
    * @generated from field: repeated string authentication = 15;
@@ -436,9 +430,9 @@ export type DIDDocument = Message<"meproto.did.v1.DIDDocument"> & {
   /**
    * Optional P-256 DataIntegrityProof
    *
-   * @generated from field: meproto.did.v1.Proof proof = 22;
+   * @generated from field: meproto.did.v1.DataIntegrityProof proof = 22;
    */
-  proof?: Proof;
+  proof?: DataIntegrityProof;
 
   /**
    * Domain verification objects

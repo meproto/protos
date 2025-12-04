@@ -37,7 +37,7 @@ public object UpdatePolicyKt {
     public class AllowedProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
      * ```
-     * VM ids that MAY sign updates (OR list)
+     * VM IDs that MAY sign updates (OR semantics)
      * ```
      *
      * `repeated string allowed = 1 [json_name = "allowed"];`
@@ -50,7 +50,7 @@ public object UpdatePolicyKt {
       )
     /**
      * ```
-     * VM ids that MAY sign updates (OR list)
+     * VM IDs that MAY sign updates (OR semantics)
      * ```
      *
      * `repeated string allowed = 1 [json_name = "allowed"];`
@@ -63,7 +63,7 @@ public object UpdatePolicyKt {
     }
     /**
      * ```
-     * VM ids that MAY sign updates (OR list)
+     * VM IDs that MAY sign updates (OR semantics)
      * ```
      *
      * `repeated string allowed = 1 [json_name = "allowed"];`
@@ -77,7 +77,7 @@ public object UpdatePolicyKt {
     }
     /**
      * ```
-     * VM ids that MAY sign updates (OR list)
+     * VM IDs that MAY sign updates (OR semantics)
      * ```
      *
      * `repeated string allowed = 1 [json_name = "allowed"];`
@@ -90,7 +90,7 @@ public object UpdatePolicyKt {
     }
     /**
      * ```
-     * VM ids that MAY sign updates (OR list)
+     * VM IDs that MAY sign updates (OR semantics)
      * ```
      *
      * `repeated string allowed = 1 [json_name = "allowed"];`
@@ -104,7 +104,7 @@ public object UpdatePolicyKt {
     }
     /**
      * ```
-     * VM ids that MAY sign updates (OR list)
+     * VM IDs that MAY sign updates (OR semantics)
      * ```
      *
      * `repeated string allowed = 1 [json_name = "allowed"];`
@@ -117,7 +117,7 @@ public object UpdatePolicyKt {
       _builder.setAllowed(index, value)
     }/**
      * ```
-     * VM ids that MAY sign updates (OR list)
+     * VM IDs that MAY sign updates (OR semantics)
      * ```
      *
      * `repeated string allowed = 1 [json_name = "allowed"];`
@@ -135,7 +135,7 @@ public object UpdatePolicyKt {
     public class RequiredAlgProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
      * ```
-     * Algorithms that MUST be present (AND list)
+     * Algorithms that MUST be present (AND semantics)
      * ```
      *
      * `repeated .meproto.did.v1.Algorithm required_alg = 2 [json_name = "requiredAlg"];`
@@ -147,7 +147,7 @@ public object UpdatePolicyKt {
       )
     /**
      * ```
-     * Algorithms that MUST be present (AND list)
+     * Algorithms that MUST be present (AND semantics)
      * ```
      *
      * `repeated .meproto.did.v1.Algorithm required_alg = 2 [json_name = "requiredAlg"];`
@@ -159,7 +159,7 @@ public object UpdatePolicyKt {
       _builder.addRequiredAlg(value)
     }/**
      * ```
-     * Algorithms that MUST be present (AND list)
+     * Algorithms that MUST be present (AND semantics)
      * ```
      *
      * `repeated .meproto.did.v1.Algorithm required_alg = 2 [json_name = "requiredAlg"];`
@@ -172,7 +172,7 @@ public object UpdatePolicyKt {
       add(value)
     }/**
      * ```
-     * Algorithms that MUST be present (AND list)
+     * Algorithms that MUST be present (AND semantics)
      * ```
      *
      * `repeated .meproto.did.v1.Algorithm required_alg = 2 [json_name = "requiredAlg"];`
@@ -184,7 +184,7 @@ public object UpdatePolicyKt {
       _builder.addAllRequiredAlg(values)
     }/**
      * ```
-     * Algorithms that MUST be present (AND list)
+     * Algorithms that MUST be present (AND semantics)
      * ```
      *
      * `repeated .meproto.did.v1.Algorithm required_alg = 2 [json_name = "requiredAlg"];`
@@ -197,7 +197,7 @@ public object UpdatePolicyKt {
       addAll(values)
     }/**
      * ```
-     * Algorithms that MUST be present (AND list)
+     * Algorithms that MUST be present (AND semantics)
      * ```
      *
      * `repeated .meproto.did.v1.Algorithm required_alg = 2 [json_name = "requiredAlg"];`
@@ -210,7 +210,7 @@ public object UpdatePolicyKt {
       _builder.setRequiredAlg(index, value)
     }/**
      * ```
-     * Algorithms that MUST be present (AND list)
+     * Algorithms that MUST be present (AND semantics)
      * ```
      *
      * `repeated .meproto.did.v1.Algorithm required_alg = 2 [json_name = "requiredAlg"];`

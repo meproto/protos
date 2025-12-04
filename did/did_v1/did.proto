@@ -41,15 +41,15 @@ enum DomainVerificationMethod {
 }
 
 // ===========================
-//  VERIFICATION METHOD KEY
+//  VERIFICATION METHOD
 // ===========================
 
-message VMKey {
-  string id = 1;                            // e.g., "#ed25519"
-  string controller = 2;                    // always DID subject for did:me
-  VerificationMethodType type = 3;          // MULTIKEY
-  Algorithm alg = 4;                        // e.g., ED25519, ML_DSA_87, etc.
-  bytes pk = 5;                             // multikey-encoded public key (raw)
+message VerificationMethod {
+  string id = 1;                     // "#ed25519"
+  VerificationMethodType type = 2;   // MULTIKEY
+  string controller = 3;             // DID subject
+  bytes pk = 4;                      // multikey-encoded key
+  Algorithm alg = 5;                 // ED25519, ML_DSA_87, ...
 }
 
 // ===========================
@@ -60,7 +60,7 @@ message Service {
   string id = 1;
   string type = 2;
   string version = 3;
-  bytes service_data = 4; // JSON blob
+  bytes service_endpoint = 4; // canonical JSON blob
 }
 
 // ===========================
@@ -69,7 +69,7 @@ message Service {
 
 message Attestation {
   Algorithm alg = 1;               // ED25519 or ML_DSA_87
-  string verification_method = 2;  // reference to VMKey.id
+  string verification_method = 2;  // reference to verification method
   bytes sig = 3;                   // signature over canonical core CBOR
 }
 
@@ -77,14 +77,12 @@ message Attestation {
 //  DATA INTEGRITY PROOF (P-256)
 // ===========================
 
-message Proof {
-  string id = 1;
-  string type = 2;
-  string cryptosuite = 3;   // e.g., "es256-jws-cid-2025"
-  string purpose = 4;       // assertionMethod
-  string vm = 5;            // VMKey.id reference
-  string created = 6;       // ISO8601 timestamp
-  string jws = 7;           // compact JWS
+message DataIntegrityProof {
+  string type = 1;               // "DataIntegrityProof"
+  string cryptosuite = 2;        // "es256-jws-cid-2025"
+  string verification_method = 3; // reference to verification method
+  string created = 4;            // ISO8601 timestamp
+  string jws = 5;                // compact JWS (the proof value)
 }
 
 // ===========================
@@ -92,7 +90,7 @@ message Proof {
 // ===========================
 
 message DomainVerification {
-  DomainVerificationMethod method = 1;
+  DomainVerificationMethod method = 1;  // dns_txt or https_well_known
   string domain = 2;
 
   oneof binding {
@@ -102,13 +100,13 @@ message DomainVerification {
 }
 
 message DNSBinding {
-  string record_name = 1;   // default: "_didme"
-  string txt_value = 2;     // TXT record value
+  string record_name = 1;  // default: "_didme"
+  string txt_value = 2;    // TXT record value (the DID)
 }
 
 message WellKnownBinding {
-  string uri = 1; // default: "/.well-known/didme"
-  string content = 2;
+  string uri = 1;          // default: "/.well-known/didme"
+  string content = 2;      // file content (the DID)
 }
 
 // ===========================
@@ -116,8 +114,8 @@ message WellKnownBinding {
 // ===========================
 
 message UpdatePolicy {
-  repeated string allowed = 1;         // VM ids that MAY sign updates (OR list)
-  repeated Algorithm required_alg = 2; // Algorithms that MUST be present (AND list)
+  repeated string allowed = 1;          // VM IDs that MAY sign updates (OR semantics)
+  repeated Algorithm required_alg = 2;  // Algorithms that MUST be present (AND semantics)
 }
 
 // ===========================
@@ -130,7 +128,7 @@ message DIDDocument {
   string controller = 2;
 
   // @context
-  repeated string ctx = 3;
+  repeated string context = 3;
 
   // Metadata
   repeated string also_known_as = 4;
@@ -147,7 +145,7 @@ message DIDDocument {
   repeated string key_history = 13;
 
   // Verification relationships
-  repeated VMKey vm = 14;           // full VM set
+  repeated VerificationMethod vm = 14;           // full VM set
   repeated string authentication = 15;
   repeated string assertion = 16;
   repeated string invocation = 17;  // capabilityInvocation
@@ -161,7 +159,7 @@ message DIDDocument {
   repeated Attestation att = 21;
 
   // Optional P-256 DataIntegrityProof
-  Proof proof = 22;
+  DataIntegrityProof proof = 22;
 
   // Domain verification objects
   repeated DomainVerification dv = 23;

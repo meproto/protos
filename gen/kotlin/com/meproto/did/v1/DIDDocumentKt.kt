@@ -76,45 +76,45 @@ public object DIDDocumentKt {
      * generics.
      */
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
-    public class CtxProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
+    public class ContextProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
      * ```
      * @context
      * ```
      *
-     * `repeated string ctx = 3 [json_name = "ctx"];`
-     * @return A list containing the ctx.
+     * `repeated string context = 3 [json_name = "context"];`
+     * @return A list containing the context.
      */
-    public val ctx: com.google.protobuf.kotlin.DslList<kotlin.String, CtxProxy>
+    public val context: com.google.protobuf.kotlin.DslList<kotlin.String, ContextProxy>
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
       get() = com.google.protobuf.kotlin.DslList(
-        _builder.ctxList
+        _builder.contextList
       )
     /**
      * ```
      * @context
      * ```
      *
-     * `repeated string ctx = 3 [json_name = "ctx"];`
-     * @param value The ctx to add.
+     * `repeated string context = 3 [json_name = "context"];`
+     * @param value The context to add.
      */
     @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("addCtx")
-    public fun com.google.protobuf.kotlin.DslList<kotlin.String, CtxProxy>.add(value: kotlin.String) {
-      _builder.addCtx(value)
+@kotlin.jvm.JvmName("addContext")
+    public fun com.google.protobuf.kotlin.DslList<kotlin.String, ContextProxy>.add(value: kotlin.String) {
+      _builder.addContext(value)
     }
     /**
      * ```
      * @context
      * ```
      *
-     * `repeated string ctx = 3 [json_name = "ctx"];`
-     * @param value The ctx to add.
+     * `repeated string context = 3 [json_name = "context"];`
+     * @param value The context to add.
      */
     @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("plusAssignCtx")
+@kotlin.jvm.JvmName("plusAssignContext")
     @Suppress("NOTHING_TO_INLINE")
-    public inline operator fun com.google.protobuf.kotlin.DslList<kotlin.String, CtxProxy>.plusAssign(value: kotlin.String) {
+    public inline operator fun com.google.protobuf.kotlin.DslList<kotlin.String, ContextProxy>.plusAssign(value: kotlin.String) {
       add(value)
     }
     /**
@@ -122,26 +122,26 @@ public object DIDDocumentKt {
      * @context
      * ```
      *
-     * `repeated string ctx = 3 [json_name = "ctx"];`
-     * @param values The ctx to add.
+     * `repeated string context = 3 [json_name = "context"];`
+     * @param values The context to add.
      */
     @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("addAllCtx")
-    public fun com.google.protobuf.kotlin.DslList<kotlin.String, CtxProxy>.addAll(values: kotlin.collections.Iterable<kotlin.String>) {
-      _builder.addAllCtx(values)
+@kotlin.jvm.JvmName("addAllContext")
+    public fun com.google.protobuf.kotlin.DslList<kotlin.String, ContextProxy>.addAll(values: kotlin.collections.Iterable<kotlin.String>) {
+      _builder.addAllContext(values)
     }
     /**
      * ```
      * @context
      * ```
      *
-     * `repeated string ctx = 3 [json_name = "ctx"];`
-     * @param values The ctx to add.
+     * `repeated string context = 3 [json_name = "context"];`
+     * @param values The context to add.
      */
     @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("plusAssignAllCtx")
+@kotlin.jvm.JvmName("plusAssignAllContext")
     @Suppress("NOTHING_TO_INLINE")
-    public inline operator fun com.google.protobuf.kotlin.DslList<kotlin.String, CtxProxy>.plusAssign(values: kotlin.collections.Iterable<kotlin.String>) {
+    public inline operator fun com.google.protobuf.kotlin.DslList<kotlin.String, ContextProxy>.plusAssign(values: kotlin.collections.Iterable<kotlin.String>) {
       addAll(values)
     }
     /**
@@ -149,25 +149,25 @@ public object DIDDocumentKt {
      * @context
      * ```
      *
-     * `repeated string ctx = 3 [json_name = "ctx"];`
+     * `repeated string context = 3 [json_name = "context"];`
      * @param index The index to set the value at.
-     * @param value The ctx to set.
+     * @param value The context to set.
      */
     @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("setCtx")
-    public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, CtxProxy>.set(index: kotlin.Int, value: kotlin.String) {
-      _builder.setCtx(index, value)
+@kotlin.jvm.JvmName("setContext")
+    public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, ContextProxy>.set(index: kotlin.Int, value: kotlin.String) {
+      _builder.setContext(index, value)
     }/**
      * ```
      * @context
      * ```
      *
-     * `repeated string ctx = 3 [json_name = "ctx"];`
+     * `repeated string context = 3 [json_name = "context"];`
      */
     @kotlin.jvm.JvmSynthetic
-@kotlin.jvm.JvmName("setCtx")
-    public fun com.google.protobuf.kotlin.DslList<kotlin.String, CtxProxy>.clear() {
-      _builder.clearCtx()
+@kotlin.jvm.JvmName("setContext")
+    public fun com.google.protobuf.kotlin.DslList<kotlin.String, ContextProxy>.clear() {
+      _builder.clearContext()
     }
     /**
      * An uninstantiable, behaviorless type to represent the field in
@@ -523,9 +523,9 @@ public object DIDDocumentKt {
      * Verification relationships
      * ```
      *
-     * `repeated .meproto.did.v1.VMKey vm = 14 [json_name = "vm"];`
+     * `repeated .meproto.did.v1.VerificationMethod vm = 14 [json_name = "vm"];`
      */
-     public val vm: com.google.protobuf.kotlin.DslList<com.meproto.did.v1.VMKey, VmProxy>
+     public val vm: com.google.protobuf.kotlin.DslList<com.meproto.did.v1.VerificationMethod, VmProxy>
       @kotlin.jvm.JvmSynthetic
   get() = com.google.protobuf.kotlin.DslList(
         _builder.vmList
@@ -535,12 +535,12 @@ public object DIDDocumentKt {
      * Verification relationships
      * ```
      *
-     * `repeated .meproto.did.v1.VMKey vm = 14 [json_name = "vm"];`
+     * `repeated .meproto.did.v1.VerificationMethod vm = 14 [json_name = "vm"];`
      * @param value The vm to add.
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("addVm")
-    public fun com.google.protobuf.kotlin.DslList<com.meproto.did.v1.VMKey, VmProxy>.add(value: com.meproto.did.v1.VMKey) {
+    public fun com.google.protobuf.kotlin.DslList<com.meproto.did.v1.VerificationMethod, VmProxy>.add(value: com.meproto.did.v1.VerificationMethod) {
       _builder.addVm(value)
     }
     /**
@@ -548,13 +548,13 @@ public object DIDDocumentKt {
      * Verification relationships
      * ```
      *
-     * `repeated .meproto.did.v1.VMKey vm = 14 [json_name = "vm"];`
+     * `repeated .meproto.did.v1.VerificationMethod vm = 14 [json_name = "vm"];`
      * @param value The vm to add.
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("plusAssignVm")
     @Suppress("NOTHING_TO_INLINE")
-    public inline operator fun com.google.protobuf.kotlin.DslList<com.meproto.did.v1.VMKey, VmProxy>.plusAssign(value: com.meproto.did.v1.VMKey) {
+    public inline operator fun com.google.protobuf.kotlin.DslList<com.meproto.did.v1.VerificationMethod, VmProxy>.plusAssign(value: com.meproto.did.v1.VerificationMethod) {
       add(value)
     }
     /**
@@ -562,12 +562,12 @@ public object DIDDocumentKt {
      * Verification relationships
      * ```
      *
-     * `repeated .meproto.did.v1.VMKey vm = 14 [json_name = "vm"];`
+     * `repeated .meproto.did.v1.VerificationMethod vm = 14 [json_name = "vm"];`
      * @param values The vm to add.
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("addAllVm")
-    public fun com.google.protobuf.kotlin.DslList<com.meproto.did.v1.VMKey, VmProxy>.addAll(values: kotlin.collections.Iterable<com.meproto.did.v1.VMKey>) {
+    public fun com.google.protobuf.kotlin.DslList<com.meproto.did.v1.VerificationMethod, VmProxy>.addAll(values: kotlin.collections.Iterable<com.meproto.did.v1.VerificationMethod>) {
       _builder.addAllVm(values)
     }
     /**
@@ -575,13 +575,13 @@ public object DIDDocumentKt {
      * Verification relationships
      * ```
      *
-     * `repeated .meproto.did.v1.VMKey vm = 14 [json_name = "vm"];`
+     * `repeated .meproto.did.v1.VerificationMethod vm = 14 [json_name = "vm"];`
      * @param values The vm to add.
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("plusAssignAllVm")
     @Suppress("NOTHING_TO_INLINE")
-    public inline operator fun com.google.protobuf.kotlin.DslList<com.meproto.did.v1.VMKey, VmProxy>.plusAssign(values: kotlin.collections.Iterable<com.meproto.did.v1.VMKey>) {
+    public inline operator fun com.google.protobuf.kotlin.DslList<com.meproto.did.v1.VerificationMethod, VmProxy>.plusAssign(values: kotlin.collections.Iterable<com.meproto.did.v1.VerificationMethod>) {
       addAll(values)
     }
     /**
@@ -589,13 +589,13 @@ public object DIDDocumentKt {
      * Verification relationships
      * ```
      *
-     * `repeated .meproto.did.v1.VMKey vm = 14 [json_name = "vm"];`
+     * `repeated .meproto.did.v1.VerificationMethod vm = 14 [json_name = "vm"];`
      * @param index The index to set the value at.
      * @param value The vm to set.
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setVm")
-    public operator fun com.google.protobuf.kotlin.DslList<com.meproto.did.v1.VMKey, VmProxy>.set(index: kotlin.Int, value: com.meproto.did.v1.VMKey) {
+    public operator fun com.google.protobuf.kotlin.DslList<com.meproto.did.v1.VerificationMethod, VmProxy>.set(index: kotlin.Int, value: com.meproto.did.v1.VerificationMethod) {
       _builder.setVm(index, value)
     }
     /**
@@ -603,11 +603,11 @@ public object DIDDocumentKt {
      * Verification relationships
      * ```
      *
-     * `repeated .meproto.did.v1.VMKey vm = 14 [json_name = "vm"];`
+     * `repeated .meproto.did.v1.VerificationMethod vm = 14 [json_name = "vm"];`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearVm")
-    public fun com.google.protobuf.kotlin.DslList<com.meproto.did.v1.VMKey, VmProxy>.clear() {
+    public fun com.google.protobuf.kotlin.DslList<com.meproto.did.v1.VerificationMethod, VmProxy>.clear() {
       _builder.clearVm()
     }
 
@@ -1133,9 +1133,9 @@ public object DIDDocumentKt {
      * Optional P-256 DataIntegrityProof
      * ```
      *
-     * `.meproto.did.v1.Proof proof = 22 [json_name = "proof"];`
+     * `.meproto.did.v1.DataIntegrityProof proof = 22 [json_name = "proof"];`
      */
-    public var proof: com.meproto.did.v1.Proof
+    public var proof: com.meproto.did.v1.DataIntegrityProof
       @kotlin.jvm.JvmName("getProof")
         get() = _builder.proof
       @kotlin.jvm.JvmName("setProof")
@@ -1147,7 +1147,7 @@ public object DIDDocumentKt {
      * Optional P-256 DataIntegrityProof
      * ```
      *
-     * `.meproto.did.v1.Proof proof = 22 [json_name = "proof"];`
+     * `.meproto.did.v1.DataIntegrityProof proof = 22 [json_name = "proof"];`
      */
     public fun clearProof() {
       _builder.clearProof()
@@ -1157,14 +1157,14 @@ public object DIDDocumentKt {
      * Optional P-256 DataIntegrityProof
      * ```
      *
-     * `.meproto.did.v1.Proof proof = 22 [json_name = "proof"];`
+     * `.meproto.did.v1.DataIntegrityProof proof = 22 [json_name = "proof"];`
      * @return Whether the proof field is set.
      */
     public fun hasProof(): kotlin.Boolean {
       return _builder.hasProof()
     }
 
-    public val DIDDocumentKt.Dsl.proofOrNull: com.meproto.did.v1.Proof?
+    public val DIDDocumentKt.Dsl.proofOrNull: com.meproto.did.v1.DataIntegrityProof?
       get() = _builder.proofOrNull
 
     /**
@@ -1274,6 +1274,6 @@ public inline fun com.meproto.did.v1.DIDDocument.copy(block: `com.meproto.did.v1
 public val com.meproto.did.v1.DIDDocumentOrBuilder.policyOrNull: com.meproto.did.v1.UpdatePolicy?
   get() = if (hasPolicy()) getPolicy() else null
 
-public val com.meproto.did.v1.DIDDocumentOrBuilder.proofOrNull: com.meproto.did.v1.Proof?
+public val com.meproto.did.v1.DIDDocumentOrBuilder.proofOrNull: com.meproto.did.v1.DataIntegrityProof?
   get() = if (hasProof()) getProof() else null
 
