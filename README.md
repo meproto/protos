@@ -25,16 +25,17 @@
 ~~~
 npm install @meproto/protos
 ~~~
-# or
+
 ~~~
 pnpm add @meproto/protos
 ~~~
-# or
+
 ~~~
 yarn add @meproto/protos
 ~~~
 
 *Note for pnpm users*
+
 pnpm may display a warning about “Ignored build scripts: esbuild”.  
 This package does *not* include any lifecycle scripts — the warning refers to
 pnpm’s global policy, not to @meproto/protos. Installation is safe to proceed.
