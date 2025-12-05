@@ -22,12 +22,17 @@
 
 ## 🚀 Install
 
-```bash
+~~~
 npm install @meproto/protos
+~~~
 # or
+~~~
 pnpm add @meproto/protos
+~~~
 # or
+~~~
 yarn add @meproto/protos
+~~~
 
 *Note for pnpm users*
 pnpm may display a warning about “Ignored build scripts: esbuild”.  
