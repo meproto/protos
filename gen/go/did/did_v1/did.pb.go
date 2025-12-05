@@ -784,8 +784,8 @@ func (x *UpdatePolicy) GetRequiredAlg() []Algorithm {
 type DIDDocument struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// Core identity
-	Id         string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Controller string `protobuf:"bytes,2,opt,name=controller,proto3" json:"controller,omitempty"`
+	Id         string   `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Controller []string `protobuf:"bytes,2,rep,name=controller,proto3" json:"controller,omitempty"`
 	// @context
 	Context []string `protobuf:"bytes,3,rep,name=context,proto3" json:"context,omitempty"`
 	// Metadata
@@ -856,11 +856,11 @@ func (x *DIDDocument) GetId() string {
 	return ""
 }
 
-func (x *DIDDocument) GetController() string {
+func (x *DIDDocument) GetController() []string {
 	if x != nil {
 		return x.Controller
 	}
-	return ""
+	return nil
 }
 
 func (x *DIDDocument) GetContext() []string {
@@ -1058,7 +1058,7 @@ const file_did_did_v1_did_proto_rawDesc = "" +
 	"\vDIDDocument\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1e\n" +
 	"\n" +
-	"controller\x18\x02 \x01(\tR\n" +
+	"controller\x18\x02 \x03(\tR\n" +
 	"controller\x12\x18\n" +
 	"\acontext\x18\x03 \x03(\tR\acontext\x12\"\n" +
 	"\ralso_known_as\x18\x04 \x03(\tR\valsoKnownAs\x12\x1c\n" +

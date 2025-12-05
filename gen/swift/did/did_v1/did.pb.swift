@@ -411,7 +411,7 @@ public struct Meproto_Did_V1_DIDDocument: @unchecked Sendable {
     set {_uniqueStorage()._id = newValue}
   }
 
-  public var controller: String {
+  public var controller: [String] {
     get {return _storage._controller}
     set {_uniqueStorage()._controller = newValue}
   }
@@ -941,7 +941,7 @@ extension Meproto_Did_V1_DIDDocument: SwiftProtobuf.Message, SwiftProtobuf._Mess
 
   fileprivate class _StorageClass {
     var _id: String = String()
-    var _controller: String = String()
+    var _controller: [String] = []
     var _context: [String] = []
     var _alsoKnownAs: [String] = []
     var _biometric: Bool = false
@@ -1015,7 +1015,7 @@ extension Meproto_Did_V1_DIDDocument: SwiftProtobuf.Message, SwiftProtobuf._Mess
         // enabled. https://github.com/apple/swift-protobuf/issues/1034
         switch fieldNumber {
         case 1: try { try decoder.decodeSingularStringField(value: &_storage._id) }()
-        case 2: try { try decoder.decodeSingularStringField(value: &_storage._controller) }()
+        case 2: try { try decoder.decodeRepeatedStringField(value: &_storage._controller) }()
         case 3: try { try decoder.decodeRepeatedStringField(value: &_storage._context) }()
         case 4: try { try decoder.decodeRepeatedStringField(value: &_storage._alsoKnownAs) }()
         case 5: try { try decoder.decodeSingularBoolField(value: &_storage._biometric) }()
@@ -1053,7 +1053,7 @@ extension Meproto_Did_V1_DIDDocument: SwiftProtobuf.Message, SwiftProtobuf._Mess
         try visitor.visitSingularStringField(value: _storage._id, fieldNumber: 1)
       }
       if !_storage._controller.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._controller, fieldNumber: 2)
+        try visitor.visitRepeatedStringField(value: _storage._controller, fieldNumber: 2)
       }
       if !_storage._context.isEmpty {
         try visitor.visitRepeatedStringField(value: _storage._context, fieldNumber: 3)

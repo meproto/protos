@@ -55,22 +55,75 @@ public object DIDDocumentKt {
     }
 
     /**
-     * `string controller = 2 [json_name = "controller"];`
+     * An uninstantiable, behaviorless type to represent the field in
+     * generics.
      */
-    public var controller: kotlin.String
-      @kotlin.jvm.JvmName("getController")
-        get() = _builder.controller
-      @kotlin.jvm.JvmName("setController")
-        set(value) {
-        _builder.controller = value
-      }
+    @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
+    public class ControllerProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `string controller = 2 [json_name = "controller"];`
+     * `repeated string controller = 2 [json_name = "controller"];`
+     * @return A list containing the controller.
      */
-    public fun clearController() {
+    public val controller: com.google.protobuf.kotlin.DslList<kotlin.String, ControllerProxy>
+    @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
+      get() = com.google.protobuf.kotlin.DslList(
+        _builder.controllerList
+      )
+    /**
+     * `repeated string controller = 2 [json_name = "controller"];`
+     * @param value The controller to add.
+     */
+    @kotlin.jvm.JvmSynthetic
+@kotlin.jvm.JvmName("addController")
+    public fun com.google.protobuf.kotlin.DslList<kotlin.String, ControllerProxy>.add(value: kotlin.String) {
+      _builder.addController(value)
+    }
+    /**
+     * `repeated string controller = 2 [json_name = "controller"];`
+     * @param value The controller to add.
+     */
+    @kotlin.jvm.JvmSynthetic
+@kotlin.jvm.JvmName("plusAssignController")
+    @Suppress("NOTHING_TO_INLINE")
+    public inline operator fun com.google.protobuf.kotlin.DslList<kotlin.String, ControllerProxy>.plusAssign(value: kotlin.String) {
+      add(value)
+    }
+    /**
+     * `repeated string controller = 2 [json_name = "controller"];`
+     * @param values The controller to add.
+     */
+    @kotlin.jvm.JvmSynthetic
+@kotlin.jvm.JvmName("addAllController")
+    public fun com.google.protobuf.kotlin.DslList<kotlin.String, ControllerProxy>.addAll(values: kotlin.collections.Iterable<kotlin.String>) {
+      _builder.addAllController(values)
+    }
+    /**
+     * `repeated string controller = 2 [json_name = "controller"];`
+     * @param values The controller to add.
+     */
+    @kotlin.jvm.JvmSynthetic
+@kotlin.jvm.JvmName("plusAssignAllController")
+    @Suppress("NOTHING_TO_INLINE")
+    public inline operator fun com.google.protobuf.kotlin.DslList<kotlin.String, ControllerProxy>.plusAssign(values: kotlin.collections.Iterable<kotlin.String>) {
+      addAll(values)
+    }
+    /**
+     * `repeated string controller = 2 [json_name = "controller"];`
+     * @param index The index to set the value at.
+     * @param value The controller to set.
+     */
+    @kotlin.jvm.JvmSynthetic
+@kotlin.jvm.JvmName("setController")
+    public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, ControllerProxy>.set(index: kotlin.Int, value: kotlin.String) {
+      _builder.setController(index, value)
+    }/**
+     * `repeated string controller = 2 [json_name = "controller"];`
+     */
+    @kotlin.jvm.JvmSynthetic
+@kotlin.jvm.JvmName("setController")
+    public fun com.google.protobuf.kotlin.DslList<kotlin.String, ControllerProxy>.clear() {
       _builder.clearController()
     }
-
     /**
      * An uninstantiable, behaviorless type to represent the field in
      * generics.

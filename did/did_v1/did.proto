@@ -125,7 +125,7 @@ message UpdatePolicy {
 message DIDDocument {
   // Core identity
   string id = 1;
-  string controller = 2;
+  repeated string controller = 2;
 
   // @context
   repeated string context = 3;
