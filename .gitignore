@@ -1,24 +1,34 @@
 # macOS system files
 .DS_Store
 
-# VS Code settings
-.vscode/
-
-# Node tooling (if used for static site generation, spec rendering, etc.)
+# Node / pnpm
 node_modules/
+pnpm-lock.yaml
+npm-debug.log*
 
-# Python cache (if used for tooling or testing)
-__pycache__/
+# Editor config
+.vscode/
+.idea/
 
-# Build / output / cache directories
+# Build / output / caches
 dist/
 build/
 .cache/
 out/
 
-# Logs
-*.log
+# Python cache 
+__pycache__/
+*.pyc
 
-# Environment files (if any tooling requires them)
+# Env files
 .env
 *.env
+
+# Typescript cache (if you later add ts build tooling for index.ts)
+*.tsbuildinfo
+
+# buf/twirp/gRPC tooling cache (only if you use it)
+buf.gen.yaml.bak
+
+# DO NOT ignore generated protobuf JS/TS:
+# gen/es/**/* MUST remain tracked
